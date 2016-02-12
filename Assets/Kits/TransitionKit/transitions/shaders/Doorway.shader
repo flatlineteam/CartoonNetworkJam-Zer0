@@ -66,10 +66,12 @@ fixed4 frag( v2f_img i ) : COLOR
   float size = lerp( 1.0, _Depth, 1.0 - _Progress );
   pto = ( i.uv + half2( -0.5, -0.5 ) ) * half2( size, size ) + half2( 0.5, 0.5 );
 
-  if( inBounds( pfr ))
-    return tex2D( _MainTex, pfr );
-  else
-    return fixed4( 0.0, 0.0, 0.0, 0.0 );
+  return tex2D(_MainTex, pfr);
+
+  //if( inBounds( pfr ))
+    
+  //else
+  //  return fixed4( 0.0, 0.0, 0.0, 0.0 );
 }
 
 ENDCG
