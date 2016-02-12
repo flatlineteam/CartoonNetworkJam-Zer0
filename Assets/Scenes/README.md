@@ -1,0 +1,1 @@
+Put any scenes in this directory. To make conflicts less common, you can put any scenes in a directory named `Your Name` in this directory.

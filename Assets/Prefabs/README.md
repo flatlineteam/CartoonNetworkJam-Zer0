@@ -1,0 +1,1 @@
+Put any prefabs in this directory. To make conflicts less common, you can put any prefabs in a directory named `Your Name` in this directory.

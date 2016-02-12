@@ -1,0 +1,1 @@
+Put any sprites/images in this directory.
