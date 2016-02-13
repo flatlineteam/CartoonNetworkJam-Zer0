@@ -37,7 +37,7 @@ namespace Assets.Scripts.GameFlowStates
         {
             if (finished)
             {
-                _machine.changeState<ShowingCellphone>();
+                _machine.changeState<DecidingNextMinigame>();
             }
         }
 

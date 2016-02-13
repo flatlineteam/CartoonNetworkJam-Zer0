@@ -14,6 +14,10 @@ namespace Assets.Scripts
 
         public Cellphone CellphonePrefab;
 
+        public int NumToCompleteThenFinale = 10;
+
+        public int NumCompleted { get; private set; }
+
         public void Start()
         {
             Current = this;
@@ -23,6 +27,7 @@ namespace Assets.Scripts
             stateMachine.addState(new ShowingCellphone(CellphonePrefab));
             stateMachine.addState(new InMinigame());
             stateMachine.addState(new MinigameFinished());
+            stateMachine.addState(new DecidingNextMinigame(NumToCompleteThenFinale));
         }
 
         public void Update()
@@ -34,6 +39,7 @@ namespace Assets.Scripts
         {
             if (stateMachine.currentState is InMinigame)
             {
+                NumCompleted++;
                 stateMachine.changeState<MinigameFinished>();
             }
         }
@@ -42,7 +48,7 @@ namespace Assets.Scripts
         {
             if (stateMachine.currentState is MinigameFinished)
             {
-                stateMachine.changeState<ShowingCellphone>();
+                stateMachine.changeState<DecidingNextMinigame>();
             }
         }
     }

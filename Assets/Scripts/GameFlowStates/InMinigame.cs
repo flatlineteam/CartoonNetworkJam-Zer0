@@ -6,7 +6,6 @@ namespace Assets.Scripts.GameFlowStates
     {
         public override void begin()
         {
-            MinigameController.Current.SetNextMinigame();
             MinigameController.Current.StartMinigame();
         }
 

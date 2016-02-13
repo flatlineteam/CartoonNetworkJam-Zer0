@@ -248,6 +248,15 @@ Prefab:
       propertyPath: layers.Array.data[1]
       value: 
       objectReference: {fileID: 1309152946}
+    - target: {fileID: 11403780, guid: 543c821e7ec56454cb857d6b7ce3ce2a, type: 2}
+      propertyPath: Finale
+      value: 
+      objectReference: {fileID: 11447678, guid: 9a3fbe08f90087e45a461205f0483523,
+        type: 2}
+    - target: {fileID: 11421356, guid: 543c821e7ec56454cb857d6b7ce3ce2a, type: 2}
+      propertyPath: StartAutomatically
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11460454, guid: 543c821e7ec56454cb857d6b7ce3ce2a, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 543c821e7ec56454cb857d6b7ce3ce2a, type: 2}
@@ -303,7 +312,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -381,9 +390,9 @@ RectTransform:
   - {fileID: 1708997101}
   m_Father: {fileID: 1612038035}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -128.5, y: -124}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 94, y: 19}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1692757741

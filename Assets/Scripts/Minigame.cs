@@ -14,6 +14,8 @@ namespace Assets.Scripts
 
         public MinigameController MinigameController { get; set; }
 
+        public bool IsFinale { get; set; }
+
         public void Awake()
         {
             MinigameScript = GetComponent<MinigameScriptBase>();

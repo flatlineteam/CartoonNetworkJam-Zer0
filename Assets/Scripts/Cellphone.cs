@@ -17,8 +17,8 @@ namespace Assets.Scripts
 
         public float RaiseTo;
         public float LowerTo;
-
-        public void Start()
+        
+        public void Awake()
         {
             transform.localPosition = new Vector3(transform.localPosition.x, LowerTo, 0);
         }

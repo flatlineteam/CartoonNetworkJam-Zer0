@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Assets.Scripts
 {
@@ -10,7 +12,11 @@ namespace Assets.Scripts
 
         public Minigame TestMinigame;
 
+        public Minigame Finale;
+
         public Minigame[] Minigames;
+
+        public Minigame SelectedMinigamePrefab;
 
         /// <summary>2x speed factor means you get half as much time to complete the minigame.</summary>
         public float SpeedFactor = 1;
@@ -18,25 +24,27 @@ namespace Assets.Scripts
         public void Start()
         {
             Current = this;
+            Finale.IsFinale = true;
         }
 
         public void DoTestMinigame()
         {
-            SetMinigame(TestMinigame.gameObject);
+            SetMinigame(TestMinigame);
         }
 
-        public void SetMinigame(GameObject minigamePrefab)
+        public void SetMinigame(Minigame minigamePrefab)
         {
             if (CurrentMinigame != null)
                 return;
 
-            var instance = Instantiate(minigamePrefab);
-            CurrentMinigame = instance.GetComponent<Minigame>();
-            StartMinigame();
+            SelectedMinigamePrefab = minigamePrefab;
         }
 
         public void StartMinigame()
         {
+            var instance = Instantiate(SelectedMinigamePrefab.gameObject);
+            CurrentMinigame = instance.GetComponent<Minigame>();
+
             var info = new MinigameStartInfo
             {
                 SecondsToComplete = CurrentMinigame.StartingSecondsToComplete / SpeedFactor
@@ -47,19 +55,24 @@ namespace Assets.Scripts
 
         public void MinigameCompletelyFinished()
         {
-            GameFlowController.Current.MarkMinigameAsCompletelyFinished();
-
             if (CurrentMinigame != null)
             {
                 Destroy(CurrentMinigame.gameObject);
                 CurrentMinigame = null;
             }
+
+            GameFlowController.Current.MarkMinigameAsCompletelyFinished();
         }
 
         public void SetNextMinigame()
         {
             var minigamePrefab = Minigames[Random.Range(0, Minigames.Length)];
-            SetMinigame(minigamePrefab.gameObject);
+            SetMinigame(minigamePrefab);
+        }
+
+        public void SetFinale()
+        {
+            SetMinigame(Finale);
         }
     }
 }
