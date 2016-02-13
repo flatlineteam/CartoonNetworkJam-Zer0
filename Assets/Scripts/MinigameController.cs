@@ -30,6 +30,7 @@ namespace Assets.Scripts
         public void DoTestMinigame()
         {
             SetMinigame(TestMinigame);
+            StartMinigame();
         }
 
         public void SetMinigame(Minigame minigamePrefab)

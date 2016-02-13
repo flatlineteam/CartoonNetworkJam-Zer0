@@ -242,7 +242,7 @@ Prefab:
     - target: {fileID: 11403780, guid: 543c821e7ec56454cb857d6b7ce3ce2a, type: 2}
       propertyPath: TestMinigame
       value: 
-      objectReference: {fileID: 11447678, guid: 9a3fbe08f90087e45a461205f0483523,
+      objectReference: {fileID: 11446856, guid: 07233938cc02dc7428a8dba9ac401f61,
         type: 2}
     - target: {fileID: 11409674, guid: 543c821e7ec56454cb857d6b7ce3ce2a, type: 2}
       propertyPath: layers.Array.data[1]
@@ -255,7 +255,7 @@ Prefab:
         type: 2}
     - target: {fileID: 11421356, guid: 543c821e7ec56454cb857d6b7ce3ce2a, type: 2}
       propertyPath: StartAutomatically
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11460454, guid: 543c821e7ec56454cb857d6b7ce3ce2a, type: 2}
