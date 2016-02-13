@@ -165,6 +165,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartingSecondsToComplete: 1.5
+  TextSentBy: dude
+  TextMessageContents: cmon red just chill
 --- !u!212 &21292316
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -205,6 +207,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: StartingSecondsToComplete
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: TextSentBy
+      value: dude
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: TextMessageContents
+      value: cmon red just chill
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

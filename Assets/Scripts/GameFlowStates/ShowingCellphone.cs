@@ -7,19 +7,22 @@ namespace Assets.Scripts.GameFlowStates
     public class ShowingCellphone : SKState<GameFlowController>
     {
         private readonly Cellphone cellphonePrefab;
+        private readonly Canvas mainCanvas;
 
         private Cellphone cellphoneInstance;
         private bool finished;
 
-        public ShowingCellphone(Cellphone cellphonePrefab)
+        public ShowingCellphone(Cellphone cellphonePrefab, Canvas mainCanvas)
         {
             this.cellphonePrefab = cellphonePrefab;
+            this.mainCanvas = mainCanvas;
         }
 
         public override void begin()
         {
             finished = false;
             cellphoneInstance = Object.Instantiate(cellphonePrefab).GetComponent<Cellphone>();
+            cellphoneInstance.transform.SetParent(mainCanvas.transform, false);
 
             _context.StartCoroutine(Sequence());
         }
@@ -27,7 +30,7 @@ namespace Assets.Scripts.GameFlowStates
         public IEnumerator Sequence()
         {
             yield return cellphoneInstance.Raise();
-            cellphoneInstance.ShowScreen();
+            yield return cellphoneInstance.ShowMessages();
             yield return new WaitForSeconds(cellphoneInstance.WaitSeconds);
             yield return cellphoneInstance.Lower();
 

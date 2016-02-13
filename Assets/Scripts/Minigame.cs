@@ -14,6 +14,10 @@ namespace Assets.Scripts
 
         public MinigameController MinigameController { get; set; }
 
+        public string TextSentBy = "";
+
+        public string TextMessageContents = "";
+
         public bool IsFinale { get; set; }
 
         public void Awake()

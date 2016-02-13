@@ -4,16 +4,10 @@ namespace Assets.Scripts.GameFlowStates
 {
     public class DecidingNextMinigame : SKState<GameFlowController>
     {
-        private readonly int numCompleteThenFinale;
-
-        public DecidingNextMinigame(int numCompleteThenFinale)
-        {
-            this.numCompleteThenFinale = numCompleteThenFinale;
-        }
 
         public override void begin()
         {
-            if (_context.NumCompleted == numCompleteThenFinale)
+            if (_context.NumCompleted == _context.NumToCompleteThenFinale)
             {
                 MinigameController.Current.SetFinale();
             }

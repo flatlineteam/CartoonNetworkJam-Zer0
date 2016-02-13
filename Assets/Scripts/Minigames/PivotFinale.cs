@@ -94,6 +94,7 @@ namespace Assets.Scripts
             touchPosition = startLaserPosition;
 
             laserInstance = Instantiate(LaserPrefab);
+            laserInstance.transform.SetParent(transform, true);
 
             Camera.main.GetComponent<ScreenShake>().ShakeCamera(0.5f, TimeSpan.MaxValue);
         }

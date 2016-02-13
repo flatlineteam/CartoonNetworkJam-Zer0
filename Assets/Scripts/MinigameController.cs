@@ -9,6 +9,7 @@ namespace Assets.Scripts
         public static MinigameController Current { get; private set; }
 
         public Minigame CurrentMinigame { get; set; }
+        public Minigame NextMinigame { get; set; }
 
         public Minigame TestMinigame;
 
@@ -39,6 +40,7 @@ namespace Assets.Scripts
                 return;
 
             SelectedMinigamePrefab = minigamePrefab;
+            NextMinigame = minigamePrefab;
         }
 
         public void StartMinigame()
@@ -48,6 +50,7 @@ namespace Assets.Scripts
 
             var instance = Instantiate(SelectedMinigamePrefab.gameObject);
             CurrentMinigame = instance.GetComponent<Minigame>();
+            NextMinigame = null;
 
             var info = new MinigameStartInfo
             {

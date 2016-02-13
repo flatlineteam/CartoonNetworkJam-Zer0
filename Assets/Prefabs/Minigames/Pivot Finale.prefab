@@ -231,6 +231,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartingSecondsToComplete: 5
+  TextSentBy: Gar
+  TextMessageContents: DEFEAT LORD BOX-MAN'S ROBOT ARMY!!!!
 --- !u!114 &11450150
 MonoBehaviour:
   m_ObjectHideFlags: 1

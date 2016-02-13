@@ -14,6 +14,8 @@ namespace Assets.Scripts
 
         public Cellphone CellphonePrefab;
 
+        public Canvas MainCanvas;
+
         public int NumToCompleteThenFinale = 10;
 
         public int NumCompleted { get; private set; }
@@ -24,10 +26,11 @@ namespace Assets.Scripts
 
             stateMachine = new SKStateMachine<GameFlowController>(this, new StartingUp(StartAutomatically));
 
-            stateMachine.addState(new ShowingCellphone(CellphonePrefab));
+            stateMachine.addState(new ShowingCellphone(CellphonePrefab, MainCanvas));
             stateMachine.addState(new InMinigame());
             stateMachine.addState(new MinigameFinished());
-            stateMachine.addState(new DecidingNextMinigame(NumToCompleteThenFinale));
+            stateMachine.addState(new DecidingNextMinigame());
+            stateMachine.addState(new SpeedingUp());
         }
 
         public void Update()
@@ -46,10 +49,16 @@ namespace Assets.Scripts
 
         public void MarkMinigameAsCompletelyFinished()
         {
-            if (stateMachine.currentState is MinigameFinished)
+            var state = stateMachine.currentState as MinigameFinished;
+            if (state != null)
             {
-                stateMachine.changeState<DecidingNextMinigame>();
+                state.MinigameIsCompletelyFinished();
             }
+        }
+
+        public void ResetNumCompleted()
+        {
+            NumCompleted = 0;
         }
     }
 }
