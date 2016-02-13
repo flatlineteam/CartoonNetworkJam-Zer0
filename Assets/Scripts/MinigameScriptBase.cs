@@ -81,7 +81,8 @@ namespace Assets.Scripts
         {
             Stopped = true;
             CancelAnyCoroutines();
-            StopCoroutine(timer);
+            if(timer != null)
+                StopCoroutine(timer);
         }
 
         protected abstract void CancelAnyCoroutines();
