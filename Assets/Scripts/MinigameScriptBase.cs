@@ -17,6 +17,8 @@ namespace Assets.Scripts
 
         protected bool Stopped { get; private set; }
 
+        protected MinigameStartInfo StartInfo { get; private set; }
+
         private Coroutine timer;
 
         public void Start()
@@ -28,6 +30,7 @@ namespace Assets.Scripts
 
         public void StartMinigame(MinigameStartInfo info)
         {
+            StartInfo = info;
             StartTime = Time.time;
             TimeForMinigame = info.SecondsToComplete;
 
@@ -62,7 +65,8 @@ namespace Assets.Scripts
         {
             TimeRemaining = StartTime + TimeForMinigame - Time.time;
 
-            OnUnityUpdate();
+            if(Stopped == false)
+                OnUnityUpdate();
         }
 
         protected abstract void OnUnityUpdate();
@@ -90,6 +94,8 @@ namespace Assets.Scripts
 
     public class MinigameStartInfo
     {
+        public float SpeedFactor { get; set; }
+
         public float SecondsToComplete { get; set; }
     }
 }

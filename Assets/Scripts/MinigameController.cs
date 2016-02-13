@@ -43,11 +43,15 @@ namespace Assets.Scripts
 
         public void StartMinigame()
         {
+            if (CurrentMinigame != null)
+                return;
+
             var instance = Instantiate(SelectedMinigamePrefab.gameObject);
             CurrentMinigame = instance.GetComponent<Minigame>();
 
             var info = new MinigameStartInfo
             {
+                SpeedFactor = SpeedFactor,
                 SecondsToComplete = CurrentMinigame.StartingSecondsToComplete / SpeedFactor
             };
 
