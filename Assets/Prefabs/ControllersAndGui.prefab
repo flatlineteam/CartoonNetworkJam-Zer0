@@ -11,6 +11,7 @@ GameObject:
   - 114: {fileID: 11409674}
   - 114: {fileID: 11485640}
   - 114: {fileID: 11460454}
+  - 114: {fileID: 11491832}
   m_Layer: 0
   m_Name: TouchScript
   m_TagString: Untagged
@@ -62,6 +63,22 @@ GameObject:
   - 223: {fileID: 22396784}
   m_Layer: 0
   m_Name: Touch Visualizer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &147574
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 486490}
+  - 114: {fileID: 11421356}
+  m_Layer: 0
+  m_Name: Game Flow Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -146,7 +163,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 177940}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 228.7874, y: 116.755035, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 22404644}
@@ -160,15 +177,28 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 190434}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -228.7874, y: -116.755035, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 22418256}
   - {fileID: 400638}
   - {fileID: 495572}
   - {fileID: 405082}
+  - {fileID: 486490}
   m_Father: {fileID: 405480}
   m_RootOrder: 1
+--- !u!4 &486490
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 147574}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 406940}
+  m_RootOrder: 4
 --- !u!4 &495572
 Transform:
   m_ObjectHideFlags: 1
@@ -192,7 +222,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd0bf6fc4dfe0cd4b8579c9b4b58febe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TestMinigame: {fileID: 11419198, guid: 74442b1b4a39d1944a8e2a4db8bb64b4, type: 2}
+  TestMinigame: {fileID: 11496572, guid: 101f2a01171482a40a8afddffd64b734, type: 2}
+  Minigames: []
   SpeedFactor: 1
 --- !u!114 &11409674
 MonoBehaviour:
@@ -212,7 +243,20 @@ MonoBehaviour:
   sendMessageEvents: 60
   sendMessageTarget: {fileID: 0}
   layers:
+  - {fileID: 11491832}
   - {fileID: 11460454}
+--- !u!114 &11421356
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 147574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 428b21c37c2df1640932e925a988d375, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CellphonePrefab: {fileID: 0}
 --- !u!114 &11427460
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -236,7 +280,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -322,6 +366,18 @@ MonoBehaviour:
   Windows8Mouse: 1
   Windows7Mouse: 1
   UniversalWindowsMouse: 1
+--- !u!114 &11491832
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 101152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26a72f9b3b6704180978dbce08cf231e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: UI Layer
 --- !u!223 &22376662
 Canvas:
   m_ObjectHideFlags: 1

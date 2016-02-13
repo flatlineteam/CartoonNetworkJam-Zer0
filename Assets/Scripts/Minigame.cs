@@ -44,6 +44,8 @@ namespace Assets.Scripts
 
         public void Finished(bool success)
         {
+            GameFlowController.Current.MarkMinigameAsFinished();
+
             MinigameScript.StopMinigame();
 
             if (success)

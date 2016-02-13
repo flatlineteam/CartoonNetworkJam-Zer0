@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Assets.Scripts
 {
@@ -10,6 +9,8 @@ namespace Assets.Scripts
         public Minigame CurrentMinigame { get; set; }
 
         public Minigame TestMinigame;
+
+        public Minigame[] Minigames;
 
         /// <summary>2x speed factor means you get half as much time to complete the minigame.</summary>
         public float SpeedFactor = 1;
@@ -46,8 +47,15 @@ namespace Assets.Scripts
 
         public void MinigameCompletelyFinished()
         {
+            GameFlowController.Current.MarkMinigameAsCompletelyFinished();
             Destroy(CurrentMinigame.gameObject);
             CurrentMinigame = null;
+        }
+
+        public void SetNextMinigame()
+        {
+            var minigamePrefab = Minigames[Random.Range(0, Minigames.Length)];
+            SetMinigame(minigamePrefab.gameObject);
         }
     }
 }
