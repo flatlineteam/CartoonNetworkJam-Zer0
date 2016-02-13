@@ -8,7 +8,7 @@ namespace Prime31.StateKit
 {
 	public sealed class SKStateMachine<T>
 	{
-		protected T _context;
+	    private T _context;
 		#pragma warning disable
 		public event Action onStateChanged;
 		#pragma warning restore

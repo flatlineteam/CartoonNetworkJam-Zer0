@@ -1,13 +1,12 @@
+//This class is auto-generated do not modify
 using UnityEngine.SceneManagement;
 namespace k
 {
 	public static class Scenes
 	{
-		public const string BOOSTRAP_SCENE = "BoostrapScene";
-		public const string SCENE1 = "Scene1";
-		public const string SCENE2 = "Scene2";
+		public const string DEFAULT = "default";
 
-		public const int TOTAL_SCENES = 3;
+		public const int TOTAL_SCENES = 1;
 
 
 		public static int nextSceneIndex()

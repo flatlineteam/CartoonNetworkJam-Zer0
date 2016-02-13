@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEditor;
 using System.Linq;
+#pragma warning disable 169
 
 
 namespace Prime31Editor

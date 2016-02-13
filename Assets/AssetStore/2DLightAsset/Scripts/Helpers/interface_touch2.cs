@@ -4,7 +4,7 @@ using System.Collections;
 public class interface_touch2: MonoBehaviour {
 	
 	GameObject cLight;
-	GameObject cubeL;
+	//GameObject cubeL;
 	Camera cam;
 	
 	//GUIText UIlights;

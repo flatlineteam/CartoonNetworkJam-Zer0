@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
+#pragma warning disable 169
 
 namespace UnityEditor.XCodeEditor.LunarConsole
 {

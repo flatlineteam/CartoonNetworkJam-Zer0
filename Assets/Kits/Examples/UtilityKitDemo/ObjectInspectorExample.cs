@@ -4,6 +4,7 @@ using Prime31;
 
 #if UNITY_EDITOR
 using UnityEditor;
+#pragma warning disable 169
 #endif
 
 

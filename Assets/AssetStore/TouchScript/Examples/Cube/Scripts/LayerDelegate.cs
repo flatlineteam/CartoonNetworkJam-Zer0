@@ -12,8 +12,12 @@ namespace TouchScript.Examples.Cube
         public bool ShouldReceiveTouch(TouchLayer layer, TouchPoint touch)
         {
             if (layer == RenderTextureLayer)
+#pragma warning disable 252,253
                 return touch.InputSource == Source;
+#pragma warning restore 252,253
+#pragma warning disable 252,253
             return touch.InputSource != Source;
+#pragma warning restore 252,253
         }
     }
 }

@@ -13,7 +13,9 @@ namespace ProgressBar
         /// Rect from the panel that will act as Filler.
         /// </summary>
         [SerializeField]
+#pragma warning disable 649
         private RectTransform m_FillRect;
+#pragma warning restore 649
         /// <summary>
         /// Class used for storing the Min and Max width values that the Filler will vary between.
         /// </summary>
@@ -67,7 +69,9 @@ namespace ProgressBar
         /// Otherwise no Error will be raised.
         /// </summary>
         [SerializeField]
+#pragma warning disable 649
         private Text m_AttachedText;
+#pragma warning restore 649
 
         /// <summary>
         /// In pixels per seconds, the speed at which the Filler will be animated.
@@ -92,7 +96,9 @@ namespace ProgressBar
         /// The methods that you register to be triggered when the ProgressBar is complete.
         /// </summary>
         [SerializeField]
+#pragma warning disable 649
         private OnCompleteEvent OnCompleteMethods;
+#pragma warning restore 649
         
         /// <summary>
         /// By default the Filler is centered horizontally in its container panel.

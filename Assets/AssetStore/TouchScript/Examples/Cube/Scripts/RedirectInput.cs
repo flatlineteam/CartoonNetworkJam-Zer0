@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TouchScript.Gestures;
 using TouchScript.Hit;
 using TouchScript.InputSources;
+#pragma warning disable 252,253
 
 namespace TouchScript.Examples.Cube
 {

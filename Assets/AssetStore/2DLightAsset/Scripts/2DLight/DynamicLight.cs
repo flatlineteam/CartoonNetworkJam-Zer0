@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;		// This allows for the use of lists, like <GameObject>
-using pseudoSinCos;
 
 
 public class verts
@@ -43,8 +42,7 @@ public class DynamicLight : MonoBehaviour {
 
 	// Called at beginning of script execution
 	void Start () {
-
-		PseudoSinCos.initPseudoSinCos();
+        
 
 
 		
@@ -323,7 +321,7 @@ public class DynamicLight : MonoBehaviour {
 
 			verts v = new verts();
 			//v.pos = new Vector3((Mathf.Sin(theta)), (Mathf.Cos(theta)), 0); // in radians low performance
-			v.pos = new Vector3((PseudoSinCos.SinArray[theta]), (PseudoSinCos.CosArray[theta]), 0); // in dregrees (previous calculate)
+			v.pos = new Vector3((Mathf.Sin(theta)), (Mathf.Cos(theta)), 0); // in dregrees (previous calculate)
 
 			v.angle = getVectorAngle(true,v.pos.x, v.pos.y);
 			v.pos *= lightRadius;

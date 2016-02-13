@@ -6,8 +6,4 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Kits/Examples/TransitionKitDemo/BoostrapScene.unity
-  - enabled: 1
-    path: Assets/Kits/Examples/TransitionKitDemo/Scene1.unity
-  - enabled: 1
-    path: Assets/Kits/Examples/TransitionKitDemo/Scene2.unity
+    path: Assets/Scenes/default.unity

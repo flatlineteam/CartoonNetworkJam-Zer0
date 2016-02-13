@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using UnityEditor;
 using System.Collections;
+#pragma warning disable 169
 
 public class DynamicLightMenu : Editor {
-
+    
 	static internal DynamicLight light;
 	const string menuPath = "GameObject/2D Dynamic Light [Free]";
 

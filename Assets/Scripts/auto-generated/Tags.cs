@@ -1,3 +1,4 @@
+//This class is auto-generated do not modify
 using UnityEngine.SceneManagement;
 namespace k
 {
