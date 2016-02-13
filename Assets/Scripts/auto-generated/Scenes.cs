@@ -5,8 +5,9 @@ namespace k
 	public static class Scenes
 	{
 		public const string DEFAULT = "default";
+		public const string TITLE = "Title";
 
-		public const int TOTAL_SCENES = 1;
+		public const int TOTAL_SCENES = 2;
 
 
 		public static int nextSceneIndex()
