@@ -10,13 +10,15 @@ namespace Assets.Scripts
 
         public static GameFlowController Current { get; private set; }
 
+        public bool StartAutomatically;
+
         public Cellphone CellphonePrefab;
 
         public void Start()
         {
             Current = this;
 
-            stateMachine = new SKStateMachine<GameFlowController>(this, new StartingUp());
+            stateMachine = new SKStateMachine<GameFlowController>(this, new StartingUp(StartAutomatically));
 
             stateMachine.addState(new ShowingCellphone(CellphonePrefab));
             stateMachine.addState(new InMinigame());

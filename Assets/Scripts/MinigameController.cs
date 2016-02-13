@@ -48,8 +48,12 @@ namespace Assets.Scripts
         public void MinigameCompletelyFinished()
         {
             GameFlowController.Current.MarkMinigameAsCompletelyFinished();
-            Destroy(CurrentMinigame.gameObject);
-            CurrentMinigame = null;
+
+            if (CurrentMinigame != null)
+            {
+                Destroy(CurrentMinigame.gameObject);
+                CurrentMinigame = null;
+            }
         }
 
         public void SetNextMinigame()
