@@ -15,6 +15,9 @@ namespace Assets.Scripts
 
         private void OnFlicked(object sender, EventArgs eventArgs)
         {
+            if (Stopped)
+                return;
+            
             MarkAsSuccess();
         }
 
@@ -24,11 +27,6 @@ namespace Assets.Scripts
 
         protected override void OnUnityUpdate()
         {            
-        }
-
-        protected override void OnTimeElapsed()
-        {
-            MarkAsFailed();
         }
 
         protected override void CancelAnyCoroutines()
