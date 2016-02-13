@@ -279,6 +279,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartingSecondsToComplete: 2
+  TextSentBy: Gar
+  TextMessageContents: Jethro's took over the Plaza! Take them out before they do
+    it in the present!
 --- !u!114 &11441494
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -474,6 +477,15 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: StartingSecondsToComplete
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: TextSentBy
+      value: Gar
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: TextMessageContents
+      value: Jethro's took over the Plaza! Take them out before they do it in the
+        present!
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

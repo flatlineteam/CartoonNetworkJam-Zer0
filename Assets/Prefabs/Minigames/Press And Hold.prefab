@@ -146,6 +146,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartingSecondsToComplete: 5
+  TextSentBy: Mr. Future
+  TextMessageContents: If you fall asleep in my class again you get an F! Make coffee!
 --- !u!114 &11481046
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -260,7 +262,15 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: TextSentBy
+      value: Mr. Future
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: TextMessageContents
+      value: If you fall asleep in my class again you get an F! Make coffee!
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 191104}

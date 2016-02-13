@@ -195,6 +195,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartingSecondsToComplete: 1.5
+  TextSentBy: Swiper
+  TextMessageContents: Swipe when I cannot, friend.
 --- !u!212 &21229660
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -261,7 +263,15 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: TextSentBy
+      value: Swiper
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: TextMessageContents
+      value: Swipe when I cannot, friend.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 170578}

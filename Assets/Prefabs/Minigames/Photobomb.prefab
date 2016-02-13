@@ -247,6 +247,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartingSecondsToComplete: 5
+  TextSentBy: Miss Pastel
+  TextMessageContents: Hey future nerd. Holo-Jane wore a green shirt, go photobomb
+    her new profile pic!
 --- !u!114 &11487708
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -379,7 +382,16 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: TextSentBy
+      value: Miss Pastel
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: TextMessageContents
+      value: Hey future nerd. Holo-Jane wore a green shirt, go photobomb her new profile
+        pic!
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 185210}

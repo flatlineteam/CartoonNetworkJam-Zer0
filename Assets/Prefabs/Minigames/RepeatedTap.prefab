@@ -449,6 +449,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartingSecondsToComplete: 1.5
+  TextSentBy: A Button
+  TextMessageContents: TAP ME. DO IT. SO MANY TIMES.
 --- !u!212 &21286084
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -655,6 +657,14 @@ Prefab:
       propertyPath: repeatedTapCollider
       value: 
       objectReference: {fileID: 6190612}
+    - target: {fileID: 0}
+      propertyPath: TextSentBy
+      value: A Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: TextMessageContents
+      value: TAP ME. DO IT. SO MANY TIMES.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 163048}
