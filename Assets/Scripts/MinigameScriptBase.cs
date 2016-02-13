@@ -67,7 +67,7 @@ namespace Assets.Scripts
 
         protected abstract void OnUnityUpdate();
 
-        protected void MarkAsCompleted()
+        protected void MarkAsSuccess()
         {
             Minigame.Finished(true);
         }

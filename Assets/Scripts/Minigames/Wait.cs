@@ -4,22 +4,18 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
-    /// <summary>Simple minigame where you have to tap on the target object.</summary>
-    public class TapOnItem : MinigameScriptBase
+    public class Wait : MinigameScriptBase
     {
-        public Collider2D ItemToTap;
-        
+        public Collider2D DontPressCollider;
+
         protected override void OnUnityStart()
         {
-            ItemToTap.GetComponent<TapGesture>().Tapped += OnTapped;
+            DontPressCollider.GetComponent<TapGesture>().Tapped += OnTapped;
         }
 
         private void OnTapped(object sender, EventArgs eventArgs)
         {
-            if (Stopped)
-                return;
-
-            MarkAsSuccess();
+            MarkAsFailed();
         }
 
         protected override void OnStartMinigame()
@@ -28,6 +24,11 @@ namespace Assets.Scripts
 
         protected override void OnUnityUpdate()
         {
+        }
+
+        protected override void OnTimeElapsed()
+        {
+            MarkAsSuccess();
         }
 
         protected override void CancelAnyCoroutines()
