@@ -317,8 +317,9 @@ GameObject:
   - 114: {fileID: 956132403}
   - 95: {fileID: 956132405}
   - 114: {fileID: 956132406}
+  - 114: {fileID: 956132407}
   m_Layer: 5
-  m_Name: WHAT!?
+  m_Name: Credits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -415,6 +416,18 @@ MonoBehaviour:
   numberOfTapsRequired: 1
   timeLimit: Infinity
   distanceLimit: Infinity
+--- !u!114 &956132407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 956132401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0dd2e92790b9184fb5d90731f4adc25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: Credits
 --- !u!1 &1024576058
 GameObject:
   m_ObjectHideFlags: 0

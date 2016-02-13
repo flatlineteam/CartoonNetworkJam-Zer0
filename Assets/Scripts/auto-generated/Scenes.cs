@@ -6,8 +6,9 @@ namespace k
 	{
 		public const string DEFAULT = "default";
 		public const string TITLE = "Title";
+		public const string CREDITS = "Credits";
 
-		public const int TOTAL_SCENES = 2;
+		public const int TOTAL_SCENES = 3;
 
 
 		public static int nextSceneIndex()
