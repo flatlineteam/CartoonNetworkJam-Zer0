@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using Assets.Scripts.PivotFinaleScripts;
 using TouchScript.Gestures;
 using UnityEngine;
@@ -68,8 +67,14 @@ namespace Assets.Scripts
             }
             else if (e.State == Gesture.GestureState.Ended)
             {
-                Destroy(laserInstance.gameObject);
+                StopLaser();
             }
+        }
+
+        private void StopLaser()
+        {
+            Destroy(laserInstance.gameObject);
+            Camera.main.GetComponent<ScreenShake>().StopShaking();
         }
 
         private void ReorientLaser()
@@ -89,6 +94,8 @@ namespace Assets.Scripts
             touchPosition = startLaserPosition;
 
             laserInstance = Instantiate(LaserPrefab);
+
+            Camera.main.GetComponent<ScreenShake>().ShakeCamera(0.5f, TimeSpan.MaxValue);
         }
 
         protected override void OnStartMinigame()
