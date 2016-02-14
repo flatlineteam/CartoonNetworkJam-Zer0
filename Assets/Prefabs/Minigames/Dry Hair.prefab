@@ -293,8 +293,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartingSecondsToComplete: 5
-  TextSentBy: 
-  TextMessageContents: 
+  TextSentBy: Future Self
+  TextMessageContents: dude your hair is gross
 --- !u!114 &11484228
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -427,6 +427,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: HoldSeconds
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: TextMessageContents
+      value: dude your hair is gross
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: TextSentBy
+      value: Future Self
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
