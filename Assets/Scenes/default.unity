@@ -176,7 +176,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11421356, guid: 543c821e7ec56454cb857d6b7ce3ce2a, type: 2}
       propertyPath: StartAutomatically
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11421356, guid: 543c821e7ec56454cb857d6b7ce3ce2a, type: 2}
       propertyPath: SpeedingUpMusic
@@ -185,7 +185,7 @@ Prefab:
     - target: {fileID: 11403780, guid: 543c821e7ec56454cb857d6b7ce3ce2a, type: 2}
       propertyPath: TestMinigame
       value: 
-      objectReference: {fileID: 11447678, guid: 9a3fbe08f90087e45a461205f0483523,
+      objectReference: {fileID: 11481238, guid: e4556578c8397ca4eacaac5b06cd34aa,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 543c821e7ec56454cb857d6b7ce3ce2a, type: 2}
@@ -240,6 +240,10 @@ Prefab:
     - target: {fileID: 427398, guid: 9627508e8c12b354fa3e7eb4f56ba353, type: 2}
       propertyPath: m_LocalScale.z
       value: 2.6719997
+      objectReference: {fileID: 0}
+    - target: {fileID: 21274020, guid: 9627508e8c12b354fa3e7eb4f56ba353, type: 2}
+      propertyPath: m_SortingOrder
+      value: -10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9627508e8c12b354fa3e7eb4f56ba353, type: 2}

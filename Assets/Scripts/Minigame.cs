@@ -5,6 +5,8 @@ namespace Assets.Scripts
 {
     public class Minigame : MonoBehaviour
     {
+        public event Action<MinigameState> StateChanged;
+
         [Range(0, 10)]
         public float StartingSecondsToComplete = 5;
 
@@ -22,6 +24,11 @@ namespace Assets.Scripts
         public string TextMessageContents = "";
 
         public bool IsFinale { get; set; }
+
+        [Serializable]
+        public enum MinigameState { Running, Failed, Succeeded }
+
+        public MinigameState CurrentState { get; private set; }
 
         public void Awake()
         {
@@ -48,6 +55,7 @@ namespace Assets.Scripts
 
         public void StartMinigame(MinigameStartInfo info)
         {
+            SetState(MinigameState.Running);
             MinigameScript.StartMinigame(info);
         }
 
@@ -59,14 +67,23 @@ namespace Assets.Scripts
 
             if (success)
             {
+                SetState(MinigameState.Succeeded);
                 CompletedScript.MinigameCompletedSuccessfully();
                 var scoreEarned = MinigameScript.CalculateScore(maxPointValueForWin);
                 LikeCounterController.Current.AddToPointCount( scoreEarned );
             }
             else
             {
+                SetState(MinigameState.Failed);
                 CompletedScript.MinigameFailed();
             }
+        }
+
+        private void SetState(MinigameState state)
+        {
+            CurrentState = state;
+            if (StateChanged != null)
+                StateChanged(CurrentState);
         }
     }
 }
