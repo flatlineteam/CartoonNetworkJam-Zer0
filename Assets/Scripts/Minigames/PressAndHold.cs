@@ -40,6 +40,9 @@ namespace Assets.Scripts
 
         private void PressGestureOnPressed(object sender, EventArgs eventArgs)
         {
+            if (Stopped)
+                return;
+
             StartHold();
         }
 
@@ -51,6 +54,9 @@ namespace Assets.Scripts
 
         private void TapGestureOnStateChanged(object sender, GestureStateChangeEventArgs e)
         {
+            if (Stopped)
+                return;
+
             if (e.State == Gesture.GestureState.Cancelled || e.State == Gesture.GestureState.Ended ||
                      e.State == Gesture.GestureState.Failed)
             {
@@ -86,7 +92,7 @@ namespace Assets.Scripts
             }
         }
 
-        protected override void CancelAnyCoroutines()
+        protected override void CleanUp()
         {
         }
     }

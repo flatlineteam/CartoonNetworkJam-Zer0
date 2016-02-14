@@ -23,6 +23,9 @@ namespace Assets.Scripts
 
         private void ItemTapped(TapSequenceItem item)
         {
+            if (Stopped)
+                return;
+
             if (item != currentItem)
                 return;
 
@@ -62,7 +65,7 @@ namespace Assets.Scripts
                 currentItem.gameObject.SetActive(true);
         }
 
-        protected override void CancelAnyCoroutines()
+        protected override void CleanUp()
         {
         }
     }

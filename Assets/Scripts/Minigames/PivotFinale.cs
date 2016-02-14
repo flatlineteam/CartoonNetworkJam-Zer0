@@ -56,19 +56,28 @@ namespace Assets.Scripts
 
         private void Released(object sender, EventArgs eventArgs)
         {
-            if(laserInstance != null)
+            if (Stopped)
+                return;
+
+            if (laserInstance != null)
                 Destroy(laserInstance.gameObject);
             laserSound.stop();
         }
 
         private void Pressed(object sender, EventArgs eventArgs)
         {
+            if (Stopped)
+                return;
+
             SpawnLaser(pressGesture.ActiveTouches[0].Hit.Point);
             ReorientLaser();
         }
 
         private void TransformStateChanged(object sender, GestureStateChangeEventArgs e)
         {
+            if (Stopped)
+                return;
+
             if (e.State == Gesture.GestureState.Changed)
             {
                 touchPosition += transformGesture.LocalDeltaPosition;
@@ -121,7 +130,7 @@ namespace Assets.Scripts
         {
         }
 
-        protected override void CancelAnyCoroutines()
+        protected override void CleanUp()
         {
             Camera.main.GetComponent<ScreenShake>().StopShaking();
         }

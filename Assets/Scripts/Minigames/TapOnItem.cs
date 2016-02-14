@@ -34,7 +34,7 @@ namespace Assets.Scripts
         {
         }
 
-        protected override void CancelAnyCoroutines()
+        protected override void CleanUp()
         {
         }
     }

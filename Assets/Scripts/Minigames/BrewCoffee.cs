@@ -26,8 +26,8 @@ namespace Assets.Scripts
         {
             pressAndHold = GetComponent<PressAndHold>();
 
-            pressAndHold.PressStarted += PressAndHoldOnPressStarted;
-            pressAndHold.PressStopped += PressAndHoldOnPressStopped;
+            pressAndHold.PressStarted += PressStarted;
+            pressAndHold.PressStopped += PressStopped;
 
             SetSteamOpacity(0);
         }
@@ -37,7 +37,7 @@ namespace Assets.Scripts
             SteamLayer.color = new Color(1.0f, 1.0f, 1.0f, opacity);
         }
 
-        private void PressAndHoldOnPressStarted()
+        private void PressStarted()
         {
             isPouring = true;
 
@@ -47,7 +47,7 @@ namespace Assets.Scripts
             spriteSwitcherCoroutine = StartCoroutine(DoSpriteSwitcher());
         }
 
-        private void PressAndHoldOnPressStopped()
+        private void PressStopped()
         {
             isPouring = false;
 

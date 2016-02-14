@@ -39,6 +39,9 @@ namespace Assets.Scripts
 
         private void Tapped(object sender, EventArgs eventArgs)
         {
+            if (Stopped)
+                return;
+
             if (Vector3.Distance(Player.position, Target.position) <= OKDistance)
             {
                 MarkAsSuccess();
@@ -64,7 +67,7 @@ namespace Assets.Scripts
         {
         }
 
-        protected override void CancelAnyCoroutines()
+        protected override void CleanUp()
         {
             sequence.Kill();
         }

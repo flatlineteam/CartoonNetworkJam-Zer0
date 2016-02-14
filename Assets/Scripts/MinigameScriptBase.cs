@@ -96,12 +96,12 @@ namespace Assets.Scripts
         public void StopMinigame()
         {
             Stopped = true;
-            CancelAnyCoroutines();
+            CleanUp();
             if(timer != null)
                 StopCoroutine(timer);
         }
 
-        protected abstract void CancelAnyCoroutines();
+        protected abstract void CleanUp();
     }
 
     public class MinigameStartInfo

@@ -38,19 +38,25 @@ namespace Assets.Scripts
             releaseGesture = TapArea.GetComponent<ReleaseGesture>();
 
             transformGesture.StateChanged += TransformGestureOnStateChanged;
-            pressGesture.Pressed += PressGestureOnPressed;
-            releaseGesture.Released += ReleaseGestureOnReleased;
+            pressGesture.Pressed += Pressed;
+            releaseGesture.Released += Released;
 
             HairDryer = SoundKit.instance.playSound(HairDry);
         }
 
-        private void ReleaseGestureOnReleased(object sender, EventArgs eventArgs)
+        private void Released(object sender, EventArgs eventArgs)
         {
+            if (Stopped)
+                return;
+
             isTouching = false;
         }
 
-        private void PressGestureOnPressed(object sender, EventArgs eventArgs)
+        private void Pressed(object sender, EventArgs eventArgs)
         {
+            if (Stopped)
+                return;
+
             startTouchPosition = pressGesture.ActiveTouches[0].Hit.Point;
             currentTouchPosition = startTouchPosition;
             isTouching = true;
@@ -58,6 +64,9 @@ namespace Assets.Scripts
 
         private void TransformGestureOnStateChanged(object sender, GestureStateChangeEventArgs e)
         {
+            if (Stopped)
+                return;
+
             if (e.State == Gesture.GestureState.Changed)
             {
                 currentTouchPosition += (Vector2)transformGesture.LocalDeltaPosition;
@@ -87,8 +96,6 @@ namespace Assets.Scripts
                 angle = -angle;
 
             var clamped = Mathf.Clamp(angle, -MaxAngleInDegrees, MaxAngleInDegrees);
-
-            //Debug.Log(clamped);
 
             if (Mathf.Approximately(clamped, MaxAngleInDegrees))
             {
@@ -132,7 +139,7 @@ namespace Assets.Scripts
             }
         }
 
-        protected override void CancelAnyCoroutines()
+        protected override void CleanUp()
         {
         }
     }

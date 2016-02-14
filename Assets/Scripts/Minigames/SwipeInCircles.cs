@@ -36,6 +36,9 @@ namespace Assets.Scripts
 
         private void PressGestureOnPressed(object sender, EventArgs eventArgs)
         {
+            if (Stopped)
+                return;
+
             isPressed = true;
 
             tapStartPosition = pressGesture.ActiveTouches[0].Hit.Point;
@@ -44,6 +47,9 @@ namespace Assets.Scripts
 
         private void TransformChanged()
         {
+            if (Stopped)
+                return;
+
             var delta = transformGesture.LocalDeltaPosition;
             lastTapPosition = tapCurrentPosition;
             tapCurrentPosition += (Vector2)delta;
@@ -51,6 +57,9 @@ namespace Assets.Scripts
 
         private void ReleaseGestureOnReleased(object sender, EventArgs eventArgs)
         {
+            if (Stopped)
+                return;
+
             isPressed = false;
         }
 
@@ -86,7 +95,7 @@ namespace Assets.Scripts
             Target.transform.rotation = Quaternion.AngleAxis(currentAngle, Vector3.forward);
         }
         
-        protected override void CancelAnyCoroutines()
+        protected override void CleanUp()
         {
         }
     }

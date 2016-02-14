@@ -17,10 +17,11 @@ namespace Assets.Scripts
 
         private void OnFlicked(object sender, EventArgs eventArgs)
         {
-            FingerSwipe = SoundKit.instance.playSound(ScreenSwipe);
             if (Stopped)
-            return;
-            
+                return;
+
+            FingerSwipe = SoundKit.instance.playSound(ScreenSwipe);
+
             MarkAsSuccess();
         }
 
@@ -32,7 +33,7 @@ namespace Assets.Scripts
         {            
         }
 
-        protected override void CancelAnyCoroutines()
+        protected override void CleanUp()
         {            
         }
     }

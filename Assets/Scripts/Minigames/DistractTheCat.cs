@@ -42,6 +42,9 @@ namespace Assets.Scripts
 
         private void Pressed(object sender, EventArgs eventArgs)
         {
+            if (Stopped)
+                return;
+
             isHeld = true;
 
             touchPosition = pressGesture.ActiveTouches[0].Hit.Point;
@@ -49,11 +52,17 @@ namespace Assets.Scripts
 
         private void Transformed()
         {
+            if (Stopped)
+                return;
+
             touchPosition += (Vector2)transformGesture.LocalDeltaPosition;
         }
 
         private void Released(object sender, EventArgs eventArgs)
         {
+            if (Stopped)
+                return;
+
             isHeld = false;
         }
 
@@ -90,8 +99,9 @@ namespace Assets.Scripts
             }
         }
 
-        protected override void CancelAnyCoroutines()
+        protected override void CleanUp()
         {
+            Destroy(catInstance);
         }
     }
 }

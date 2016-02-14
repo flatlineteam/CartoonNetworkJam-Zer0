@@ -43,7 +43,7 @@ namespace Assets.Scripts
             MarkAsSuccess();
         }
 
-        protected override void CancelAnyCoroutines()
+        protected override void CleanUp()
         {
         }
     }
