@@ -22,6 +22,7 @@ namespace Assets.Scripts
 
         private PressGesture pressGesture;
         private Sequence sequence;
+        private float actualSecondsPerPass;
 
         protected override void OnUnityStart()
         {
@@ -42,6 +43,8 @@ namespace Assets.Scripts
 
         protected override void OnStartMinigame()
         {
+            actualSecondsPerPass = SecondsPerPass / StartInfo.SpeedFactor;
+            
             var ease = Ease.InOutSine;
 
             Player.localPosition = Left.localPosition;

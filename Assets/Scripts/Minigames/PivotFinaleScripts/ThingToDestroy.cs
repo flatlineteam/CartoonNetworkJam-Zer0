@@ -17,9 +17,13 @@ namespace Assets.Scripts.PivotFinaleScripts
         [Range(0, 4)]
         public float Speed = 2f;
 
+        private float actualSpeed;
+
         public void Start()
         {
-            transform.DOMove(new Vector3(Target.position.x, Target.position.y, 0), Speed).SetEase(Ease.Linear);
+            actualSpeed = Speed * MinigameController.Current.SpeedFactor;
+
+            transform.DOMove(new Vector3(Target.position.x, Target.position.y, 0), 1.0f / actualSpeed).SetEase(Ease.Linear);
         }
 
         public void OnTriggerEnter2D(Collider2D collider)

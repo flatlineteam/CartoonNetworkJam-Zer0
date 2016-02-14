@@ -1,6 +1,7 @@
 ﻿using Assets.Scripts.GameFlowStates;
 using Prime31.StateKit;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Assets.Scripts
 {
@@ -16,21 +17,20 @@ namespace Assets.Scripts
 
         public Canvas MainCanvas;
 
-        public AudioClip MainMusic;
-
         public int NumToCompleteThenFinale = 10;
 
-        private SoundKit.SKSound mainMusic;
-
         public int NumCompleted { get; private set; }
+
+        public Text SpeedingUpTextPrefab;
+
+        public float CurrentSpeed = 1;
 
         public void Start()
         {
             Current = this;
 
             stateMachine = new SKStateMachine<GameFlowController>(this, new StartingUp(StartAutomatically));
-
-
+            
             stateMachine.addState(new ShowingCellphone(CellphonePrefab, MainCanvas));
             stateMachine.addState(new InMinigame());
             stateMachine.addState(new MinigameFinished());
@@ -64,6 +64,25 @@ namespace Assets.Scripts
         public void ResetNumCompleted()
         {
             NumCompleted = 0;
+        }
+
+        public void ResetSpeed()
+        {
+            CurrentSpeed = 1.0f;
+            SetupSpeed();
+        }
+
+        /// <summary>baseIncreaseAmount of 0.1 will increase the speed by 10% of the base speed.</summary>
+        public void SpeedUpBy(float baseIncreaseAmount)
+        {
+            CurrentSpeed += baseIncreaseAmount;
+            SetupSpeed();
+        }
+
+        public void SetupSpeed()
+        {
+            MinigameController.Current.SpeedFactor = CurrentSpeed;
+            GetComponent<AudioSource>().pitch = CurrentSpeed;
         }
     }
 }

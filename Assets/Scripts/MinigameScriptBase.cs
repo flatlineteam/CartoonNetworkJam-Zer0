@@ -94,6 +94,7 @@ namespace Assets.Scripts
 
     public class MinigameStartInfo
     {
+        /// <summary>2x speed factor means you get half as much time to complete the minigame.</summary>
         public float SpeedFactor { get; set; }
 
         public float SecondsToComplete { get; set; }
