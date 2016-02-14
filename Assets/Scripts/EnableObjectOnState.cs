@@ -9,7 +9,7 @@ namespace Assets.Scripts
 
         public Minigame.MinigameState StateToEnableOn;
 
-        public bool enabledToSet = false;
+        public bool enabledToSet = true;
 
         public Minigame Minigame;
 

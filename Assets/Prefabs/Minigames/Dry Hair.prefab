@@ -390,7 +390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Time: 0.7
-  StartOnStart: 0
+  startOnStart: 0
 --- !u!114 &11436118
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -417,6 +417,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ToEnableOnState: {fileID: 110528}
   StateToEnableOn: 1
+  enabledToSet: 1
   Minigame: {fileID: 11481238}
 --- !u!114 &11439990
 MonoBehaviour:
@@ -507,7 +508,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartingSecondsToComplete: 4
-  maxPointValueForWin: 100
+  MaxPointValueForWin: 100
   TextSentBy: Future Self
   TextMessageContents: dude your hair is gross
 --- !u!114 &11484228
