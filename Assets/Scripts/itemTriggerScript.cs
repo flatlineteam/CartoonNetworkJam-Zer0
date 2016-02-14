@@ -6,16 +6,17 @@ namespace Assets.Scripts
 {
     public class itemTriggerScript : MonoBehaviour {
 
-        public bool isSelected;
+        public bool IsSelected;
         public AudioClip BlasterShot;
 
         public TapOnItems Parent { get; set; }
 
-        // Use this for initialization
-        void Start () 
+        public PressGesture GestureObj;
+
+        public void Awake()
         {
-            GetComponent<PressGesture>().Pressed += OnPressed;
-    	}
+            GestureObj.Pressed += OnPressed;
+        }
 
         private void OnPressed (object s, System.EventArgs e)
         {
@@ -27,8 +28,8 @@ namespace Assets.Scripts
         private void RegisterClick()
         {
             SoundKit.instance.playOneShot(BlasterShot);
-            isSelected = true;
-            GetComponent<SpriteRenderer>().color = Color.green;
+            IsSelected = true;
+            Destroy(gameObject);
         }    
     }
 }
