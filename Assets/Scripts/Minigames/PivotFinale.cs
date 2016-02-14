@@ -15,6 +15,8 @@ namespace Assets.Scripts
 
         public AudioClip BlasterHeld;
 
+        public Transform LaserParent;
+
         private TransformGesture transformGesture;
         private PressGesture pressGesture;
         private ReleaseGesture releaseGesture;
@@ -98,7 +100,7 @@ namespace Assets.Scripts
             startLaserPosition = startPosition;
             touchPosition = startLaserPosition;
             laserInstance = Instantiate(LaserPrefab);
-            laserInstance.transform.SetParent(transform, true);
+            laserInstance.transform.SetParent(LaserParent, true);
             laserSound = SoundKit.instance.playSound(BlasterHeld);
 
             Camera.main.GetComponent<ScreenShake>().ShakeCamera(0.5f, TimeSpan.MaxValue);
