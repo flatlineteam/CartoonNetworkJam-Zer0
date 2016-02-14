@@ -124,6 +124,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2044788, guid: 299c2e18ad40adc4eaa4471f80500801, type: 2}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2044788, guid: 299c2e18ad40adc4eaa4471f80500801, type: 2}
+      propertyPath: orthographic size
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 299c2e18ad40adc4eaa4471f80500801, type: 2}
   m_IsPrefabParent: 0
@@ -659,3 +667,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+--- !u!1 &1995603690 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 147538, guid: 299c2e18ad40adc4eaa4471f80500801, type: 2}
+  m_PrefabInternal: {fileID: 212480780}
+--- !u!114 &1995603697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1995603690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d234ecdf68641a845b2ad4e4532bc0e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
