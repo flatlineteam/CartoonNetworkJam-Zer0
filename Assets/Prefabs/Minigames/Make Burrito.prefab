@@ -790,10 +790,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LaserPrefab: {fileID: 111170, guid: 937cdf13661203a4cb32915690b3710a, type: 2}
   CookedBurritoPrefab: {fileID: 180050, guid: 0519974fe20e7b14e970f6563284f911, type: 2}
-  BurritoOpen: {fileID: 8300000, guid: a2b5d8ef3e6f2bd4db61f78c3ee152b3, type: 3}
-  BurritoPlace: {fileID: 8300000, guid: 5d3b9f3b39c6ef2428231bdbd27e09bf, type: 3}
-  BurritoClose: {fileID: 8300000, guid: 8fcfddf8f58295a4f924b409fe70575c, type: 3}
-  BurritoBoom: {fileID: 8300000, guid: 01c1a106e55dc954284cad5d56bd8c1f, type: 3}
+  IceBurritoPrefab: {fileID: 140808, guid: f9b9cbef0af9580419b3231b3770caab, type: 2}
 --- !u!114 &11490596
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1099,6 +1096,10 @@ Prefab:
       propertyPath: BurritoPlace
       value: 
       objectReference: {fileID: 8300000, guid: 5d3b9f3b39c6ef2428231bdbd27e09bf, type: 3}
+    - target: {fileID: 0}
+      propertyPath: IceBurritoPrefab
+      value: 
+      objectReference: {fileID: 140808, guid: f9b9cbef0af9580419b3231b3770caab, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 123988}

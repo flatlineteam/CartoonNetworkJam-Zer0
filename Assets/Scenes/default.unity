@@ -299,8 +299,12 @@ Prefab:
     - target: {fileID: 11403780, guid: 543c821e7ec56454cb857d6b7ce3ce2a, type: 2}
       propertyPath: TestMinigame
       value: 
-      objectReference: {fileID: 11447678, guid: 9a3fbe08f90087e45a461205f0483523,
+      objectReference: {fileID: 11423914, guid: 406cd0a6c656f294a99e5939eefb2a1e,
         type: 2}
+    - target: {fileID: 11421356, guid: 543c821e7ec56454cb857d6b7ce3ce2a, type: 2}
+      propertyPath: StartAutomatically
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 543c821e7ec56454cb857d6b7ce3ce2a, type: 2}
   m_IsPrefabParent: 0
