@@ -198,6 +198,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartingSecondsToComplete: 1.5
+  maxPointValueForWin: 100
+  failImage: {fileID: 0}
   TextSentBy: Swiper
   TextMessageContents: Swipe when I cannot, friend.
 --- !u!212 &21229660

@@ -32,13 +32,17 @@ namespace Assets.Scripts
 
         public float CurrentSpeed = 1;
 
-        public void Start()
+        public void Awake()
         {
             Current = this;
+        }
 
+        public void Start()
+        {
             stateMachine = new SKStateMachine<GameFlowController>(this, new StartingUp(StartAutomatically));
 
             stateMachine.onStateChanged += StateMachine_onStateChanged;
+
             stateMachine.addState(new ShowingCellphone(CellphonePrefab, MainCanvas));
             stateMachine.addState(new InMinigame());
             stateMachine.addState(new MinigameFinished());

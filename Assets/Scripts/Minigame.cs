@@ -45,7 +45,7 @@ namespace Assets.Scripts
             CompletedScript.Minigame = this;
             MinigameScript.Minigame = this;
 
-            CompletedScript.FinishedScript += OnMinigameCompletelyFinished;
+            CompletedScript.FinishedScript += OnMinigameCompletelyFinished;           
         }
 
         private void OnMinigameCompletelyFinished()
