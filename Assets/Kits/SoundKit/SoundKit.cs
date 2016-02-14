@@ -133,6 +133,9 @@ public class SoundKit : MonoBehaviour
 	/// <param name="volumeScale">Volume scale.</param>
 	public void playOneShot( AudioClip audioClip, float volumeScale = 1f )
 	{
+	    if (audioClip == null)
+	        throw new ArgumentNullException("audioClip");
+
 		if (oneShotSound == null)
 			oneShotSound = new SKSound(this);
 
@@ -196,8 +199,11 @@ public class SoundKit : MonoBehaviour
 	/// <param name="pan">Pan.</param>
 	public SKSound playSound( AudioClip audioClip, float volumeScale, float pitch, float pan )
 	{
-		// Find the first SKSound not being used. if they are all in use, create a new one
-		SKSound sound = nextAvailableSound();
+        if (audioClip == null)
+            throw new ArgumentNullException("audioClip");
+
+        // Find the first SKSound not being used. if they are all in use, create a new one
+        SKSound sound = nextAvailableSound();
 		sound.playAudioClip( audioClip, volumeScale * soundEffectVolume, pitch, pan );
 
 		return sound;
@@ -212,8 +218,11 @@ public class SoundKit : MonoBehaviour
 	/// <param name="audioClip">Audio clip.</param>
 	public SKSound playSoundLooped( AudioClip audioClip )
 	{
-		// find the first SKSound not being used. if they are all in use, create a new one
-		SKSound sound = nextAvailableSound();
+        if (audioClip == null)
+            throw new ArgumentNullException("audioClip");
+
+        // find the first SKSound not being used. if they are all in use, create a new one
+        SKSound sound = nextAvailableSound();
 		sound.playAudioClip( audioClip, soundEffectVolume, 1f, 0f );
 		sound.setLoop( true );
 
