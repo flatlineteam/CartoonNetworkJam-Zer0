@@ -23,6 +23,8 @@ namespace Assets.Scripts
 
         public GameObject TextMessageContainerPrefab;
         public LayoutGroup TextMessageParent;
+
+        public GameObject ScreenOnObj;
         
         public void Awake()
         {
@@ -31,11 +33,14 @@ namespace Assets.Scripts
 
         public IEnumerator Raise()
         {
+            ScreenOnObj.SetActive(false);
             var speedFactor = GameFlowController.Current.CurrentSpeed;
             var raiseTime = RaiseTime / speedFactor;
 
             GetComponent<RectTransform>().DOAnchorPosY(RaiseTo, raiseTime);
             yield return new WaitForSeconds(raiseTime);
+            ScreenOnObj.SetActive(true);
+            yield return new WaitForSeconds(0.25f);
         }
 
         public IEnumerator ShowMessages()

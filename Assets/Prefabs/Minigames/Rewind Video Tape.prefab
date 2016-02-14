@@ -324,8 +324,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartingSecondsToComplete: 5
   MaxPointValueForWin: 100
-  TextSentBy: Old Bpss
-  TextMessageContents: yo you forgot to rewind this video get on it
+  TextSentBy: SOMEONE
+  TextMessageContents: REWIND THE VIDEO TAPE
 --- !u!114 &11493390
 MonoBehaviour:
   m_ObjectHideFlags: 1
