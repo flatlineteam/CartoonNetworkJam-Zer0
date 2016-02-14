@@ -164,8 +164,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartingSecondsToComplete: 5
   MaxPointValueForWin: 100
-  TextSentBy: 
-  TextMessageContents: 
+  TextSentBy: SOMEONE
+  TextMessageContents: DISTRACT THE CAT
 --- !u!114 &11451016
 MonoBehaviour:
   m_ObjectHideFlags: 1

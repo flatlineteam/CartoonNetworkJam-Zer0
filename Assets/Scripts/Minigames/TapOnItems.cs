@@ -16,18 +16,18 @@ namespace Assets.Scripts
 
         protected override void OnStartMinigame()
         {
+            foreach (var item in ItemsToTap)
+            {
+                item.GetComponent<itemTriggerScript>().Parent = this;
+            }
         }
 
         protected override void OnUnityUpdate()
         {
-            if (Stopped)
-                return;
-
             foreach (var item in ItemsToTap)
             {
                 if (item.GetComponent<itemTriggerScript>().isSelected == false)
                     return;
-  
             }
 
             MarkAsSuccess();

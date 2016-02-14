@@ -8,6 +8,9 @@ namespace Assets.Scripts
     {
         public Collider2D DontPressCollider;
 
+        public GameObject laserObject;
+        public GameObject fireObject;
+        public GameObject backgroundObject;
         public Sprite failImage;
 
         protected override void OnUnityStart()
@@ -20,7 +23,9 @@ namespace Assets.Scripts
             if (Stopped)
                 return;
 
-            GetComponentInChildren<SpriteRenderer>().sprite = failImage;
+            backgroundObject.GetComponentInChildren<SpriteRenderer>().sprite = failImage;
+            fireObject.SetActive(true);
+            laserObject.SetActive(true);
             MarkAsFailed();
         }
 

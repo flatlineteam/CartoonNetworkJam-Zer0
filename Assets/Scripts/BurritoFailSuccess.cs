@@ -10,6 +10,8 @@ namespace Assets.Scripts
 
         public GameObject CookedBurritoPrefab;
 
+        public GameObject IceBurritoPrefab;
+
         private Action finished;
         private int scoreEarned;
 
@@ -42,6 +44,19 @@ namespace Assets.Scripts
         protected override void OnMinigameFailed(Action finished)
         {
             this.finished = finished;
+
+            StartCoroutine(FailSequence());
+        }
+
+        public IEnumerator FailSequence()
+        {
+            var instance = Instantiate(IceBurritoPrefab);
+
+            yield return new WaitForSeconds(3.0f / GameFlowController.Current.CurrentSpeed);
+
+            Destroy(instance);
+
+            finished();
         }
 
         public override void ScoreEarned(int scoreEarned)

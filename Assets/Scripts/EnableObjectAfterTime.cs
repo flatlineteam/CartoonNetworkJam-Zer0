@@ -3,30 +3,32 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
-    public class DestroyAfterTime : MonoBehaviour
+    public class EnableObjectAfterTime : MonoBehaviour
     {
         [Range(0, 100)]
         public float Time;
 
-        public bool startOnStart;       
+        public bool startOnStart;
+
+        public GameObject objectToEnable;
 
         public void Start()
         {
             if(startOnStart)
             {
-                StartCoroutine(DestroyOnDelay());
+                StartCoroutine(EnableOnDelay());
             }
         }
 
         public void OnEnable()
         {
-            StartCoroutine(DestroyOnDelay());
+            StartCoroutine(EnableOnDelay());
         }
 
-        public IEnumerator DestroyOnDelay()
+        public IEnumerator EnableOnDelay()
         {
             yield return new WaitForSeconds(Time);
-            Destroy(gameObject);
+            objectToEnable.SetActive(true);
         }
     }
 }

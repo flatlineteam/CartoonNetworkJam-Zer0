@@ -14,7 +14,7 @@ namespace Assets.Scripts
 
         protected float StartTime { get; private set; }
 
-        protected bool Stopped { get; private set; }
+        public bool Stopped { get; private set; }
 
         protected MinigameStartInfo StartInfo { get; private set; }
 

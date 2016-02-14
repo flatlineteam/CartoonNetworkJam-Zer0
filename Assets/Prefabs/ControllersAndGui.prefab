@@ -495,7 +495,7 @@ MonoBehaviour:
   - {fileID: 11496572, guid: 101f2a01171482a40a8afddffd64b734, type: 2}
   - {fileID: 11402782, guid: d33aa95b09e4c23499de9d8e2c0d5adf, type: 2}
   - {fileID: 11423914, guid: 406cd0a6c656f294a99e5939eefb2a1e, type: 2}
-  - {fileID: 11413554, guid: 69a62994e0aa0b8459c38f3a71a0a35e, type: 2}
+  - {fileID: 11491310, guid: d5bd6b9bd5eb26e45a9dc7683fc6b843, type: 2}
   - {fileID: 11433004, guid: 477bd9c3777d636489eaa9b943c41a59, type: 2}
   SelectedMinigamePrefab: {fileID: 11496572, guid: 101f2a01171482a40a8afddffd64b734,
     type: 2}
