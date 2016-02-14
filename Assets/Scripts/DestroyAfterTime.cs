@@ -8,19 +8,22 @@ namespace Assets.Scripts
         [Range(0, 100)]
         public float Time;
 
-        public bool startOnStart;       
+        public bool StartOnStart;
+
+        private Coroutine coroutine;  
 
         public void Start()
         {
-            if(startOnStart)
+            if(StartOnStart)
             {
-                StartCoroutine(DestroyOnDelay());
+                coroutine = StartCoroutine(DestroyOnDelay());
             }
         }
 
         public void OnEnable()
         {
-            StartCoroutine(DestroyOnDelay());
+            if(coroutine == null)
+                coroutine = StartCoroutine(DestroyOnDelay());
         }
 
         public IEnumerator DestroyOnDelay()
