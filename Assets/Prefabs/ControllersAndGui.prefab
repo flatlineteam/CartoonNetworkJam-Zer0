@@ -464,7 +464,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd0bf6fc4dfe0cd4b8579c9b4b58febe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TestMinigame: {fileID: 11475276, guid: ce19996982cd0e94eae6eb50e1e151c8, type: 2}
+  TestMinigame: {fileID: 11413554, guid: 69a62994e0aa0b8459c38f3a71a0a35e, type: 2}
   Finale: {fileID: 11447678, guid: 9a3fbe08f90087e45a461205f0483523, type: 2}
   Minigames:
   - {fileID: 11446856, guid: 07233938cc02dc7428a8dba9ac401f61, type: 2}
@@ -476,6 +476,7 @@ MonoBehaviour:
   - {fileID: 11496572, guid: 101f2a01171482a40a8afddffd64b734, type: 2}
   - {fileID: 11402782, guid: d33aa95b09e4c23499de9d8e2c0d5adf, type: 2}
   - {fileID: 11475276, guid: ce19996982cd0e94eae6eb50e1e151c8, type: 2}
+  - {fileID: 11413554, guid: 69a62994e0aa0b8459c38f3a71a0a35e, type: 2}
   SelectedMinigamePrefab: {fileID: 11496572, guid: 101f2a01171482a40a8afddffd64b734,
     type: 2}
   SpeedFactor: 1

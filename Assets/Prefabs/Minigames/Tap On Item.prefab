@@ -128,7 +128,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4b41d1ce4d4e9d4cbb39302ff2e4436, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartingSecondsToComplete: 1
+  StartingSecondsToComplete: 2
+  maxPointValueForWin: 100
   TextSentBy: KO
   TextMessageContents: Shoot this bug Red!
 --- !u!114 &11445134
@@ -240,7 +241,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: StartingSecondsToComplete
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: TextSentBy

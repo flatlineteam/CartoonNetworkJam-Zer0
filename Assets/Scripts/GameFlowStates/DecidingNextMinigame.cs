@@ -12,7 +12,7 @@ namespace Assets.Scripts.GameFlowStates
             }
             else
             {
-                MinigameController.Current.SetNextMinigame();
+                MinigameController.Current.SetNextMinigameRandom();
             }
         }
 

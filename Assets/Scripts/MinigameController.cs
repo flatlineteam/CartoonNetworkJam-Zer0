@@ -22,6 +22,8 @@ namespace Assets.Scripts
         /// <summary>2x speed factor means you get half as much time to complete the minigame.</summary>
         public float SpeedFactor = 1;
 
+        private Minigame previousMinigame;
+
         public void Awake()
         {
             Current = this;
@@ -48,6 +50,8 @@ namespace Assets.Scripts
             if (CurrentMinigame != null)
                 return;
 
+            previousMinigame = SelectedMinigamePrefab;
+
             var instance = Instantiate(SelectedMinigamePrefab.gameObject);
             CurrentMinigame = instance.GetComponent<Minigame>();
             NextMinigame = null;
@@ -72,9 +76,14 @@ namespace Assets.Scripts
             GameFlowController.Current.MarkMinigameAsCompletelyFinished();
         }
 
-        public void SetNextMinigame()
+        public void SetNextMinigameRandom()
         {
-            var minigamePrefab = Minigames[Random.Range(0, Minigames.Length)];
+            Minigame minigamePrefab;
+            do
+            {
+                minigamePrefab = Minigames[Random.Range(0, Minigames.Length)];
+            } while (previousMinigame != null && previousMinigame != minigamePrefab);
+            
             SetMinigame(minigamePrefab);
         }
 

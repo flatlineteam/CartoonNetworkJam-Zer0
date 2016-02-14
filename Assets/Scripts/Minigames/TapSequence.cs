@@ -62,10 +62,6 @@ namespace Assets.Scripts
                 currentItem.gameObject.SetActive(true);
         }
 
-        protected override void OnTimeElapsed()
-        {
-        }
-
         protected override void CancelAnyCoroutines()
         {
         }

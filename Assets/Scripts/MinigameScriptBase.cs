@@ -52,7 +52,6 @@ namespace Assets.Scripts
                 yield break;
 
             OnTimeElapsed();
-            StopMinigame();
         }
 
         public virtual float PercentComplete()
@@ -71,7 +70,6 @@ namespace Assets.Scripts
         protected virtual void OnTimeElapsed()
         {
             MarkAsFailed();
-            Stopped = true;
         }
 
         public void Update()
@@ -87,11 +85,13 @@ namespace Assets.Scripts
         protected void MarkAsSuccess()
         {
             Minigame.Finished(true);
+            StopMinigame();
         }
 
         protected void MarkAsFailed()
         {
             Minigame.Finished(false);
+            StopMinigame();
         }
 
         public void StopMinigame()
