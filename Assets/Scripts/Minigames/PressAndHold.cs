@@ -14,6 +14,10 @@ namespace Assets.Scripts
 
         public float TimeHeld = 0;
 
+        public AudioClip CoffeeMake;
+
+        private SoundKit.SKSound CoffeeMaker;
+
         private float actualHoldTime;
         private TapGesture tapGesture;
         private PressGesture pressGesture;
@@ -55,6 +59,7 @@ namespace Assets.Scripts
         private void StartHold()
         {
             Holding = true;
+            CoffeeMaker = SoundKit.instance.playSound(CoffeeMake);
         }
 
         protected override void OnUnityUpdate()

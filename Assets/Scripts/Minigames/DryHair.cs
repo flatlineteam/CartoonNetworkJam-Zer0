@@ -11,6 +11,10 @@ namespace Assets.Scripts
         public Collider2D TapArea;
 
         public Transform ArmPivot;
+
+        public AudioClip HairDry;
+
+        private SoundKit.SKSound HairDryer;
         
         private TransformGesture transformGesture;
         private PressGesture pressGesture;
@@ -36,6 +40,8 @@ namespace Assets.Scripts
             transformGesture.StateChanged += TransformGestureOnStateChanged;
             pressGesture.Pressed += PressGestureOnPressed;
             releaseGesture.Released += ReleaseGestureOnReleased;
+
+            HairDryer = SoundKit.instance.playSound(HairDry);
         }
 
         private void ReleaseGestureOnReleased(object sender, EventArgs eventArgs)
@@ -110,6 +116,7 @@ namespace Assets.Scripts
             if (currentCount == CountNeeded)
             {
                 MarkAsSuccess();
+                HairDryer.stop();
             }
         }
 
@@ -121,6 +128,7 @@ namespace Assets.Scripts
             if (currentCount == CountNeeded)
             {
                 MarkAsSuccess();
+                HairDryer.stop();
             }
         }
 

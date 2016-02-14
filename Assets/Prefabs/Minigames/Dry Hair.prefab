@@ -11,6 +11,7 @@ GameObject:
   - 212: {fileID: 21236792}
   - 114: {fileID: 11435738}
   - 114: {fileID: 11420686}
+  - 114: {fileID: 11439990}
   m_Layer: 0
   m_Name: Laser
   m_TagString: Untagged
@@ -388,6 +389,18 @@ MonoBehaviour:
   ToEnableOnState: {fileID: 110528}
   StateToEnableOn: 1
   Minigame: {fileID: 11481238}
+--- !u!114 &11439990
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 110528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c86f5af553caf104db19f87f0c5ddb4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioClip: {fileID: 8300000, guid: 3d5b93c4b8cd90640bcdab6b25cb4a69, type: 3}
 --- !u!114 &11443128
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -464,7 +477,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4b41d1ce4d4e9d4cbb39302ff2e4436, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartingSecondsToComplete: 5
+  StartingSecondsToComplete: 4
+  maxPointValueForWin: 100
   TextSentBy: Future Self
   TextMessageContents: dude your hair is gross
 --- !u!114 &11484228
@@ -481,6 +495,7 @@ MonoBehaviour:
   Character: {fileID: 495406}
   TapArea: {fileID: 6191234}
   ArmPivot: {fileID: 453256}
+  HairDry: {fileID: 8300000, guid: 99bdd4d66764bed41927e7411f955f8e, type: 3}
   MaxAngleInDegrees: 30
   CountNeeded: 4
 --- !u!198 &19806286
@@ -3688,6 +3703,18 @@ Prefab:
       propertyPath: TextSentBy
       value: Future Self
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: HairDry
+      value: 
+      objectReference: {fileID: 8300000, guid: 99bdd4d66764bed41927e7411f955f8e, type: 3}
+    - target: {fileID: 0}
+      propertyPath: StartingSecondsToComplete
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: AudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3d5b93c4b8cd90640bcdab6b25cb4a69, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 199606}

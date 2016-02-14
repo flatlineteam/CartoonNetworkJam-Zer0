@@ -20,6 +20,10 @@ namespace Assets.Scripts
 
         public float OKDistance;
 
+        public AudioClip ShutterClick;
+
+        private SoundKit.SKSound Shutter;
+
         private PressGesture pressGesture;
         private Sequence sequence;
         private float actualSecondsPerPass;
@@ -38,6 +42,7 @@ namespace Assets.Scripts
             if (Vector3.Distance(Player.position, Target.position) <= OKDistance)
             {
                 MarkAsSuccess();
+                Shutter = SoundKit.instance.playSound(ShutterClick);
             }
         }
 

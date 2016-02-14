@@ -134,8 +134,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TapObject: {fileID: 6197224}
   Holding: 0
-  HoldTime: 1
+  HoldTime: 2
   TimeHeld: 0
+  CoffeeMake: {fileID: 8300000, guid: 3d0605bb427e648469192b2318666aeb, type: 3}
 --- !u!114 &11480430
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -285,6 +286,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: HoldSeconds
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: CoffeeMake
+      value: 
+      objectReference: {fileID: 8300000, guid: 3d0605bb427e648469192b2318666aeb, type: 3}
+    - target: {fileID: 0}
+      propertyPath: HoldTime
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
