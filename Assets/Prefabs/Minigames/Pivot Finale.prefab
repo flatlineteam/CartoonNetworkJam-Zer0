@@ -180,7 +180,7 @@ Transform:
   m_GameObject: {fileID: 139626}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.6719785, y: 2.6719785, z: 2.6719785}
+  m_LocalScale: {x: 2.0701804, y: 2.0701811, z: 2.0701811}
   m_Children: []
   m_Father: {fileID: 463564}
   m_RootOrder: 0
@@ -316,7 +316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartingSecondsToComplete: 0
-  maxPointValueForWin: 100
+  MaxPointValueForWin: 100
   TextSentBy: Gar
   TextMessageContents: DEFEAT LORD BOX-MAN'S ROBOT ARMY!!!!
 --- !u!114 &11450150
@@ -416,7 +416,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ThingToDestroyPrefab: {fileID: 156382, guid: fc4d7f90c0da59e4c89fb2dbdf4fef43, type: 2}
   Count: 300
-  Radius: 14.5
+  Radius: 19.3
+  Jitter: 0.384
   Target: {fileID: 405406}
 --- !u!212 &21205478
 SpriteRenderer:

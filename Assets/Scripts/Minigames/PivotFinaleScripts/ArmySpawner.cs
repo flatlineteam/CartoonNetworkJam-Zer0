@@ -20,6 +20,9 @@ namespace Assets.Scripts.PivotFinaleScripts
         [Range(0, 30)]
         public float Radius;
 
+        [Range(0, 1)]
+        public float Jitter = 0.3f;
+
         public Transform Target;
 
         private readonly IList<GameObject> army;
@@ -49,7 +52,7 @@ namespace Assets.Scripts.PivotFinaleScripts
             thingToDestroy.Target = Target;
             thingToDestroy.CollidedWithPlayer += HandlePlayerCollision;
 
-            var position = Random.insideUnitCircle.normalized * Random.Range(0.9f, 1.1f) * Radius;
+            var position = Random.insideUnitCircle.normalized * Random.Range(1.0f - Jitter, 1.0f + Jitter) * Radius;
 
             army.Add(instance);
 

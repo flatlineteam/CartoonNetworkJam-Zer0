@@ -14,7 +14,7 @@ namespace Assets.Scripts.PivotFinaleScripts
 
         public Transform Target { get; set; }
 
-        [Range(0, 4)]
+        [Range(0, 10)]
         public float Speed = 0.5f;
 
         private float actualSpeed;
@@ -22,8 +22,6 @@ namespace Assets.Scripts.PivotFinaleScripts
         public void Start()
         {
             actualSpeed = Speed * MinigameController.Current.SpeedFactor;
-
-            transform.DOMove(new Vector3(Target.position.x, Target.position.y, 0), 1.0f / actualSpeed).SetEase(Ease.Linear);
         }
 
         public void OnTriggerEnter2D(Collider2D collider)
@@ -50,6 +48,16 @@ namespace Assets.Scripts.PivotFinaleScripts
             }
                 
             //TODO explosion
+        }
+
+        public void Update()
+        {
+            var toTarget = (Target.position - transform.position).normalized;
+            var angle = Mathf.Atan2(toTarget.y, toTarget.x) * Mathf.Rad2Deg;
+            
+            transform.position += toTarget * actualSpeed * Time.deltaTime;
+
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         }
 
         public void OnDoDestroy()
