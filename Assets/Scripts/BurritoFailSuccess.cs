@@ -1,0 +1,52 @@
+﻿using System;
+using System.Collections;
+using UnityEngine;
+
+namespace Assets.Scripts
+{
+    public class BurritoFailSuccess : CompletedMinigameScriptBase
+    {
+        public GameObject LaserPrefab;
+
+        public GameObject CookedBurritoPrefab;
+
+        private Action finished;
+        private int scoreEarned;
+
+        protected override void OnMinigameCompletedSuccessfully(Action finished)
+        {
+            this.finished = finished;
+
+            StartCoroutine(SuccessSequence());
+        }
+
+        public IEnumerator SuccessSequence()
+        {
+            var instance = Instantiate(LaserPrefab);
+            Camera.main.GetComponent<ScreenShake>().ShakeCamera(1.0f, TimeSpan.FromSeconds(0.75));
+
+            yield return new WaitForSeconds(0.75f);
+
+            Destroy(instance);
+
+            var cookedInstance = Instantiate(CookedBurritoPrefab);
+            LikeCounterController.Current.AddToPointCount(scoreEarned);
+
+            yield return new WaitForSeconds(1.5f);
+
+            Destroy(cookedInstance);
+
+            finished();
+        }
+
+        protected override void OnMinigameFailed(Action finished)
+        {
+            this.finished = finished;
+        }
+
+        public override void ScoreEarned(int scoreEarned)
+        {
+            this.scoreEarned = scoreEarned;
+        }
+    }
+}

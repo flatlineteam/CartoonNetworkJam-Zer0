@@ -34,5 +34,10 @@ namespace Assets.Scripts
         protected abstract void OnMinigameCompletedSuccessfully(Action finished);
 
         protected abstract void OnMinigameFailed(Action finished);
+
+        public virtual void ScoreEarned(int scoreEarned)
+        {
+            LikeCounterController.Current.AddToPointCount(scoreEarned);
+        }
     }
 }

@@ -70,7 +70,8 @@ namespace Assets.Scripts
                 SetState(MinigameState.Succeeded);
                 CompletedScript.MinigameCompletedSuccessfully();
                 var scoreEarned = MinigameScript.CalculateScore(MaxPointValueForWin);
-                LikeCounterController.Current.AddToPointCount( scoreEarned );
+
+                CompletedScript.ScoreEarned(scoreEarned);
             }
             else
             {
