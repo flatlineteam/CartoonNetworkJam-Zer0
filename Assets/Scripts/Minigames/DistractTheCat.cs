@@ -14,6 +14,8 @@ namespace Assets.Scripts
 
         public Collider2D TapArea;
 
+        public AudioClip LionCat;
+
         public float DistanceCatNeedsToMove;
 
         public float DistanceCatHasMoved;
@@ -22,6 +24,7 @@ namespace Assets.Scripts
         private PressGesture pressGesture;
         private TransformGesture transformGesture;
         private ReleaseGesture releaseGesture;
+        private SoundKit.SKSound CatMeow;
 
         [Range(0, 20)]
         public float StopDistance = 4;
@@ -46,6 +49,8 @@ namespace Assets.Scripts
                 return;
 
             isHeld = true;
+            CatMeow = SoundKit.instance.playSound(LionCat);
+
 
             touchPosition = pressGesture.ActiveTouches[0].Hit.Point;
         }

@@ -29,6 +29,7 @@ GameObject:
   - 223: {fileID: 22326768}
   - 114: {fileID: 11436282}
   - 114: {fileID: 11479358}
+  - 114: {fileID: 11464380}
   m_Layer: 0
   m_Name: Power Battle
   m_TagString: Untagged
@@ -149,6 +150,18 @@ MonoBehaviour:
   m_EffectColor: {r: 1, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 1, y: 8.36}
   m_UseGraphicAlpha: 1
+--- !u!114 &11464380
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 114888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcc243b2881d81e43bab4aa1d68a6d28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioClip: {fileID: 8300000, guid: c20562e6a797ed642b4b184fa4a8549a, type: 3}
 --- !u!114 &11479358
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -266,7 +279,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: AudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c20562e6a797ed642b4b184fa4a8549a, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 114888}

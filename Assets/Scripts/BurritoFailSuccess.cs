@@ -12,6 +12,10 @@ namespace Assets.Scripts
 
         public GameObject IceBurritoPrefab;
 
+        public AudioClip LoseSound;
+
+        private SoundKit.SKSound Loser;
+
         private Action finished;
         private int scoreEarned;
 
@@ -20,6 +24,7 @@ namespace Assets.Scripts
             this.finished = finished;
 
             StartCoroutine(SuccessSequence());
+            Loser = SoundKit.instance.playSound(LoseSound);
         }
 
         public IEnumerator SuccessSequence()
@@ -46,6 +51,7 @@ namespace Assets.Scripts
             this.finished = finished;
 
             StartCoroutine(FailSequence());
+
         }
 
         public IEnumerator FailSequence()

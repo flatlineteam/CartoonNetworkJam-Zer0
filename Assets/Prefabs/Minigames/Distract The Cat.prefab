@@ -148,6 +148,7 @@ MonoBehaviour:
   CatSpawnLocation: {fileID: 439352}
   CatMoveSpeed: 10
   TapArea: {fileID: 6154958}
+  LionCat: {fileID: 8300000, guid: 708b7de804af8af48a51b625cbac6571, type: 3}
   DistanceCatNeedsToMove: 20
   DistanceCatHasMoved: 0
   StopDistance: 1.6
@@ -301,6 +302,10 @@ Prefab:
       propertyPath: WinGame
       value: 
       objectReference: {fileID: 8300000, guid: 2757691bc4c0125429bfc4bbb59d4c08, type: 3}
+    - target: {fileID: 0}
+      propertyPath: LionCat
+      value: 
+      objectReference: {fileID: 8300000, guid: 708b7de804af8af48a51b625cbac6571, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 139502}

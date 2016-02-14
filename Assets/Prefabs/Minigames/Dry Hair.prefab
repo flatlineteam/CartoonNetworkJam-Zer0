@@ -12,6 +12,7 @@ GameObject:
   - 114: {fileID: 11435738}
   - 114: {fileID: 11420686}
   - 114: {fileID: 11439990}
+  - 114: {fileID: 11439342}
   m_Layer: 0
   m_Name: Laser
   m_TagString: Untagged
@@ -419,6 +420,18 @@ MonoBehaviour:
   StateToEnableOn: 1
   enabledToSet: 1
   Minigame: {fileID: 11481238}
+--- !u!114 &11439342
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 110528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcc243b2881d81e43bab4aa1d68a6d28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioClip: {fileID: 8300000, guid: 3d5b93c4b8cd90640bcdab6b25cb4a69, type: 3}
 --- !u!114 &11439990
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -525,7 +538,7 @@ MonoBehaviour:
   Character: {fileID: 495406}
   TapArea: {fileID: 6191234}
   ArmPivot: {fileID: 453256}
-  HairDry: {fileID: 8300000, guid: 99bdd4d66764bed41927e7411f955f8e, type: 3}
+  HairDry: {fileID: 8300000, guid: 787cd3bad57289f4fb4db2d4b2f69b80, type: 3}
   MaxAngleInDegrees: 30
   CountNeeded: 4
 --- !u!198 &19806286
@@ -3766,7 +3779,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: HairDry
       value: 
-      objectReference: {fileID: 8300000, guid: 99bdd4d66764bed41927e7411f955f8e, type: 3}
+      objectReference: {fileID: 8300000, guid: 787cd3bad57289f4fb4db2d4b2f69b80, type: 3}
     - target: {fileID: 0}
       propertyPath: StartingSecondsToComplete
       value: 4
