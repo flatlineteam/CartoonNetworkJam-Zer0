@@ -12,6 +12,10 @@ namespace Assets.Scripts
 
         public float DegreesToRotate = 720;
 
+        public ParticleSystem ParticleSystem;
+
+        public int ParticleCount;
+
         private PressGesture pressGesture;
         private TransformGesture transformGesture;
         private ReleaseGesture releaseGesture;
@@ -83,13 +87,27 @@ namespace Assets.Scripts
             angleAccumulator += Mathf.Clamp(angleChange, -30, 30);
             lastTapPosition = tapCurrentPosition; // We've used lastTapPosition so reset it
             
-            if (DegreesToRotate < 0 && angleAccumulator <= DegreesToRotate)
+            if (DegreesToRotate < 0)
             {
-                MarkAsSuccess();
+                if (angleChange < 1)
+                {
+                    if (ParticleSystem != null)
+                        ParticleSystem.Emit(ParticleCount);
+                }
+
+                if(angleAccumulator <= DegreesToRotate)
+                    MarkAsSuccess();
             }
-            else if (DegreesToRotate > 0 && angleAccumulator >= DegreesToRotate)
+            else if (DegreesToRotate > 0)
             {
-                MarkAsSuccess();
+                if (angleChange > 1)
+                {
+                    if (ParticleSystem != null)
+                        ParticleSystem.Emit(ParticleCount);
+                }
+
+                if(angleAccumulator >= DegreesToRotate)
+                    MarkAsSuccess();
             }
 
             Target.transform.rotation = Quaternion.AngleAxis(currentAngle, Vector3.forward);

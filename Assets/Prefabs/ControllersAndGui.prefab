@@ -483,7 +483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd0bf6fc4dfe0cd4b8579c9b4b58febe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TestMinigame: {fileID: 11415806, guid: 9d6d30486d49024429240d0cd059f196, type: 2}
+  TestMinigame: {fileID: 11491310, guid: d5bd6b9bd5eb26e45a9dc7683fc6b843, type: 2}
   Finale: {fileID: 11447678, guid: 9a3fbe08f90087e45a461205f0483523, type: 2}
   Minigames:
   - {fileID: 11446856, guid: 07233938cc02dc7428a8dba9ac401f61, type: 2}

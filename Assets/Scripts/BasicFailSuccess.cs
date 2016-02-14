@@ -18,11 +18,18 @@ namespace Assets.Scripts
 
         private SoundKit.SKSound soundPlaying;
 
+        public bool Success = true;
+        public bool Fail = true;
+
         protected override void OnMinigameCompletedSuccessfully(Action finished)
         {
             this.finished = finished;
-            Init();
-            failSuccessContainer.transform.FindChild("SuccessMinigameBasic").gameObject.SetActive(true);
+
+            if (Success)
+            {
+                Init();
+                failSuccessContainer.transform.FindChild("SuccessMinigameBasic").gameObject.SetActive(true);
+            }
 
             soundPlaying = SoundKit.instance.playPitchedSound(WinGame, GameFlowController.Current.CurrentSpeed);
 
@@ -43,9 +50,13 @@ namespace Assets.Scripts
         protected override void OnMinigameFailed(Action finished)
         {
             this.finished = finished;
-            Init();
-            failSuccessContainer.transform.FindChild("FailedMinigameBasic").gameObject.SetActive(true);
 
+            if (Fail)
+            {
+                Init();
+                failSuccessContainer.transform.FindChild("FailedMinigameBasic").gameObject.SetActive(true);
+            }
+            
             soundPlaying = SoundKit.instance.playPitchedSound(LoseGame, GameFlowController.Current.CurrentSpeed);
 
             StartCoroutine(StopAfterTime());
@@ -59,7 +70,8 @@ namespace Assets.Scripts
 
         private void Finished()
         {
-            Destroy(failSuccessContainer.gameObject);
+            if(failSuccessContainer != null)
+                Destroy(failSuccessContainer.gameObject);
             finished();
 
             if (soundPlaying != null)
