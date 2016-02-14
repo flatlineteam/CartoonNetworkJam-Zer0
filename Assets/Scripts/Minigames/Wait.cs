@@ -17,6 +17,9 @@ namespace Assets.Scripts
 
         private void OnTapped(object sender, EventArgs eventArgs)
         {
+            if (Stopped)
+                return;
+
             GetComponentInChildren<SpriteRenderer>().sprite = failImage;
             MarkAsFailed();
         }

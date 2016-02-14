@@ -47,8 +47,10 @@ namespace Assets.Scripts
         public IEnumerator Timer()
         {
             yield return new WaitForSeconds(TimeForMinigame);
+
             if (Stopped)
                 yield break;
+
             OnTimeElapsed();
             StopMinigame();
         }

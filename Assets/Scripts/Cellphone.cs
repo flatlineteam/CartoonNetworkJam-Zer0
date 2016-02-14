@@ -31,12 +31,17 @@ namespace Assets.Scripts
 
         public IEnumerator Raise()
         {
-            GetComponent<RectTransform>().DOAnchorPosY(RaiseTo, RaiseTime);
-            yield return new WaitForSeconds(RaiseTime);
+            var speedFactor = GameFlowController.Current.CurrentSpeed;
+            var raiseTime = RaiseTime / speedFactor;
+
+            GetComponent<RectTransform>().DOAnchorPosY(RaiseTo, raiseTime);
+            yield return new WaitForSeconds(raiseTime);
         }
 
         public IEnumerator ShowMessages()
         {
+            var speedFactor = GameFlowController.Current.CurrentSpeed;
+
             var minigame = MinigameController.Current.NextMinigame;
 
             var senderInstance = Instantiate(TextMessageContainerPrefab);
@@ -44,12 +49,18 @@ namespace Assets.Scripts
 
             SetSenderAndText(senderInstance, minigame.TextSentBy, minigame.TextMessageContents);
 
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.5f / speedFactor);
 
             var replyInstance = Instantiate(TextMessageContainerPrefab);
             replyInstance.transform.SetParent(TextMessageParent.transform, false);
 
             SetSenderAndText(replyInstance, "Red", RedMessages[Random.Range(0, RedMessages.Length)]);
+        }
+
+        public float GetWaitSeconds()
+        {
+            var speedFactor = GameFlowController.Current.CurrentSpeed;
+            return WaitSeconds / speedFactor;
         }
 
         private static void SetSenderAndText(GameObject senderInstance, string sender, string text)
@@ -64,8 +75,11 @@ namespace Assets.Scripts
 
         public IEnumerator Lower()
         {
-            GetComponent<RectTransform>().DOAnchorPosY(LowerTo, LowerTime);
-            yield return new WaitForSeconds(LowerTime);
+            var speedFactor = GameFlowController.Current.CurrentSpeed;
+            var lowerTime = LowerTime / speedFactor;
+
+            GetComponent<RectTransform>().DOAnchorPosY(LowerTo, lowerTime);
+            yield return new WaitForSeconds(lowerTime);
         }
     }
 }

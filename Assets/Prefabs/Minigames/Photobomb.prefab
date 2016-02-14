@@ -233,7 +233,7 @@ MonoBehaviour:
   Left: {fileID: 465164}
   Right: {fileID: 411086}
   TapArea: {fileID: 6131100}
-  SecondsPerPass: 1
+  SecondsPerPass: 0.7
   OKDistance: 1
   ShutterClick: {fileID: 8300000, guid: cdb6c29d1a7d784498b2967519fca827, type: 3}
 --- !u!114 &11446856
@@ -412,6 +412,10 @@ Prefab:
       propertyPath: ShutterClick
       value: 
       objectReference: {fileID: 8300000, guid: cdb6c29d1a7d784498b2967519fca827, type: 3}
+    - target: {fileID: 0}
+      propertyPath: SecondsPerPass
+      value: 0.7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 185210}
