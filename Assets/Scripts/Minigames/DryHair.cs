@@ -99,7 +99,7 @@ namespace Assets.Scripts
                 }
             }
 
-            ArmPivot.transform.rotation = Quaternion.AngleAxis(-clamped, Vector3.forward);
+            ArmPivot.transform.rotation = Quaternion.AngleAxis(clamped, Vector3.forward);
         }
 
         private void HitTop()
