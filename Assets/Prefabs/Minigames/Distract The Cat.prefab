@@ -1,5 +1,20 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &109904
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 412596}
+  m_Layer: 0
+  m_Name: Gun Barrel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &139502
 GameObject:
   m_ObjectHideFlags: 0
@@ -68,6 +83,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &412596
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 109904}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071067}
+  m_LocalPosition: {x: 0.03, y: -5.62, z: 0}
+  m_LocalScale: {x: 0.26218837, y: 0.26218837, z: 0.26218837}
+  m_Children: []
+  m_Father: {fileID: 477532}
+  m_RootOrder: 3
 --- !u!4 &439352
 Transform:
   m_ObjectHideFlags: 1
@@ -100,7 +127,7 @@ Transform:
   m_GameObject: {fileID: 172150}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.6764868, y: 1.6764863, z: 1.6764863}
   m_Children: []
   m_Father: {fileID: 477532}
   m_RootOrder: 0
@@ -117,6 +144,7 @@ Transform:
   - {fileID: 474828}
   - {fileID: 439352}
   - {fileID: 446388}
+  - {fileID: 412596}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!61 &6154958
@@ -151,6 +179,9 @@ MonoBehaviour:
   LionCat: {fileID: 8300000, guid: 708b7de804af8af48a51b625cbac6571, type: 3}
   DistanceCatNeedsToMove: 20
   DistanceCatHasMoved: 0
+  GunBarrel: {fileID: 412596}
+  PlayerToRotate: {fileID: 0}
+  LaserPrefab: {fileID: 137444, guid: 25d884e65e52bb94ab0f7b4f71e20e88, type: 2}
   StopDistance: 1.6
 --- !u!114 &11433004
 MonoBehaviour:
@@ -257,6 +288,8 @@ MonoBehaviour:
   WinGame: {fileID: 8300000, guid: 2757691bc4c0125429bfc4bbb59d4c08, type: 3}
   LoseGame: {fileID: 8300000, guid: f3e451ecd689aef458265998bec49ee0, type: 3}
   HoldSeconds: 3
+  Success: 1
+  Fail: 1
 --- !u!212 &21218926
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -282,7 +315,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -306,6 +339,10 @@ Prefab:
       propertyPath: LionCat
       value: 
       objectReference: {fileID: 8300000, guid: 708b7de804af8af48a51b625cbac6571, type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 139502}

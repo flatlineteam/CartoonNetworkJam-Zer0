@@ -19,12 +19,20 @@ namespace Assets.Scripts
         public float DistanceCatNeedsToMove;
 
         public float DistanceCatHasMoved;
+
+        public Transform GunBarrel;
+
+        public Transform PlayerToRotate;
+
+        public GameObject LaserPrefab;
+
         private GameObject catInstance;
 
         private PressGesture pressGesture;
         private TransformGesture transformGesture;
         private ReleaseGesture releaseGesture;
         private SoundKit.SKSound CatMeow;
+        private GameObject laserInstance;
 
         [Range(0, 20)]
         public float StopDistance = 4;
@@ -48,6 +56,9 @@ namespace Assets.Scripts
             if (Stopped)
                 return;
 
+            laserInstance = Instantiate(LaserPrefab) as GameObject;
+            laserInstance.transform.SetParent(GunBarrel.transform, false);
+
             isHeld = true;
             CatMeow = SoundKit.instance.playSound(LionCat);
 
@@ -67,6 +78,9 @@ namespace Assets.Scripts
         {
             if (Stopped)
                 return;
+
+            if(laserInstance != null)
+                Destroy(laserInstance);
 
             isHeld = false;
         }
@@ -100,6 +114,18 @@ namespace Assets.Scripts
             {
                 MarkAsSuccess();
             }
+
+            //var playerToTouch = touchPosition - (Vector2)PlayerToRotate.transform.position;
+            //var playerDirection = Mathf.Atan2(playerToTouch.y, playerToTouch.x);
+
+            //PlayerToRotate.rotation = Quaternion.AngleAxis(playerDirection * Mathf.Rad2Deg, Vector3.forward);
+
+            var laser = laserInstance.GetComponent<LineRenderer>();
+            laser.SetPositions(new[]
+            {
+                new Vector3(GunBarrel.transform.position.x, GunBarrel.transform.position.y, 1),
+                new Vector3(touchPosition.x, touchPosition.y, 1)
+            });
         }
 
         protected override void CleanUp()

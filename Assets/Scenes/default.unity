@@ -204,7 +204,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 111606, guid: 9627508e8c12b354fa3e7eb4f56ba353, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9627508e8c12b354fa3e7eb4f56ba353, type: 2}
@@ -303,7 +303,7 @@ Prefab:
     - target: {fileID: 11403780, guid: 543c821e7ec56454cb857d6b7ce3ce2a, type: 2}
       propertyPath: TestMinigame
       value: 
-      objectReference: {fileID: 11481238, guid: e4556578c8397ca4eacaac5b06cd34aa,
+      objectReference: {fileID: 11433004, guid: 477bd9c3777d636489eaa9b943c41a59,
         type: 2}
     - target: {fileID: 11403780, guid: 543c821e7ec56454cb857d6b7ce3ce2a, type: 2}
       propertyPath: Minigames.Array.data[6]
