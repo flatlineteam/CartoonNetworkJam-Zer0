@@ -41,20 +41,25 @@ namespace Assets.Scripts.PivotFinaleScripts
 
             if (otherRigidbody.name.Contains("SolidBeamLaser"))
             {
-                Destroy(gameObject);
-
-                if (Destroyed != null)
-                    Destroyed();
+                OnDoDestroy();
             }
             else if (otherRigidbody.name.Contains("Player"))
             {
                 if (CollidedWithPlayer != null)
                     CollidedWithPlayer();
             }
-
-            
-
+                
             //TODO explosion
+        }
+
+        public void OnDoDestroy()
+        {
+            LikeCounterController.Current.SpawnPoints(1, transform.position);
+
+            Destroy(gameObject);
+
+            if (Destroyed != null)
+                Destroyed();
         }
     }
 }

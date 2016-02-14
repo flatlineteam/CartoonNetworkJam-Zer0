@@ -26,6 +26,12 @@ namespace Assets.Scripts
         {
         }
 
+        public override int CalculateScore(int baseScore)
+        {
+            var percent = 1 - (TimeRemaining / TimeForMinigame);
+            return (int)(Minigame.maxPointValueForWin * percent);
+        }
+
         protected override void OnTimeElapsed()
         {
             MarkAsSuccess();

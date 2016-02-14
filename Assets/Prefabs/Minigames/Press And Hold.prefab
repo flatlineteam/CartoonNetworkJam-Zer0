@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartingSecondsToComplete: 5
+  maxPointValueForWin: 100
   TextSentBy: Mr. Future
   TextMessageContents: If you fall asleep in my class again you get an F! Make coffee!
 --- !u!114 &11481046

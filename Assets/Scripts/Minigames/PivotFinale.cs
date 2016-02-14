@@ -102,6 +102,11 @@ namespace Assets.Scripts
             laserSound = SoundKit.instance.playSound(BlasterHeld);
 
             Camera.main.GetComponent<ScreenShake>().ShakeCamera(0.5f, TimeSpan.MaxValue);
+        }          
+
+        public override float PercentComplete()
+        {
+            return 0.0f;
         }
 
         protected override void OnStartMinigame()

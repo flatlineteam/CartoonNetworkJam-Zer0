@@ -12,6 +12,8 @@ namespace Assets.Scripts
 
         private SKStateMachine<GameFlowController> stateMachine; 
 
+        public event Action<SKState<GameFlowController>> StateChanged;
+
         public static GameFlowController Current { get; private set; }
 
         public bool StartAutomatically;
@@ -35,12 +37,21 @@ namespace Assets.Scripts
             Current = this;
 
             stateMachine = new SKStateMachine<GameFlowController>(this, new StartingUp(StartAutomatically));
-            
+
+            stateMachine.onStateChanged += StateMachine_onStateChanged;
             stateMachine.addState(new ShowingCellphone(CellphonePrefab, MainCanvas));
             stateMachine.addState(new InMinigame());
             stateMachine.addState(new MinigameFinished());
             stateMachine.addState(new DecidingNextMinigame());
             stateMachine.addState(new SpeedingUp());
+        }
+
+        void StateMachine_onStateChanged ()
+        {
+            if (StateChanged != null)
+            {
+                StateChanged(stateMachine.currentState);
+            }
         }
 
         public void Update()

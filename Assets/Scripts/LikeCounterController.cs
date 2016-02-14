@@ -45,6 +45,7 @@ namespace Assets.Scripts
             }
 
             ScoreValue.text = Score.ToString();
+
             if(PointsToSpew > 1)
             {
                 SpawnPoints(2);
@@ -66,11 +67,18 @@ namespace Assets.Scripts
 
         public void SpawnPoints(int count)
         {
+            SpawnPoints(count, Random.insideUnitCircle);
+        }
+
+        public void SpawnPoints(int count, Vector3 spawnPosition)
+        {
             // instantiate a "count" of thumb particles that seek a transform target "collectionTarget"
             for (int i = 0; i < count; ++i)
             {
-                GameObject seeker = Instantiate(ScoreSeeker, (Vector2)Random.onUnitSphere, Quaternion.identity) as GameObject;
+                GameObject seeker = Instantiate(ScoreSeeker, spawnPosition, Quaternion.identity) as GameObject;
+
                 seeker.GetComponent<LikeSeekingScript>().target = collectionTarget;
+
                 --PointsToSpew;
             }
         }
@@ -78,10 +86,12 @@ namespace Assets.Scripts
         public void AddToScore(int i)
         {
             Score += i;
+
             foreach (var anim in anims)
             {
                 if(anim == null)
                     continue;
+                
                 anim.Play();
             }             
         }

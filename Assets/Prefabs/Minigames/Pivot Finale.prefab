@@ -230,7 +230,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4b41d1ce4d4e9d4cbb39302ff2e4436, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartingSecondsToComplete: 5
+  StartingSecondsToComplete: 0
+  maxPointValueForWin: 100
   TextSentBy: Gar
   TextMessageContents: DEFEAT LORD BOX-MAN'S ROBOT ARMY!!!!
 --- !u!114 &11450150
@@ -420,6 +421,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: HoldSeconds
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: StartingSecondsToComplete
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

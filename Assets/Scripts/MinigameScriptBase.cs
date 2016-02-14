@@ -9,11 +9,11 @@ namespace Assets.Scripts
     {
         public Minigame Minigame { get; set; }
 
-        protected float StartTime { get; private set; }
-
         protected float TimeRemaining { get; private set; }
 
         protected float TimeForMinigame { get; set; }
+
+        protected float StartTime { get; private set; }
 
         protected bool Stopped { get; private set; }
 
@@ -51,6 +51,17 @@ namespace Assets.Scripts
                 yield break;
             OnTimeElapsed();
             StopMinigame();
+        }
+
+        public virtual float PercentComplete()
+        {
+            return TimeRemaining / TimeForMinigame;
+        }
+
+        public virtual int CalculateScore(int baseScore)
+        {
+            var percent = PercentComplete();
+            return (int)(Minigame.maxPointValueForWin * percent);
         }
 
         protected abstract void OnStartMinigame();
