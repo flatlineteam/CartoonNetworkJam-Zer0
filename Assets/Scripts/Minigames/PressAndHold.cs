@@ -6,6 +6,10 @@ namespace Assets.Scripts
 {
     public class PressAndHold : MinigameScriptBase
     {
+        public event Action PressStarted;
+
+        public event Action PressStopped;
+
         public Collider2D TapObject;
 
         public bool Holding;
@@ -13,6 +17,9 @@ namespace Assets.Scripts
         public float HoldTime;
 
         public float TimeHeld = 0;
+
+        /// <summary>The actual amount of time that the button needs to be held, calculated from speed.</summary>
+        public float ActualHoldTime;
 
         public AudioClip CoffeeMake;
 
@@ -39,7 +46,7 @@ namespace Assets.Scripts
         protected override void OnStartMinigame()
         {
             TimeHeld = 0;
-            actualHoldTime = HoldTime / StartInfo.SpeedFactor;
+            ActualHoldTime = HoldTime / StartInfo.SpeedFactor;
         }
 
         private void TapGestureOnStateChanged(object sender, GestureStateChangeEventArgs e)
@@ -54,11 +61,17 @@ namespace Assets.Scripts
         private void EndHold()
         {
             Holding = false;
+
+            if(PressStopped != null)
+                PressStopped();
         }
 
         private void StartHold()
         {
             Holding = true;
+
+            if (PressStarted != null)
+                PressStarted();
             CoffeeMaker = SoundKit.instance.playSound(CoffeeMake);
         }
 
@@ -67,7 +80,7 @@ namespace Assets.Scripts
             if (Holding)
                 TimeHeld += Time.deltaTime;
 
-            if (TimeHeld >= actualHoldTime)
+            if (TimeHeld >= ActualHoldTime)
             {
                 MarkAsSuccess();
             }
