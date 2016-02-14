@@ -296,6 +296,11 @@ Prefab:
       propertyPath: layers.Array.data[1]
       value: 
       objectReference: {fileID: 1309152946}
+    - target: {fileID: 11403780, guid: 543c821e7ec56454cb857d6b7ce3ce2a, type: 2}
+      propertyPath: TestMinigame
+      value: 
+      objectReference: {fileID: 11481238, guid: e4556578c8397ca4eacaac5b06cd34aa,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 543c821e7ec56454cb857d6b7ce3ce2a, type: 2}
   m_IsPrefabParent: 0
