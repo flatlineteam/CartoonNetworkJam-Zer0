@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartingSecondsToComplete: 5.5
-  MaxPointValueForWin: 1000
+  MaxPointValueForWin: 400
   TextSentBy: Mr. Future
   TextMessageContents: If you fall asleep in my class again you get an F! Make coffee!
 --- !u!114 &11413702
@@ -323,7 +323,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: MaxPointValueForWin
-      value: 1000
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: StartingSecondsToComplete
