@@ -283,7 +283,7 @@ Prefab:
     - target: {fileID: 11403780, guid: 543c821e7ec56454cb857d6b7ce3ce2a, type: 2}
       propertyPath: TestMinigame
       value: 
-      objectReference: {fileID: 11402782, guid: d33aa95b09e4c23499de9d8e2c0d5adf,
+      objectReference: {fileID: 11446856, guid: 07233938cc02dc7428a8dba9ac401f61,
         type: 2}
     - target: {fileID: 11409674, guid: 543c821e7ec56454cb857d6b7ce3ce2a, type: 2}
       propertyPath: layers.Array.data[1]

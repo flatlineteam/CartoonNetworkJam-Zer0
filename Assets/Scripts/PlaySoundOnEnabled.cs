@@ -6,7 +6,7 @@ namespace Assets.Scripts
     {
         public AudioClip AudioClip;
 
-        public void OnEnabled()
+        public void OnEnable()
         {
             SoundKit.instance.playOneShot(AudioClip);
         }

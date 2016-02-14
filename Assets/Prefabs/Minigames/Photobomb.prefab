@@ -235,6 +235,7 @@ MonoBehaviour:
   TapArea: {fileID: 6131100}
   SecondsPerPass: 1
   OKDistance: 1
+  ShutterClick: {fileID: 8300000, guid: cdb6c29d1a7d784498b2967519fca827, type: 3}
 --- !u!114 &11446856
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -247,6 +248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartingSecondsToComplete: 5
+  maxPointValueForWin: 100
   TextSentBy: Miss Pastel
   TextMessageContents: Hey future nerd. Holo-Jane wore a green shirt, go photobomb
     her new profile pic!
@@ -406,6 +408,10 @@ Prefab:
       propertyPath: HoldSeconds
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ShutterClick
+      value: 
+      objectReference: {fileID: 8300000, guid: cdb6c29d1a7d784498b2967519fca827, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 185210}
