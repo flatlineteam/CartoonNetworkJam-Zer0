@@ -17,6 +17,8 @@ namespace Assets.Scripts
 
         public Transform LaserParent;
 
+        public Transform Rotator;
+
         private TransformGesture transformGesture;
         private PressGesture pressGesture;
         private ReleaseGesture releaseGesture;
@@ -91,16 +93,17 @@ namespace Assets.Scripts
 
             if (laserInstance == null)
                 return;
-
-            laserInstance.transform.rotation = Quaternion.AngleAxis(direction, Vector3.forward);
+            
+            Rotator.rotation = Quaternion.AngleAxis(direction, Vector3.forward);
         }
 
         private void SpawnLaser(Vector3 startPosition)
         {
+            Debug.Log(startLaserPosition);
             startLaserPosition = startPosition;
             touchPosition = startLaserPosition;
             laserInstance = Instantiate(LaserPrefab);
-            laserInstance.transform.SetParent(LaserParent, true);
+            laserInstance.transform.SetParent(LaserParent, false);
             laserSound = SoundKit.instance.playSound(BlasterHeld);
 
             Camera.main.GetComponent<ScreenShake>().ShakeCamera(0.5f, TimeSpan.MaxValue);
@@ -121,6 +124,7 @@ namespace Assets.Scripts
 
         protected override void CancelAnyCoroutines()
         {
+            Camera.main.GetComponent<ScreenShake>().StopShaking();
         }
 
         protected override void OnTimeElapsed()
