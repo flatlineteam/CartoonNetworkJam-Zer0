@@ -8,6 +8,8 @@ namespace Assets.Scripts
     {
         public Collider2D DontPressCollider;
 
+        public Sprite failImage;
+
         protected override void OnUnityStart()
         {
             DontPressCollider.GetComponent<TapGesture>().Tapped += OnTapped;
@@ -15,6 +17,7 @@ namespace Assets.Scripts
 
         private void OnTapped(object sender, EventArgs eventArgs)
         {
+            GetComponentInChildren<SpriteRenderer>().sprite = failImage;
             MarkAsFailed();
         }
 
