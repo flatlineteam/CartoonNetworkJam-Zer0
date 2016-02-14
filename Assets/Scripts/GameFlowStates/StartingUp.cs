@@ -20,6 +20,8 @@ namespace Assets.Scripts.GameFlowStates
 
         public override void begin()
         {
+            _context.NumFailed = 0;
+
             if (startAutomatically == false)
                 return;
 

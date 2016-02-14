@@ -67,7 +67,7 @@ namespace Assets.Scripts
 
         public void MinigameCompletelyFinished()
         {
-            if (CurrentMinigame != null)
+            if (CurrentMinigame != null && GameFlowController.Current.HasFailedGame == false)
             {
                 Destroy(CurrentMinigame.gameObject);
                 CurrentMinigame = null;

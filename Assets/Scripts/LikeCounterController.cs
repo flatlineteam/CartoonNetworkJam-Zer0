@@ -1,22 +1,27 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 
 namespace Assets.Scripts
 {
-    public class LikeCounterController : MonoBehaviour {
+    public class LikeCounterController : MonoBehaviour
+    {
         public static LikeCounterController Current { get; private set; }
+
+        public int Likes { get { return score; } }
+
         public GameObject ScoreSeeker;
-        public Transform collectionTarget;
-        public float collectionRange;
-        public bool testButton = false;
 
+        public Transform CollectionTarget;
 
-        private int Score;
-        private Text ScoreValue;
-        private Image ScoreImage;
+        public float CollectionRange;
+
+        public bool TestButton = false;
+        
+        private int score;
+        private Text scoreValue;
+        private Image scoreImage;
         private Animation[] anims;
-        private int PointsToSpew = 0;
+        private int pointsToSpew = 0;
 
         private void Start()
         {
@@ -27,42 +32,42 @@ namespace Assets.Scripts
             }
             Current = this;
 
-            if(ScoreValue == null)
-                ScoreValue = GetComponentInChildren<Text>();
+            if(scoreValue == null)
+                scoreValue = GetComponentInChildren<Text>();
 
-            if(ScoreImage == null)
-                ScoreImage = GetComponentInChildren<Image>();
+            if(scoreImage == null)
+                scoreImage = GetComponentInChildren<Image>();
 
             anims = GetComponentsInChildren<Animation>();
         }
 
         private void Update()
         {
-            if(testButton)
+            if(TestButton)
             {
-                testButton = false;
+                TestButton = false;
                 AddToPointCount(100);
             }
 
-            ScoreValue.text = Score.ToString();
+            scoreValue.text = score.ToString();
 
-            if(PointsToSpew > 1)
+            if(pointsToSpew > 1)
             {
                 SpawnPoints(2);
             }
-            else if (PointsToSpew > 0)
+            else if (pointsToSpew > 0)
             {
                 SpawnPoints(1);
             }
             else
             {
-                PointsToSpew = 0;
+                pointsToSpew = 0;
             }
         }
 
         public void AddToPointCount(int count)
         {
-            PointsToSpew += count;
+            pointsToSpew += count;
         }
 
         public void SpawnPoints(int count)
@@ -75,25 +80,38 @@ namespace Assets.Scripts
             // instantiate a "count" of thumb particles that seek a transform target "collectionTarget"
             for (int i = 0; i < count; ++i)
             {
-                GameObject seeker = Instantiate(ScoreSeeker, spawnPosition, Quaternion.identity) as GameObject;
+                var seeker = (GameObject)Instantiate(ScoreSeeker, spawnPosition, Quaternion.identity);
 
-                seeker.GetComponent<LikeSeekingScript>().target = collectionTarget;
+                seeker.GetComponent<LikeSeeker>().target = CollectionTarget;
 
-                --PointsToSpew;
+                --pointsToSpew;
             }
         }
 
         public void AddToScore(int i)
         {
-            Score += i;
+            score += i;
 
+            PlayAnimations();
+        }
+
+        public void PlayAnimations()
+        {
             foreach (var anim in anims)
             {
-                if(anim == null)
+                if (anim == null)
                     continue;
-                
+
                 anim.Play();
-            }             
+            }
+        }
+
+        public void SetScore(int score, bool includeAnimation = true)
+        {
+            this.score = score;
+
+            if(includeAnimation)
+                PlayAnimations();
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -62,7 +61,7 @@ namespace Assets.Scripts
         public virtual int CalculateScore(int baseScore)
         {
             var percent = PercentComplete();
-            return (int)(Minigame.maxPointValueForWin * percent);
+            return (int)(baseScore * percent);
         }
 
         protected abstract void OnStartMinigame();

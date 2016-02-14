@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace Assets.Scripts
 {
-    public class LikeSeekingScript : MonoBehaviour 
+    public class LikeSeeker : MonoBehaviour 
     {    
         public Transform target;
         public float turnSpeedInDegrees = 1.0f;

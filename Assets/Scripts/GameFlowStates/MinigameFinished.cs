@@ -15,6 +15,12 @@ namespace Assets.Scripts.GameFlowStates
 
         public void MinigameIsCompletelyFinished()
         {
+            if (_context.HasFailedGame)
+            {
+                _machine.changeState<FailedGame>();
+                return;
+            }
+
             if (_context.NumCompleted == _context.NumToCompleteThenFinale + 1)
             {
                 _context.ResetNumCompleted();

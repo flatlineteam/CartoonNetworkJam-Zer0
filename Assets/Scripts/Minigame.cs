@@ -11,7 +11,7 @@ namespace Assets.Scripts
         public float StartingSecondsToComplete = 5;
 
         [Range(10, 1000)]
-        public int maxPointValueForWin = 100;
+        public int MaxPointValueForWin = 100;
 
         public MinigameScriptBase MinigameScript { get; private set; }
 
@@ -61,7 +61,7 @@ namespace Assets.Scripts
 
         public void Finished(bool success)
         {
-            GameFlowController.Current.MarkMinigameAsFinished();
+            GameFlowController.Current.MarkMinigameAsFinished(success);
 
             MinigameScript.StopMinigame();
 
@@ -69,7 +69,7 @@ namespace Assets.Scripts
             {
                 SetState(MinigameState.Succeeded);
                 CompletedScript.MinigameCompletedSuccessfully();
-                var scoreEarned = MinigameScript.CalculateScore(maxPointValueForWin);
+                var scoreEarned = MinigameScript.CalculateScore(MaxPointValueForWin);
                 LikeCounterController.Current.AddToPointCount( scoreEarned );
             }
             else

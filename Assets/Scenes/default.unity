@@ -284,14 +284,6 @@ Prefab:
       propertyPath: layers.Array.data[1]
       value: 
       objectReference: {fileID: 1309152946}
-    - target: {fileID: 11421356, guid: 543c821e7ec56454cb857d6b7ce3ce2a, type: 2}
-      propertyPath: StartAutomatically
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11421356, guid: 543c821e7ec56454cb857d6b7ce3ce2a, type: 2}
-      propertyPath: NumToCompleteThenFinale
-      value: 7
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 543c821e7ec56454cb857d6b7ce3ce2a, type: 2}
   m_IsPrefabParent: 0

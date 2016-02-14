@@ -27,6 +27,8 @@ namespace Assets.Scripts
 
         public int NumCompleted { get; private set; }
 
+        public bool HasFailedGame { get; set; }
+
         public Text SpeedingUpTextPrefab;
 
         public AudioClip SpeedingUpMusic;
@@ -35,6 +37,27 @@ namespace Assets.Scripts
 
         public GameObject EnteringPowerBattlePrefab;
         public float EnteringPowerBattleTime;
+
+        public RectTransform FailedGamePrefab;
+        public float FailedGameScoreLowerTime;
+        public float FailedGameTimeToShow;
+
+        public int NumFailed
+        {
+            get { return numFailed; }
+            set
+            {
+                numFailed = value;
+                if (NumFailedChanged != null)
+                    NumFailedChanged(numFailed);
+            }
+        }
+
+        private int numFailed;
+
+        public event Action<int> NumFailedChanged;
+
+        public int NumFailToFailGame;
 
         public void Awake()
         {
@@ -53,6 +76,7 @@ namespace Assets.Scripts
             stateMachine.addState(new DecidingNextMinigame());
             stateMachine.addState(new SpeedingUp());
             stateMachine.addState(new EnteringPowerBattle());
+            stateMachine.addState(new FailedGame());
         }
 
         void StateMachine_onStateChanged ()
@@ -68,12 +92,22 @@ namespace Assets.Scripts
             stateMachine.update(Time.deltaTime);
         }
 
-        public void MarkMinigameAsFinished()
+        public void MarkMinigameAsFinished(bool didSucceed)
         {
-            if (stateMachine.currentState is InMinigame)
+            if (!(stateMachine.currentState is InMinigame))
+                return;
+
+            NumCompleted++;
+            stateMachine.changeState<MinigameFinished>();
+
+            if (didSucceed == false)
             {
-                NumCompleted++;
-                stateMachine.changeState<MinigameFinished>();
+                NumFailed++;
+
+                if (NumFailed >= NumFailToFailGame)
+                {
+                    HasFailedGame = true;
+                }
             }
         }
 
