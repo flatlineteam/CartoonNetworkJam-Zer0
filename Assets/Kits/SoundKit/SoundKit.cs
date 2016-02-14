@@ -334,9 +334,8 @@ public class SoundKit : MonoBehaviour
 			{
 				_completionHandler();
 				_completionHandler = null;
-			}
-
-			_manager.recycleSound( this );
+                _manager.recycleSound(this);
+            }
 		}
 
 

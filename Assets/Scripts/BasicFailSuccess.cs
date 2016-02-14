@@ -55,15 +55,15 @@ namespace Assets.Scripts
         {
             yield return new WaitForSeconds(HoldSeconds);
             Finished();
-
-            if (soundPlaying != null)
-                soundPlaying.stop();
         }
 
         private void Finished()
         {
             Destroy(failSuccessContainer.gameObject);
             finished();
+
+            if (soundPlaying != null)
+                soundPlaying.stop();
         }
     }
 }
