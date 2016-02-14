@@ -238,7 +238,9 @@ public class SoundKit : MonoBehaviour
 				break;
 			index++;
 		}
-		_playingSounds.RemoveAt( index );
+
+        if(index < _playingSounds.Count)
+		    _playingSounds.RemoveAt( index );
 
 
 		// if we are already over capacity dont recycle this sound but destroy it instead

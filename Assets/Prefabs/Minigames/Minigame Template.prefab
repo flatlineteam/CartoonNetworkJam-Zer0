@@ -71,7 +71,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FailSuccessContainerPrefab: {fileID: 193466, guid: 5b17d6f8afdbb7848a49911cbef09cba,
     type: 2}
-  HoldSeconds: 1
+  WinGame: {fileID: 0}
+  LoseGame: {fileID: 0}
+  HoldSeconds: 3
 --- !u!114 &11465800
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -84,6 +86,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartingSecondsToComplete: 5
+  TextSentBy: 
+  TextMessageContents: 
 --- !u!212 &21200926
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -125,6 +129,10 @@ Prefab:
       propertyPath: FailSuccessContainerPrefab
       value: 
       objectReference: {fileID: 193466, guid: 5b17d6f8afdbb7848a49911cbef09cba, type: 2}
+    - target: {fileID: 0}
+      propertyPath: HoldSeconds
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 155388}

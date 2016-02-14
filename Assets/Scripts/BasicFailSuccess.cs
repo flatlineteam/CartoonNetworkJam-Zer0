@@ -15,7 +15,8 @@ namespace Assets.Scripts
 
         private GameObject failSuccessContainer;
         private Action finished;
-        private SoundKit.SKSound laserSound;
+
+        private SoundKit.SKSound soundPlaying;
 
         protected override void OnMinigameCompletedSuccessfully(Action finished)
         {
@@ -23,7 +24,7 @@ namespace Assets.Scripts
             Init();
             failSuccessContainer.transform.FindChild("SuccessMinigameBasic").gameObject.SetActive(true);
 
-            laserSound = SoundKit.instance.playSound(WinGame);
+            soundPlaying = SoundKit.instance.playPitchedSound(WinGame, GameFlowController.Current.CurrentSpeed);
 
             StartCoroutine(StopAfterTime());
         }
@@ -45,7 +46,7 @@ namespace Assets.Scripts
             Init();
             failSuccessContainer.transform.FindChild("FailedMinigameBasic").gameObject.SetActive(true);
 
-            laserSound = SoundKit.instance.playSound(LoseGame);
+            soundPlaying = SoundKit.instance.playPitchedSound(LoseGame, GameFlowController.Current.CurrentSpeed);
 
             StartCoroutine(StopAfterTime());
         }
@@ -54,6 +55,9 @@ namespace Assets.Scripts
         {
             yield return new WaitForSeconds(HoldSeconds);
             Finished();
+
+            if (soundPlaying != null)
+                soundPlaying.stop();
         }
 
         private void Finished()

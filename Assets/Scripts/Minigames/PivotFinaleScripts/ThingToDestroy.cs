@@ -15,7 +15,7 @@ namespace Assets.Scripts.PivotFinaleScripts
         public Transform Target { get; set; }
 
         [Range(0, 4)]
-        public float Speed = 2f;
+        public float Speed = 0.5f;
 
         private float actualSpeed;
 

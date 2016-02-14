@@ -22,7 +22,7 @@ namespace Assets.Scripts
         /// <summary>2x speed factor means you get half as much time to complete the minigame.</summary>
         public float SpeedFactor = 1;
 
-        public void Start()
+        public void Awake()
         {
             Current = this;
             Finale.IsFinale = true;

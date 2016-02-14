@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.GameFlowStates;
+﻿using System;
+using Assets.Scripts.GameFlowStates;
 using Prime31.StateKit;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,6 +8,8 @@ namespace Assets.Scripts
 {
     public class GameFlowController : MonoBehaviour
     {
+        public event Action<float> SpeedChanged;
+
         private SKStateMachine<GameFlowController> stateMachine; 
 
         public static GameFlowController Current { get; private set; }
@@ -22,6 +25,8 @@ namespace Assets.Scripts
         public int NumCompleted { get; private set; }
 
         public Text SpeedingUpTextPrefab;
+
+        public AudioClip SpeedingUpMusic;
 
         public float CurrentSpeed = 1;
 
@@ -83,6 +88,9 @@ namespace Assets.Scripts
         {
             MinigameController.Current.SpeedFactor = CurrentSpeed;
             GetComponent<AudioSource>().pitch = CurrentSpeed;
+
+            if (SpeedChanged != null)
+                SpeedChanged(CurrentSpeed);
         }
     }
 }
