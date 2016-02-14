@@ -9,11 +9,14 @@ namespace Assets.Scripts
         public GameObject ScoreSeeker;
         public Transform collectionTarget;
         public float collectionRange;
+        public bool testButton = false;
+
 
         private int Score;
         private Text ScoreValue;
         private Image ScoreImage;
         private Animation[] anims;
+        private int PointsToSpew = 0;
 
         private void Start()
         {
@@ -35,14 +38,41 @@ namespace Assets.Scripts
 
         private void Update()
         {
+            if(testButton)
+            {
+                testButton = false;
+                AddToPointCount(100);
+            }
+
             ScoreValue.text = Score.ToString();
-            AddToScore(1);
+            if(PointsToSpew > 1)
+            {
+                SpawnPoints(2);
+            }
+            else if (PointsToSpew > 0)
+            {
+                SpawnPoints(1);
+            }
+            else
+            {
+                PointsToSpew = 0;
+            }
+        }
+
+        public void AddToPointCount(int count)
+        {
+            PointsToSpew += count;
         }
 
         public void SpawnPoints(int count)
         {
             // instantiate a "count" of thumb particles that seek a transform target "collectionTarget"
-
+            for (int i = 0; i < count; ++i)
+            {
+                GameObject seeker = Instantiate(ScoreSeeker, (Vector2)Random.onUnitSphere, Quaternion.identity) as GameObject;
+                seeker.GetComponent<LikeSeekingScript>().target = collectionTarget;
+                --PointsToSpew;
+            }
         }
 
         public void AddToScore(int i)
