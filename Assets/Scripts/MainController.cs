@@ -12,6 +12,8 @@ namespace Assets.Scripts
         public void Start()
         {
             Current = this;
+
+            Screen.orientation = ScreenOrientation.LandscapeLeft;
         }
 
         public void Update()
