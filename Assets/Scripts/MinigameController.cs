@@ -82,7 +82,7 @@ namespace Assets.Scripts
             do
             {
                 minigamePrefab = Minigames[Random.Range(0, Minigames.Length)];
-            } while (previousMinigame != null && previousMinigame != minigamePrefab);
+            } while (previousMinigame != null && previousMinigame == minigamePrefab);
             
             SetMinigame(minigamePrefab);
         }

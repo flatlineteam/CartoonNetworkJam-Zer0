@@ -4,8 +4,8 @@ namespace k
 {
 	public static class Scenes
 	{
-		public const string DEFAULT = "default";
 		public const string TITLE = "Title";
+		public const string DEFAULT = "default";
 		public const string CREDITS = "Credits";
 
 		public const int TOTAL_SCENES = 3;

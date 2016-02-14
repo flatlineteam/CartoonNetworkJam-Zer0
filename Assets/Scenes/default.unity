@@ -239,7 +239,7 @@ MonoBehaviour:
   soundEffectVolume: 1
   initialCapacity: 10
   maxCapacity: 15
-  dontDestroyOnLoad: 1
+  dontDestroyOnLoad: 0
   clearAllAudioClipsOnLevelLoad: 1
 --- !u!1001 &1097017675
 Prefab:
@@ -287,6 +287,10 @@ Prefab:
     - target: {fileID: 11421356, guid: 543c821e7ec56454cb857d6b7ce3ce2a, type: 2}
       propertyPath: StartAutomatically
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11421356, guid: 543c821e7ec56454cb857d6b7ce3ce2a, type: 2}
+      propertyPath: NumToCompleteThenFinale
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 543c821e7ec56454cb857d6b7ce3ce2a, type: 2}

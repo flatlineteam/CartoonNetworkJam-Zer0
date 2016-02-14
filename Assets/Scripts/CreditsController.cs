@@ -3,23 +3,14 @@ using UnityEngine.SceneManagement;
 
 namespace Assets.Scripts
 {
-    public class MainController : MonoBehaviour
+    public class CreditsController : MonoBehaviour
     {
-        public Canvas MinigameCanvas;
-
-        public static MainController Current { get; private set; }
-
-        public void Start()
-        {
-            Current = this;
-        }
-
         public void Update()
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 SceneManager.LoadScene(k.Scenes.TITLE);
-            }            
+            }                
         }
     }
 }

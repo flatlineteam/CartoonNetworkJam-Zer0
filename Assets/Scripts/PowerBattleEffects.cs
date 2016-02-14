@@ -29,5 +29,10 @@ namespace Assets.Scripts
 
             Camera.main.GetComponent<ScreenShake>().ShakeCamera(1.0f, TimeSpan.MaxValue);
         }
+
+        public void OnDestroy()
+        {
+            Camera.main.GetComponent<ScreenShake>().StopShaking();
+        }
     }
 }
