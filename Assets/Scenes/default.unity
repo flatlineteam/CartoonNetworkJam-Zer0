@@ -182,6 +182,11 @@ Prefab:
       propertyPath: SpeedingUpMusic
       value: 
       objectReference: {fileID: 8300000, guid: 4450eed8a95d296438e6b0fd8b4b0ff0, type: 3}
+    - target: {fileID: 11403780, guid: 543c821e7ec56454cb857d6b7ce3ce2a, type: 2}
+      propertyPath: TestMinigame
+      value: 
+      objectReference: {fileID: 11447678, guid: 9a3fbe08f90087e45a461205f0483523,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 543c821e7ec56454cb857d6b7ce3ce2a, type: 2}
   m_IsPrefabParent: 0
