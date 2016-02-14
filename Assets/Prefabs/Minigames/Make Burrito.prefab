@@ -763,6 +763,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LaserPrefab: {fileID: 111170, guid: 937cdf13661203a4cb32915690b3710a, type: 2}
   CookedBurritoPrefab: {fileID: 180050, guid: 0519974fe20e7b14e970f6563284f911, type: 2}
+  IceBurritoPrefab: {fileID: 140808, guid: f9b9cbef0af9580419b3231b3770caab, type: 2}
 --- !u!212 &21204662
 SpriteRenderer:
   m_ObjectHideFlags: 1

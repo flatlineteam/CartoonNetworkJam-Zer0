@@ -297,6 +297,11 @@ Prefab:
       propertyPath: StartAutomatically
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11403780, guid: 543c821e7ec56454cb857d6b7ce3ce2a, type: 2}
+      propertyPath: TestMinigame
+      value: 
+      objectReference: {fileID: 11423914, guid: 406cd0a6c656f294a99e5939eefb2a1e,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 543c821e7ec56454cb857d6b7ce3ce2a, type: 2}
   m_IsPrefabParent: 0
@@ -323,7 +328,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1612038032
 MonoBehaviour:
   m_ObjectHideFlags: 0
