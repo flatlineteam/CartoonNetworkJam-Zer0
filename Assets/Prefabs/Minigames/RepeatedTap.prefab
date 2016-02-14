@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 419592}
   - 212: {fileID: 21286084}
+  - 114: {fileID: 11478476}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -147,7 +148,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &163048
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,8 +174,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 109982}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.11, y: -0.54, z: 0}
+  m_LocalScale: {x: 1.2358333, y: 1.2358333, z: 1.2358333}
   m_Children: []
   m_Father: {fileID: 486114}
   m_RootOrder: 0
@@ -390,7 +391,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   repeatedTapCollider: {fileID: 6190612}
   numberOfTapsToSuccess: 4
-  slider: {fileID: 0}
 --- !u!114 &11467690
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -439,6 +439,23 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &11478476
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 109982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6df345489baec24580589238db0ed0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundImages:
+  - {fileID: 21300000, guid: afa72909a45fa754dbcdbe51e092cd27, type: 3}
+  - {fileID: 21300000, guid: 2d98f5b3496ef3547b34e00ea0aa0bfb, type: 3}
+  - {fileID: 21300000, guid: 358b67761d50bcf4eae8fcf91563b40b, type: 3}
+  - {fileID: 21300000, guid: 71d4b15df571af842be144900136334c, type: 3}
+  - {fileID: 21300000, guid: 530efa9cf04d3294b974453edf304292, type: 3}
 --- !u!114 &11486732
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -451,6 +468,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartingSecondsToComplete: 1.5
+  MaxPointValueForWin: 100
   TextSentBy: A Button
   TextMessageContents: TAP ME. DO IT. SO MANY TIMES.
 --- !u!212 &21286084
@@ -479,7 +497,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: afa72909a45fa754dbcdbe51e092cd27, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -532,7 +550,7 @@ RectTransform:
   m_Father: {fileID: 22485048}
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}

@@ -8,15 +8,17 @@ namespace Assets.Scripts
     public class RepeatedTap : MinigameScriptBase {
         public Collider2D repeatedTapCollider;
         public int numberOfTapsToSuccess;
-        public Slider slider;
+        //public Slider slider;
 
         private int RepeatedTapCount = 0;
         protected override void OnUnityStart()
         {            
             repeatedTapCollider.GetComponent<TapGesture>().Tapped += OnTapped;
-            if(slider == null)
+            /*if(slider == null)
+            {
                 slider = GetComponentInChildren<Slider>();
-            slider.maxValue = numberOfTapsToSuccess;
+                slider.maxValue = numberOfTapsToSuccess;
+            }*/
         }
 
         void OnTapped (object sender, System.EventArgs e)
@@ -25,7 +27,8 @@ namespace Assets.Scripts
                 return;
             
             RepeatedTapCount++;
-            slider.value = RepeatedTapCount;
+            //slider.value = RepeatedTapCount;
+            GetComponentInChildren<ImageSequencer>().incrementIndex();
 
             if (RepeatedTapCount >= numberOfTapsToSuccess)
             {
