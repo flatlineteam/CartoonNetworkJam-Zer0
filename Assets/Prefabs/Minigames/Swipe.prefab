@@ -184,6 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a0db0ef59170254dbf6e4aa4b9b6b55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ScreenSwipe: {fileID: 8300000, guid: b567fdde87453f149a1b71dca841afae, type: 3}
   FlickCollider: {fileID: 6179526}
 --- !u!114 &11497608
 MonoBehaviour:
@@ -286,6 +287,10 @@ Prefab:
       propertyPath: HoldSeconds
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ScreenSwipe
+      value: 
+      objectReference: {fileID: 8300000, guid: b567fdde87453f149a1b71dca841afae, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 170578}

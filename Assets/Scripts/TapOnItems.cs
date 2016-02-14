@@ -7,6 +7,7 @@ namespace Assets.Scripts
     /// <summary>Simple minigame where you have to tap on multiple target objects.</summary>
     public class TapOnItems : MinigameScriptBase
     {
+
         public Collider2D[] ItemsToTap;
 
         protected override void OnUnityStart()
@@ -26,6 +27,7 @@ namespace Assets.Scripts
             {
                 if (item.GetComponent<itemTriggerScript>().isSelected == false)
                     return;
+  
             }
 
             MarkAsSuccess();

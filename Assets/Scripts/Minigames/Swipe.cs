@@ -7,6 +7,8 @@ namespace Assets.Scripts
 {
     public class Swipe : MinigameScriptBase 
     {
+        public AudioClip ScreenSwipe;
+        private SoundKit.SKSound FingerSwipe;
         public Collider2D FlickCollider;
         protected override void OnUnityStart()
         {            
@@ -15,8 +17,9 @@ namespace Assets.Scripts
 
         private void OnFlicked(object sender, EventArgs eventArgs)
         {
+            FingerSwipe = SoundKit.instance.playSound(ScreenSwipe);
             if (Stopped)
-                return;
+            return;
             
             MarkAsSuccess();
         }
