@@ -13,9 +13,12 @@ namespace Assets.Scripts
 
         public ArmySpawner ArmySpawner;
 
+        public AudioClip BlasterHeld;
+
         private TransformGesture transformGesture;
         private PressGesture pressGesture;
         private ReleaseGesture releaseGesture;
+        private SoundKit.SKSound laserSound;
 
         private Vector3 startLaserPosition;
         private Vector3 touchPosition;
@@ -30,6 +33,7 @@ namespace Assets.Scripts
 
             transformGesture.StateChanged += TransformStateChanged;
             pressGesture.Pressed += Pressed;
+
             releaseGesture.Released += Released;
 
             ArmySpawner.AllDestroyed += ArmySpawnerOnAllDestroyed;
@@ -50,6 +54,7 @@ namespace Assets.Scripts
         {
             if(laserInstance != null)
                 Destroy(laserInstance.gameObject);
+            laserSound.stop();
         }
 
         private void Pressed(object sender, EventArgs eventArgs)
@@ -92,9 +97,9 @@ namespace Assets.Scripts
         {
             startLaserPosition = startPosition;
             touchPosition = startLaserPosition;
-
             laserInstance = Instantiate(LaserPrefab);
             laserInstance.transform.SetParent(transform, true);
+            laserSound = SoundKit.instance.playSound(BlasterHeld);
 
             Camera.main.GetComponent<ScreenShake>().ShakeCamera(0.5f, TimeSpan.MaxValue);
         }

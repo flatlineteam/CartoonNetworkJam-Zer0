@@ -7,18 +7,24 @@ namespace Assets.Scripts
     public class BasicFailSuccess : CompletedMinigameScriptBase
     {
         public GameObject FailSuccessContainerPrefab;
+        public AudioClip WinGame;
+        public AudioClip LoseGame;
 
         [Range(0, 5)]
         public float HoldSeconds = 1;
 
         private GameObject failSuccessContainer;
         private Action finished;
+        private SoundKit.SKSound laserSound;
 
         protected override void OnMinigameCompletedSuccessfully(Action finished)
         {
             this.finished = finished;
             Init();
             failSuccessContainer.transform.FindChild("SuccessMinigameBasic").gameObject.SetActive(true);
+
+            laserSound = SoundKit.instance.playSound(WinGame);
+
             StartCoroutine(StopAfterTime());
         }
 
@@ -38,6 +44,9 @@ namespace Assets.Scripts
             this.finished = finished;
             Init();
             failSuccessContainer.transform.FindChild("FailedMinigameBasic").gameObject.SetActive(true);
+
+            laserSound = SoundKit.instance.playSound(LoseGame);
+
             StartCoroutine(StopAfterTime());
         }
 

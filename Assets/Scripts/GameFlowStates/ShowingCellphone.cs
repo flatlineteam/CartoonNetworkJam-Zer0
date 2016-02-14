@@ -25,6 +25,12 @@ namespace Assets.Scripts.GameFlowStates
             cellphoneInstance.transform.SetParent(mainCanvas.transform, false);
 
             _context.StartCoroutine(Sequence());
+
+            var audioSource = _context.GetComponent<AudioSource>();
+            if (audioSource.isPlaying == false)
+            {
+                audioSource.Play();
+            }
         }
 
         public IEnumerator Sequence()

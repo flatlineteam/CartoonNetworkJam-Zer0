@@ -118,7 +118,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FailSuccessContainerPrefab: {fileID: 193466, guid: 5b17d6f8afdbb7848a49911cbef09cba,
     type: 2}
-  HoldSeconds: 1
+  WinGame: {fileID: 8300000, guid: 2757691bc4c0125429bfc4bbb59d4c08, type: 3}
+  LoseGame: {fileID: 8300000, guid: f3e451ecd689aef458265998bec49ee0, type: 3}
+  HoldSeconds: 5
 --- !u!114 &11476208
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -270,6 +272,18 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: TextMessageContents
       value: If you fall asleep in my class again you get an F! Make coffee!
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: WinGame
+      value: 
+      objectReference: {fileID: 8300000, guid: 2757691bc4c0125429bfc4bbb59d4c08, type: 3}
+    - target: {fileID: 0}
+      propertyPath: LoseGame
+      value: 
+      objectReference: {fileID: 8300000, guid: f3e451ecd689aef458265998bec49ee0, type: 3}
+    - target: {fileID: 0}
+      propertyPath: HoldSeconds
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

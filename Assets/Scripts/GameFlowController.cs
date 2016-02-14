@@ -16,7 +16,11 @@ namespace Assets.Scripts
 
         public Canvas MainCanvas;
 
+        public AudioClip MainMusic;
+
         public int NumToCompleteThenFinale = 10;
+
+        private SoundKit.SKSound mainMusic;
 
         public int NumCompleted { get; private set; }
 
@@ -25,6 +29,7 @@ namespace Assets.Scripts
             Current = this;
 
             stateMachine = new SKStateMachine<GameFlowController>(this, new StartingUp(StartAutomatically));
+
 
             stateMachine.addState(new ShowingCellphone(CellphonePrefab, MainCanvas));
             stateMachine.addState(new InMinigame());

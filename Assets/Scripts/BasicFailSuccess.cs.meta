@@ -1,10 +1,13 @@
 fileFormatVersion: 2
 guid: 38e1cde521e7ef2428f759c2d0316de6
-timeCreated: 1455354330
+timeCreated: 1455406380
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - FailSuccessContainerPrefab: {instanceID: 0}
+  - WinGame: {fileID: 8300000, guid: 2757691bc4c0125429bfc4bbb59d4c08, type: 3}
+  - LoseGame: {fileID: 8300000, guid: f3e451ecd689aef458265998bec49ee0, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

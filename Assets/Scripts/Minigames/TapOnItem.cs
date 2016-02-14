@@ -8,7 +8,10 @@ namespace Assets.Scripts
     public class TapOnItem : MinigameScriptBase
     {
         public Collider2D ItemToTap;
-        
+        public AudioClip BlasterShot;
+
+        private SoundKit.SKSound laserSound;
+
         protected override void OnUnityStart()
         {
             ItemToTap.GetComponent<TapGesture>().Tapped += OnTapped;
@@ -20,6 +23,7 @@ namespace Assets.Scripts
                 return;
 
             MarkAsSuccess();
+            laserSound = SoundKit.instance.playSound(BlasterShot);
         }
 
         protected override void OnStartMinigame()

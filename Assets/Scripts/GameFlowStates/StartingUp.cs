@@ -15,9 +15,14 @@ namespace Assets.Scripts.GameFlowStates
 
         public StartingUp(bool startAutomatically)
         {
+
             this.startAutomatically = startAutomatically;
         }
 
+        public override void end()
+        {
+            _context.GetComponent<AudioSource>().Play();
+        }
         public override void begin()
         {
             if (startAutomatically == false)

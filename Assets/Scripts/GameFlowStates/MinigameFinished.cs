@@ -1,9 +1,14 @@
 ﻿using Prime31.StateKit;
+using UnityEngine;
 
 namespace Assets.Scripts.GameFlowStates
 {
     public class MinigameFinished : SKState<GameFlowController>
     {
+        public override void begin()
+        {
+            _context.GetComponent<AudioSource>().Pause();
+        }
         public override void update(float deltaTime)
         {
         }
