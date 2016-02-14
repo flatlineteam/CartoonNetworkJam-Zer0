@@ -145,8 +145,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4b41d1ce4d4e9d4cbb39302ff2e4436, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartingSecondsToComplete: 5
-  MaxPointValueForWin: 100
+  StartingSecondsToComplete: 5.5
+  MaxPointValueForWin: 1000
   TextSentBy: Mr. Future
   TextMessageContents: If you fall asleep in my class again you get an F! Make coffee!
 --- !u!114 &11413702
@@ -320,6 +320,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_SortingOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: MaxPointValueForWin
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: StartingSecondsToComplete
+      value: 5.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

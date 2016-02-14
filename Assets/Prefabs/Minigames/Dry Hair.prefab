@@ -11,7 +11,7 @@ GameObject:
   - 212: {fileID: 21236792}
   - 114: {fileID: 11435738}
   - 114: {fileID: 11420686}
-  - 114: {fileID: 11439990}
+  - 114: {fileID: 11412192}
   m_Layer: 0
   m_Name: Laser
   m_TagString: Untagged
@@ -330,6 +330,18 @@ MonoBehaviour:
   RunningSprite: {fileID: 21300000, guid: 6af0861b6756b644dbb66aab93ead1f2, type: 3}
   SuccessSprite: {fileID: 21300000, guid: 5776bcd8e2adb794c9dd7b376970a03a, type: 3}
   FailedSprite: {fileID: 21300000, guid: 3c2eede69e624ff40961bbde84ac3dfa, type: 3}
+--- !u!114 &11412192
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 110528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcc243b2881d81e43bab4aa1d68a6d28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioClip: {fileID: 8300000, guid: 3d5b93c4b8cd90640bcdab6b25cb4a69, type: 3}
 --- !u!114 &11416558
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -419,18 +431,6 @@ MonoBehaviour:
   StateToEnableOn: 1
   enabledToSet: 1
   Minigame: {fileID: 11481238}
---- !u!114 &11439990
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 110528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c86f5af553caf104db19f87f0c5ddb4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AudioClip: {fileID: 8300000, guid: 3d5b93c4b8cd90640bcdab6b25cb4a69, type: 3}
 --- !u!114 &11443128
 MonoBehaviour:
   m_ObjectHideFlags: 1

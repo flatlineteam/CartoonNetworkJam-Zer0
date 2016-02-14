@@ -45,6 +45,7 @@ GameObject:
   - 114: {fileID: 11497740}
   - 114: {fileID: 11489590}
   - 114: {fileID: 11443958}
+  - 114: {fileID: 11414244}
   m_Layer: 0
   m_Name: laser Blast
   m_TagString: Untagged
@@ -194,6 +195,18 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 24.36, y: 16.14}
+--- !u!114 &11414244
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 137538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcc243b2881d81e43bab4aa1d68a6d28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioClip: {fileID: 8300000, guid: 3d5b93c4b8cd90640bcdab6b25cb4a69, type: 3}
 --- !u!114 &11414296
 MonoBehaviour:
   m_ObjectHideFlags: 1

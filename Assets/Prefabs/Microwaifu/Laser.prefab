@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 457886}
   - 212: {fileID: 21280868}
+  - 114: {fileID: 11497758}
   m_Layer: 0
   m_Name: Laser
   m_TagString: Untagged
@@ -115,6 +116,18 @@ Transform:
   - {fileID: 422496}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &11497758
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 109294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcc243b2881d81e43bab4aa1d68a6d28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioClip: {fileID: 8300000, guid: 3d5b93c4b8cd90640bcdab6b25cb4a69, type: 3}
 --- !u!198 &19854634
 ParticleSystem:
   m_ObjectHideFlags: 1
