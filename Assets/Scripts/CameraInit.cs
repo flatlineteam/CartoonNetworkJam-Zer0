@@ -21,7 +21,6 @@ namespace Assets.Scripts
                 var selfCamera = GetComponent<Camera>();
 
                 var scaleHeight = screenAspectRatio / aspectRatio;
-                Debug.Log(scaleHeight);
 
                 if (scaleHeight > 1.0f)
                 {
