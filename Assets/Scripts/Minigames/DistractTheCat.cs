@@ -91,8 +91,6 @@ namespace Assets.Scripts
 
             DistanceCatHasMoved += movement.magnitude;
 
-            Debug.Log(DistanceCatHasMoved);
-
             if (DistanceCatHasMoved >= DistanceCatNeedsToMove)
             {
                 MarkAsSuccess();
