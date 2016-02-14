@@ -25,10 +25,12 @@ namespace Assets.Scripts
         public LayoutGroup TextMessageParent;
 
         public GameObject ScreenOnObj;
+
+        public Transform Target;
         
         public void Awake()
         {
-            transform.localPosition = new Vector3(transform.localPosition.x, LowerTo, 0);
+            Target.transform.localPosition = new Vector3(Target.transform.localPosition.x, LowerTo, 0);
         }
 
         public IEnumerator Raise()
@@ -37,7 +39,7 @@ namespace Assets.Scripts
             var speedFactor = GameFlowController.Current.CurrentSpeed;
             var raiseTime = RaiseTime / speedFactor;
 
-            GetComponent<RectTransform>().DOAnchorPosY(RaiseTo, raiseTime);
+            Target.GetComponent<RectTransform>().DOAnchorPosY(RaiseTo, raiseTime);
             yield return new WaitForSeconds(raiseTime);
             ScreenOnObj.SetActive(true);
             yield return new WaitForSeconds(0.25f);
@@ -83,7 +85,7 @@ namespace Assets.Scripts
             var speedFactor = GameFlowController.Current.CurrentSpeed;
             var lowerTime = LowerTime / speedFactor;
 
-            GetComponent<RectTransform>().DOAnchorPosY(LowerTo, lowerTime);
+            Target.GetComponent<RectTransform>().DOAnchorPosY(LowerTo, lowerTime);
             yield return new WaitForSeconds(lowerTime);
         }
     }

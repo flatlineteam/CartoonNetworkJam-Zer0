@@ -9,6 +9,8 @@ namespace Assets.Scripts
         public bool isSelected;
         public AudioClip BlasterShot;
 
+        public TapOnItems Parent { get; set; }
+
         // Use this for initialization
         void Start () 
         {
@@ -17,7 +19,8 @@ namespace Assets.Scripts
 
         private void OnPressed (object s, System.EventArgs e)
         {
-            
+            if (Parent.Stopped)
+                return;
             RegisterClick();
         }   
 
