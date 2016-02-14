@@ -3,6 +3,7 @@ using Assets.Scripts.GameFlowStates;
 using Prime31.StateKit;
 using UnityEngine;
 using UnityEngine.UI;
+using Object = UnityEngine.Object;
 
 namespace Assets.Scripts
 {
@@ -32,6 +33,9 @@ namespace Assets.Scripts
 
         public float CurrentSpeed = 1;
 
+        public GameObject EnteringPowerBattlePrefab;
+        public float EnteringPowerBattleTime;
+
         public void Awake()
         {
             Current = this;
@@ -48,6 +52,7 @@ namespace Assets.Scripts
             stateMachine.addState(new MinigameFinished());
             stateMachine.addState(new DecidingNextMinigame());
             stateMachine.addState(new SpeedingUp());
+            stateMachine.addState(new EnteringPowerBattle());
         }
 
         void StateMachine_onStateChanged ()

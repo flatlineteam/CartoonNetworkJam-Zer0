@@ -99,7 +99,6 @@ namespace Assets.Scripts
 
         private void SpawnLaser(Vector3 startPosition)
         {
-            Debug.Log(startLaserPosition);
             startLaserPosition = startPosition;
             touchPosition = startLaserPosition;
             laserInstance = Instantiate(LaserPrefab);

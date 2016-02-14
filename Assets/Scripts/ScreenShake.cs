@@ -13,7 +13,7 @@ namespace Assets.Scripts
 
         private Coroutine shakeCoroutine;
 
-        public void Start()
+        public void Awake()
         {
             cameraBasePosition = transform.localPosition;
         }

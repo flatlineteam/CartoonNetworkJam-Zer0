@@ -47,7 +47,14 @@ namespace Assets.Scripts.GameFlowStates
         {
             if (finished)
             {
-                _machine.changeState<InMinigame>();
+                if (MinigameController.Current.NextMinigame.IsFinale)
+                {
+                    _machine.changeState<EnteringPowerBattle>();
+                }
+                else
+                {
+                    _machine.changeState<InMinigame>();
+                }
             }
         }
 
