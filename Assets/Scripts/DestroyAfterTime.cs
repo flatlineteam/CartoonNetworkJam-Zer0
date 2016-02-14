@@ -8,20 +8,22 @@ namespace Assets.Scripts
         [Range(0, 100)]
         public float Time;
 
-        public bool StartOnStart = true;
+        public bool startOnStart;       
 
         public void Start()
         {
-            if (StartOnStart)
-                StartCoroutine(DestroyDelay());
+            if(startOnStart)
+            {
+                StartCoroutine(DestroyOnDelay());
+            }
         }
 
         public void OnEnable()
         {
-            StartCoroutine(DestroyDelay());
+            StartCoroutine(DestroyOnDelay());
         }
 
-        public IEnumerator DestroyDelay()
+        public IEnumerator DestroyOnDelay()
         {
             yield return new WaitForSeconds(Time);
             Destroy(gameObject);

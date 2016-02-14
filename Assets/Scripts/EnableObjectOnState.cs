@@ -9,6 +9,8 @@ namespace Assets.Scripts
 
         public Minigame.MinigameState StateToEnableOn;
 
+        public bool enabledToSet = false;
+
         public Minigame Minigame;
 
         public void Start()
@@ -20,7 +22,7 @@ namespace Assets.Scripts
         {
             if (minigameState == StateToEnableOn)
             {
-                ToEnableOnState.SetActive(true);
+                ToEnableOnState.SetActive(enabledToSet);
             }
         }
     }
