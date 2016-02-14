@@ -59,6 +59,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 408264}
   - 114: {fileID: 11473338}
+  - 114: {fileID: 11480998}
   m_Layer: 0
   m_Name: 4
   m_TagString: Untagged
@@ -206,6 +207,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 495640}
   - 114: {fileID: 11400818}
+  - 114: {fileID: 11443144}
   m_Layer: 0
   m_Name: 2
   m_TagString: Untagged
@@ -222,6 +224,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 459778}
   - 114: {fileID: 11428804}
+  - 114: {fileID: 11490596}
   m_Layer: 0
   m_Name: 3
   m_TagString: Untagged
@@ -644,6 +647,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PressGesture: {fileID: 11464828}
+--- !u!114 &11443144
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 180220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcc243b2881d81e43bab4aa1d68a6d28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioClip: {fileID: 8300000, guid: a2b5d8ef3e6f2bd4db61f78c3ee152b3, type: 3}
 --- !u!114 &11464828
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -712,6 +727,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PressGesture: {fileID: 11414458}
+--- !u!114 &11480998
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 137488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcc243b2881d81e43bab4aa1d68a6d28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioClip: {fileID: 8300000, guid: 8fcfddf8f58295a4f924b409fe70575c, type: 3}
 --- !u!114 &11481992
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -763,6 +790,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LaserPrefab: {fileID: 111170, guid: 937cdf13661203a4cb32915690b3710a, type: 2}
   CookedBurritoPrefab: {fileID: 180050, guid: 0519974fe20e7b14e970f6563284f911, type: 2}
+  BurritoOpen: {fileID: 8300000, guid: a2b5d8ef3e6f2bd4db61f78c3ee152b3, type: 3}
+  BurritoPlace: {fileID: 8300000, guid: 5d3b9f3b39c6ef2428231bdbd27e09bf, type: 3}
+  BurritoClose: {fileID: 8300000, guid: 8fcfddf8f58295a4f924b409fe70575c, type: 3}
+  BurritoBoom: {fileID: 8300000, guid: 01c1a106e55dc954284cad5d56bd8c1f, type: 3}
+--- !u!114 &11490596
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 189390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcc243b2881d81e43bab4aa1d68a6d28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioClip: {fileID: 8300000, guid: 5d3b9f3b39c6ef2428231bdbd27e09bf, type: 3}
 --- !u!212 &21204662
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -1039,7 +1082,23 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: BurritoBoom
+      value: 
+      objectReference: {fileID: 8300000, guid: 01c1a106e55dc954284cad5d56bd8c1f, type: 3}
+    - target: {fileID: 0}
+      propertyPath: BurritoOpen
+      value: 
+      objectReference: {fileID: 8300000, guid: a2b5d8ef3e6f2bd4db61f78c3ee152b3, type: 3}
+    - target: {fileID: 0}
+      propertyPath: BurritoClose
+      value: 
+      objectReference: {fileID: 8300000, guid: 8fcfddf8f58295a4f924b409fe70575c, type: 3}
+    - target: {fileID: 0}
+      propertyPath: BurritoPlace
+      value: 
+      objectReference: {fileID: 8300000, guid: 5d3b9f3b39c6ef2428231bdbd27e09bf, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 123988}
