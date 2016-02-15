@@ -23,13 +23,21 @@ namespace Assets.Scripts
         private Vector2 startTouchPosition;
         private Vector2 currentTouchPosition;
 
-        public float MaxAngleInDegrees = 75;
+        public float MaxAngle;
+        public float MinAngle;
+
+        public GameObject GoUp;
+        public GameObject GoDown;
+
+        [Range(0, 10)]
+        public float Sensitivity = 1;
 
         private bool? neededHitIsTop;
         public int CountNeeded;
 
         private int currentCount;
         private bool isTouching;
+        private float currentAngle;
 
         protected override void OnUnityStart()
         {
@@ -77,34 +85,29 @@ namespace Assets.Scripts
         {
             currentCount = 0;
             isTouching = false;
+            currentAngle = Mathf.Clamp(0, MinAngle, MaxAngle);
+            GoUp.SetActive(false);
+            GoDown.SetActive(false);
         }
 
         protected override void OnUnityUpdate()
         {
-            if (currentTouchPosition.x > Character.transform.localPosition.x || isTouching == false)
-                return;
+            var delta = transformGesture.LocalDeltaPosition;
 
-            var diff = currentTouchPosition - (Vector2)Character.transform.localPosition;
+            var change = delta.y * Sensitivity;
 
-            var angleUnitCircle = Mathf.Atan2(diff.y, diff.x);
-            var angleVector = new Vector2(Mathf.Cos(angleUnitCircle), Mathf.Sin(angleUnitCircle));
+            currentAngle += change;
 
-            var isUp = currentTouchPosition.y > Character.transform.localPosition.y;
-            var angle = Vector2.Angle(angleVector, Vector2.left);
+            var clamped = Mathf.Clamp(currentAngle, MinAngle, MaxAngle);
 
-            if (!isUp)
-                angle = -angle;
-
-            var clamped = Mathf.Clamp(angle, -MaxAngleInDegrees, MaxAngleInDegrees);
-
-            if (Mathf.Approximately(clamped, MaxAngleInDegrees))
+            if (Mathf.Approximately(clamped, MaxAngle))
             {
                 if (neededHitIsTop == null || neededHitIsTop.Value)
                 {
                     HitTop();
                 }
             }
-            else if (Mathf.Approximately(clamped, -MaxAngleInDegrees))
+            else if (Mathf.Approximately(clamped, MinAngle))
             {
                 if (neededHitIsTop == null || neededHitIsTop.Value == false)
                 {
@@ -120,6 +123,9 @@ namespace Assets.Scripts
             currentCount++;
             neededHitIsTop = false;
 
+            GoUp.SetActive(false);
+            GoDown.SetActive(true);
+
             if (currentCount == CountNeeded)
             {
                 MarkAsSuccess();
@@ -131,6 +137,9 @@ namespace Assets.Scripts
         {
             currentCount++;
             neededHitIsTop = true;
+
+            GoUp.SetActive(true);
+            GoDown.SetActive(false);
 
             if (currentCount == CountNeeded)
             {

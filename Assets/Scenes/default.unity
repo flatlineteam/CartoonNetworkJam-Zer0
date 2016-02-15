@@ -303,7 +303,7 @@ Prefab:
     - target: {fileID: 11403780, guid: 543c821e7ec56454cb857d6b7ce3ce2a, type: 2}
       propertyPath: TestMinigame
       value: 
-      objectReference: {fileID: 11433004, guid: 477bd9c3777d636489eaa9b943c41a59,
+      objectReference: {fileID: 11481238, guid: e4556578c8397ca4eacaac5b06cd34aa,
         type: 2}
     - target: {fileID: 11403780, guid: 543c821e7ec56454cb857d6b7ce3ce2a, type: 2}
       propertyPath: Minigames.Array.data[6]
@@ -362,7 +362,7 @@ Prefab:
         type: 2}
     - target: {fileID: 11421356, guid: 543c821e7ec56454cb857d6b7ce3ce2a, type: 2}
       propertyPath: StartAutomatically
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 543c821e7ec56454cb857d6b7ce3ce2a, type: 2}
@@ -390,7 +390,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1612038032
 MonoBehaviour:
   m_ObjectHideFlags: 0

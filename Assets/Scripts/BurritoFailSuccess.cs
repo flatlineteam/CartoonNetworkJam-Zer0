@@ -15,6 +15,8 @@ namespace Assets.Scripts
         private Action finished;
         private int scoreEarned;
 
+        public float ShowTime = 3;
+
         protected override void OnMinigameCompletedSuccessfully(Action finished)
         {
             this.finished = finished;
@@ -34,7 +36,7 @@ namespace Assets.Scripts
             var cookedInstance = Instantiate(CookedBurritoPrefab);
             LikeCounterController.Current.AddToPointCount(scoreEarned);
 
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(ShowTime);
 
             Destroy(cookedInstance);
 

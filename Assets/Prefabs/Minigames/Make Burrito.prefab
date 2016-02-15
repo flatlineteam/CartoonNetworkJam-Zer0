@@ -791,7 +791,7 @@ MonoBehaviour:
   LaserPrefab: {fileID: 111170, guid: 937cdf13661203a4cb32915690b3710a, type: 2}
   CookedBurritoPrefab: {fileID: 180050, guid: 0519974fe20e7b14e970f6563284f911, type: 2}
   IceBurritoPrefab: {fileID: 140808, guid: f9b9cbef0af9580419b3231b3770caab, type: 2}
-  LoseSound: {fileID: 8300000, guid: f3e451ecd689aef458265998bec49ee0, type: 3}
+  ShowTime: 3
 --- !u!114 &11490596
 MonoBehaviour:
   m_ObjectHideFlags: 1
