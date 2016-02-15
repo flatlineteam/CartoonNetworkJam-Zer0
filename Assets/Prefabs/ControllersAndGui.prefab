@@ -483,7 +483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd0bf6fc4dfe0cd4b8579c9b4b58febe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TestMinigame: {fileID: 11446856, guid: 07233938cc02dc7428a8dba9ac401f61, type: 2}
+  TestMinigame: {fileID: 11447678, guid: 9a3fbe08f90087e45a461205f0483523, type: 2}
   Finale: {fileID: 11447678, guid: 9a3fbe08f90087e45a461205f0483523, type: 2}
   Minigames:
   - {fileID: 11481238, guid: e4556578c8397ca4eacaac5b06cd34aa, type: 2}
@@ -493,7 +493,7 @@ MonoBehaviour:
   - {fileID: 11423914, guid: 406cd0a6c656f294a99e5939eefb2a1e, type: 2}
   - {fileID: 11496572, guid: 101f2a01171482a40a8afddffd64b734, type: 2}
   - {fileID: 11491310, guid: d5bd6b9bd5eb26e45a9dc7683fc6b843, type: 2}
-  - {fileID: 11446856, guid: 07233938cc02dc7428a8dba9ac401f61, type: 2}
+  - {fileID: 11433004, guid: 477bd9c3777d636489eaa9b943c41a59, type: 2}
   SelectedMinigamePrefab: {fileID: 11496572, guid: 101f2a01171482a40a8afddffd64b734,
     type: 2}
   SpeedFactor: 1
@@ -542,7 +542,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 428b21c37c2df1640932e925a988d375, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartAutomatically: 0
+  StartAutomatically: 1
   CellphonePrefab: {fileID: 11404528, guid: 805924028f17463449b71af59bde74a0, type: 2}
   MainCanvas: {fileID: 22376662}
   NumToCompleteThenFinale: 7
