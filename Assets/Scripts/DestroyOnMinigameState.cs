@@ -16,7 +16,7 @@ namespace Assets.Scripts
 
         private void MinigameOnStateChanged(Minigame.MinigameState minigameState)
         {
-            if (minigameState == StateToDestroyOn)
+            if (minigameState == StateToDestroyOn && gameObject != null)
                 Destroy(gameObject);
         }
     }

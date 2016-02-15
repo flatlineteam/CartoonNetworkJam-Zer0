@@ -29,7 +29,9 @@ namespace Assets.Scripts
         public IEnumerator DestroyOnDelay()
         {
             yield return new WaitForSeconds(Time);
-            Destroy(gameObject);
+
+            if(gameObject != null)
+                Destroy(gameObject);
         }
     }
 }
