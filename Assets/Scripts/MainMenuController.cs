@@ -9,16 +9,20 @@ namespace Assets.Scripts
 
         public GameObject FlashPrefab;
         public float FlashAt;
+        public AudioClip audio;
+        public SoundKit.SKSound sound;
 
         public void Start()
         {
             StartCoroutine(FlashScreen());
             Screen.orientation = ScreenOrientation.Landscape;
+            sound = SoundKit.instance.playSoundLooped(audio);
         }
 
         public void StartGame()
         {
             SceneManager.LoadScene(k.Scenes.DEFAULT);
+            sound.stop();
         }
 
         public void Credits()

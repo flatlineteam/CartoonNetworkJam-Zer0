@@ -557,6 +557,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FlashPrefab: {fileID: 111334, guid: 797c572e78743d548b638f34944e0b56, type: 2}
   FlashAt: 1.5
+  audio: {fileID: 8300000, guid: 8c67cc92de611184f9bdd81650235234, type: 3}
 --- !u!4 &897513956
 Transform:
   m_ObjectHideFlags: 0
@@ -1186,6 +1187,50 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!1 &1986654299
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1986654301}
+  - 114: {fileID: 1986654300}
+  m_Layer: 0
+  m_Name: Sound Kit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1986654300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1986654299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bd640f00f5c6420ab98d0d68542091d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundEffectVolume: 1
+  initialCapacity: 2
+  maxCapacity: 15
+  dontDestroyOnLoad: 0
+  clearAllAudioClipsOnLevelLoad: 1
+--- !u!4 &1986654301
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1986654299}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 178.77492, y: 104.1322, z: 0.13983952}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
 --- !u!1 &1988288910
 GameObject:
   m_ObjectHideFlags: 0
