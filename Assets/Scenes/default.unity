@@ -260,10 +260,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 11403780, guid: 543c821e7ec56454cb857d6b7ce3ce2a, type: 2}
-      propertyPath: Minigames.Array.size
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 405480, guid: 543c821e7ec56454cb857d6b7ce3ce2a, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0

@@ -11,6 +11,8 @@ namespace Assets.Scripts
 
         public Transform Player;
 
+        public Sprite photobombImage;
+
         public Transform Left;
         public Transform Right;
 
@@ -45,6 +47,10 @@ namespace Assets.Scripts
             if (Vector3.Distance(Player.position, Target.position) <= OKDistance)
             {
                 MarkAsSuccess();
+                Player.gameObject.GetComponent<SpriteRenderer>().sprite = photobombImage;
+                Player.gameObject.GetComponent<SpriteRenderer>().flipX = false;
+                Player.localScale = new Vector3(1.0f, 1.0f);
+                Player.position += new Vector3(-1.0f, 0.0f);
                 Shutter = SoundKit.instance.playSound(ShutterClick);
             }
         }
@@ -58,9 +64,19 @@ namespace Assets.Scripts
             Player.localPosition = Left.localPosition;
 
             sequence = DOTween.Sequence()
-                .Append(Player.DOLocalMoveX(Right.localPosition.x, SecondsPerPass).SetEase(ease))
-                .Append(Player.DOLocalMoveX(Left.localPosition.x, SecondsPerPass).SetEase(ease))
+                .Append(Player.DOLocalMoveX(Right.localPosition.x, SecondsPerPass).SetEase(ease).OnStepComplete(FlipPlayerRight))
+                .Append(Player.DOLocalMoveX(Left.localPosition.x, SecondsPerPass).SetEase(ease).OnStepComplete(FlipPlayerLeft))
                 .SetLoops(-1);
+        }
+
+        protected void FlipPlayerLeft()
+        {
+            Player.gameObject.GetComponent<SpriteRenderer>().flipX = true;
+        }
+
+        protected void FlipPlayerRight()
+        {
+            Player.gameObject.GetComponent<SpriteRenderer>().flipX = false;
         }
 
         protected override void OnUnityUpdate()
