@@ -1,11 +1,15 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using TouchScript.Gestures;
 
 namespace Assets.Scripts
 {
     public class MainMenuController : MonoBehaviour
     {
+        public TapGesture Go;
+        public TapGesture CreditsButton;
+        public TapGesture QuitButton;
 
         public GameObject FlashPrefab;
         public float FlashAt;
@@ -17,6 +21,10 @@ namespace Assets.Scripts
             StartCoroutine(FlashScreen());
             Screen.orientation = ScreenOrientation.Landscape;
             sound = SoundKit.instance.playSoundLooped(audio);
+
+            Go.Tapped += (o, e) => StartGame();
+            CreditsButton.Tapped += (o, e) => Credits();
+            QuitButton.Tapped += (o, e) => Quit();
         }
 
         public void StartGame()
