@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartingSecondsToComplete: 2
-  maxPointValueForWin: 100
+  MaxPointValueForWin: 100
   TextSentBy: KO
   TextMessageContents: Shoot this bug Red!
 --- !u!114 &11445134
@@ -148,6 +148,8 @@ MonoBehaviour:
   WinGame: {fileID: 8300000, guid: 2757691bc4c0125429bfc4bbb59d4c08, type: 3}
   LoseGame: {fileID: 8300000, guid: f3e451ecd689aef458265998bec49ee0, type: 3}
   HoldSeconds: 3
+  Success: 1
+  Fail: 1
 --- !u!114 &11468756
 MonoBehaviour:
   m_ObjectHideFlags: 1

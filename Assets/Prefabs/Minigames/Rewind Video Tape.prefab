@@ -359,8 +359,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartingSecondsToComplete: 5
   MaxPointValueForWin: 100
-  TextSentBy: SOMEONE
-  TextMessageContents: REWIND THE VIDEO TAPE
+  TextSentBy: Aych Dee Arr
+  TextMessageContents: Rewind the video tape! Customers were lazy!
 --- !u!114 &11493390
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2059,6 +2059,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: TextSentBy
+      value: Aych Dee Arr
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: TextMessageContents
+      value: Rewind the video tape! Customers were lazy!
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

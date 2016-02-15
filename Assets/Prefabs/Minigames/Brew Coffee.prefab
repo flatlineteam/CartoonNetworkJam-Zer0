@@ -148,7 +148,7 @@ MonoBehaviour:
   StartingSecondsToComplete: 5.5
   MaxPointValueForWin: 400
   TextSentBy: Mr. Future
-  TextMessageContents: If you fall asleep in my class again you get an F! Make coffee!
+  TextMessageContents: Make Coffee! I won't have you fall asleep in my class again!
 --- !u!114 &11413702
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -246,6 +246,8 @@ MonoBehaviour:
   WinGame: {fileID: 8300000, guid: 2757691bc4c0125429bfc4bbb59d4c08, type: 3}
   LoseGame: {fileID: 8300000, guid: f3e451ecd689aef458265998bec49ee0, type: 3}
   HoldSeconds: 3
+  Success: 1
+  Fail: 1
 --- !u!212 &21239150
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -328,6 +330,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: StartingSecondsToComplete
       value: 5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: TextMessageContents
+      value: Make Coffee! I won't have you fall asleep in my class again!
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
