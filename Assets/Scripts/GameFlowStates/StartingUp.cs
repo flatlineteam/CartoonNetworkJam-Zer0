@@ -9,7 +9,7 @@ namespace Assets.Scripts.GameFlowStates
         private readonly bool startAutomatically;
 
         [Range(0, 5)]
-        public float WaitTime = 2;
+        public float WaitTime = 0;
         
         private bool finished;
 
