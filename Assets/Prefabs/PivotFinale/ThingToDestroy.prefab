@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 425494}
   - 114: {fileID: 11490378}
   - 58: {fileID: 5839160}
+  - 114: {fileID: 11410670}
   m_Layer: 0
   m_Name: ThingToDestroy
   m_TagString: Untagged
@@ -72,6 +73,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.4395605
+--- !u!114 &11410670
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 156382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af584d49a4935d6449d2ff328c170a6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Prefab: {fileID: 109688, guid: ef89ecc81fd363b459149647f419a824, type: 2}
 --- !u!114 &11490378
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -129,6 +142,10 @@ Prefab:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Prefab
+      value: 
+      objectReference: {fileID: 109688, guid: ef89ecc81fd363b459149647f419a824, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 156382}
