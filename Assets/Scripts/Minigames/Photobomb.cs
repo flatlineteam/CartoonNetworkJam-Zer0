@@ -12,6 +12,7 @@ namespace Assets.Scripts
         public Transform Player;
 
         public Sprite photobombImage;
+        public GameObject flashPrefab;
 
         public Transform Left;
         public Transform Right;
@@ -51,6 +52,7 @@ namespace Assets.Scripts
                 Player.gameObject.GetComponent<SpriteRenderer>().flipX = false;
                 Player.localScale = new Vector3(1.0f, 1.0f);
                 Player.position += new Vector3(-1.0f, 0.0f);
+                Instantiate(flashPrefab);
                 Shutter = SoundKit.instance.playSound(ShutterClick);
             }
         }

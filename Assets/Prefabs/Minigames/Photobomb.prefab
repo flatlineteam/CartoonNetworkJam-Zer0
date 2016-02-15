@@ -259,6 +259,7 @@ MonoBehaviour:
   Target: {fileID: 476402}
   Player: {fileID: 419254}
   photobombImage: {fileID: 21300000, guid: 2e3fd97dd98466546a622976c13af98f, type: 3}
+  flashPrefab: {fileID: 111334, guid: 797c572e78743d548b638f34944e0b56, type: 2}
   Left: {fileID: 465164}
   Right: {fileID: 411086}
   TapArea: {fileID: 6131100}

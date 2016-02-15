@@ -13,6 +13,7 @@ namespace Assets.Scripts
         public void Start()
         {
             StartCoroutine(FlashScreen());
+            Screen.orientation = ScreenOrientation.Landscape;
         }
 
         public void StartGame()
