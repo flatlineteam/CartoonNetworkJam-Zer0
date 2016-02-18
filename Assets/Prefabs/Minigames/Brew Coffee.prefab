@@ -188,7 +188,8 @@ MonoBehaviour:
   StartingSecondsToComplete: 5.5
   MaxPointValueForWin: 400
   TextSentBy: Mr. Future
-  TextMessageContents: Make Coffee! I won't have you fall asleep in my class again!
+  TextMessageContents: Hold the button, make coffee! Don't fall asleep in my class
+    again!
 --- !u!114 &11413608
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -511,7 +512,7 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 7.28, y: 2.22}
   m_SizeDelta: {x: 22.43, y: 15.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22474604
@@ -564,7 +565,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: TextMessageContents
-      value: Make Coffee! I won't have you fall asleep in my class again!
+      value: Hold the button, make coffee! Don't fall asleep in my class again!
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

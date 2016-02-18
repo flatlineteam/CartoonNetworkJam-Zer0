@@ -485,7 +485,7 @@ MonoBehaviour:
   StartingSecondsToComplete: 1.5
   MaxPointValueForWin: 100
   TextSentBy: Future Red
-  TextMessageContents: Chill for a bit. Garbage truck around that corner.
+  TextMessageContents: Don't move, cute guy around that corner.
 --- !u!114 &11497740
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -696,7 +696,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: TextMessageContents
-      value: Chill for a bit. Garbage truck around that corner.
+      value: Don't move, cute guy around that corner.
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: WinGame

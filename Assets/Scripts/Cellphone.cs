@@ -11,7 +11,7 @@ namespace Assets.Scripts
         public float WaitSeconds = 2;
 
         [Range(0, 2)]
-        public float RaiseTime = 1;
+        public float RaiseTime = 0.25f;
 
         [Range(0, 2)]
         public float LowerTime = 0.5f;

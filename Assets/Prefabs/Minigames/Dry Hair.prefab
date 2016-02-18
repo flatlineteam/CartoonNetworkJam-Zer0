@@ -704,7 +704,7 @@ MonoBehaviour:
   StartingSecondsToComplete: 4
   MaxPointValueForWin: 100
   TextSentBy: Future Red
-  TextMessageContents: Blow dry your hair, it's picture day!
+  TextMessageContents: Swipe up and down, blow dry your hair! Picture day!
 --- !u!114 &11484228
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4009,7 +4009,7 @@ RectTransform:
   m_RootOrder: 6
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 8.8, y: 0.21}
   m_SizeDelta: {x: 22.43, y: 15.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22457860
@@ -4058,7 +4058,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: TextMessageContents
-      value: Blow dry your hair, it's picture day!
+      value: Swipe up and down, blow dry your hair! Picture day!
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: TextSentBy

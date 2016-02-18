@@ -333,7 +333,7 @@ MonoBehaviour:
   StartingSecondsToComplete: 1.5
   MaxPointValueForWin: 100
   TextSentBy: Topher
-  TextMessageContents: Nail the board!
+  TextMessageContents: Tap tap tap! Nail the board!
 --- !u!114 &11497922
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -465,7 +465,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: TextMessageContents
-      value: Nail the board!
+      value: Tap tap tap! Nail the board!
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: WinGame

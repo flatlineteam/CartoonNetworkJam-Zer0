@@ -13,14 +13,15 @@ namespace Assets.Scripts
 
         public GameObject FlashPrefab;
         public float FlashAt;
-        public AudioClip audio;
+        public AudioClip PowerGuit;
+        public AudioClip LoopGuit;
         public SoundKit.SKSound sound;
 
         public void Start()
         {
             StartCoroutine(FlashScreen());
             Screen.orientation = ScreenOrientation.Landscape;
-            sound = SoundKit.instance.playSoundLooped(audio);
+            sound = SoundKit.instance.playSound(PowerGuit);
 
             Go.Tapped += (o, e) => StartGame();
             CreditsButton.Tapped += (o, e) => Credits();
@@ -54,8 +55,9 @@ namespace Assets.Scripts
         public IEnumerator FlashScreen()
         {
             yield return new WaitForSeconds(FlashAt);
-
             Instantiate(FlashPrefab);
+            yield return new WaitForSeconds(2);
+            sound = SoundKit.instance.playSoundLooped(LoopGuit);
         }
     }
 }

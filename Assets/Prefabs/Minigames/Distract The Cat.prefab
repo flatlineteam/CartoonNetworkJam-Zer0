@@ -365,7 +365,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartingSecondsToComplete: 5
   MaxPointValueForWin: 100
-  TextSentBy: Kaylie from CN
+  TextSentBy: Kaylie (CN)
   TextMessageContents: DISTRACT LIONCAT! He's trying to get the tuna again!
 --- !u!114 &11442460
 MonoBehaviour:
@@ -787,7 +787,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: TextSentBy
-      value: Kaylie from CN
+      value: Kaylie (CN)
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: TextMessageContents

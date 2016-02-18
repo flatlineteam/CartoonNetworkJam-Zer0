@@ -618,7 +618,8 @@ MonoBehaviour:
   QuitButton: {fileID: 1652490012}
   FlashPrefab: {fileID: 111334, guid: 797c572e78743d548b638f34944e0b56, type: 2}
   FlashAt: 1.5
-  audio: {fileID: 8300000, guid: 8c67cc92de611184f9bdd81650235234, type: 3}
+  PowerGuit: {fileID: 8300000, guid: 8c3a9dc0076a01440b1707192b02db7d, type: 3}
+  LoopGuit: {fileID: 8300000, guid: 78aa5ae695f4c9d479c7e3851da6573c, type: 3}
 --- !u!4 &897513956
 Transform:
   m_ObjectHideFlags: 0

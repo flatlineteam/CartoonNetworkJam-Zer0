@@ -202,7 +202,7 @@ MonoBehaviour:
   StartingSecondsToComplete: 1.5
   MaxPointValueForWin: 100
   TextSentBy: Swiper
-  TextMessageContents: Swiper can't swipe, do it for me!
+  TextMessageContents: swipe but what even is this
 --- !u!212 &21229660
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -276,7 +276,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: TextMessageContents
-      value: Swiper can't swipe, do it for me!
+      value: swipe but what even is this
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: WinGame
