@@ -186,7 +186,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!223 &116470627
 Canvas:
   m_ObjectHideFlags: 0
@@ -1152,7 +1152,6 @@ MonoBehaviour:
   sendMessageEvents: 60
   sendMessageTarget: {fileID: 0}
   layers:
-  - {fileID: 0}
   - {fileID: 1490697463}
 --- !u!4 &1490697462
 Transform:

@@ -17,12 +17,16 @@ namespace Assets.Scripts
         public AudioClip LoopGuit;
         public SoundKit.SKSound sound;
 
+        private AsyncOperation aSync;
+
         public void Start()
         {
             StartCoroutine(FlashScreen());
             Screen.orientation = ScreenOrientation.Landscape;
             sound = SoundKit.instance.playSound(PowerGuit);
 
+            aSync = SceneManager.LoadSceneAsync(k.Scenes.DEFAULT);
+            aSync.allowSceneActivation = false;
             Go.Tapped += (o, e) => StartGame();
             CreditsButton.Tapped += (o, e) => Credits();
             QuitButton.Tapped += (o, e) => Quit();
@@ -30,7 +34,7 @@ namespace Assets.Scripts
 
         public void StartGame()
         {
-            SceneManager.LoadScene(k.Scenes.DEFAULT);
+            aSync.allowSceneActivation = true;
             sound.stop();
         }
 
