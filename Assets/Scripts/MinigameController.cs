@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -24,10 +27,13 @@ namespace Assets.Scripts
 
         private Minigame previousMinigame;
 
+        private Stack<Minigame> randomizedMinigames;
+
         public void Awake()
         {
             Current = this;
             Finale.IsFinale = true;
+            randomizedMinigames = new Stack<Minigame>();
         }
 
         public void DoTestMinigame()
@@ -78,11 +84,14 @@ namespace Assets.Scripts
 
         public void SetNextMinigameRandom()
         {
-            Minigame minigamePrefab;
-            do
+            if (randomizedMinigames.Count == 0)
             {
-                minigamePrefab = Minigames[Random.Range(0, Minigames.Length)];
-            } while (previousMinigame != null && previousMinigame == minigamePrefab);
+                var randomized = Minigames.OrderBy(x => Random.value).ToList();
+                foreach (var item in randomized)
+                    randomizedMinigames.Push(item);
+            }
+
+            var minigamePrefab = randomizedMinigames.Pop();
             
             SetMinigame(minigamePrefab);
         }
