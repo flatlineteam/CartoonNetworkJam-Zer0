@@ -32,6 +32,7 @@ GameObject:
   - 114: {fileID: 11479586}
   - 114: {fileID: 11475596}
   - 114: {fileID: 11420658}
+  - 114: {fileID: 11417804}
   m_Layer: 0
   m_Name: Tap Area
   m_TagString: Untagged
@@ -434,13 +435,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Minigame: {fileID: 11481238}
   StateToDestroyOn: 2
---- !u!114 &11420658
+--- !u!114 &11417804
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 113036}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ba67d04e07d3491989322c6414feaf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  advancedProps: 0
+  minTouches: 0
+  maxTouches: 0
+  combineTouches: 0
+  combineTouchesInterval: 0.3
+  useSendMessage: 0
+  sendStateChangeMessages: 0
+  sendMessageTarget: {fileID: 0}
+  requireGestureToFail: {fileID: 0}
+  friendlyGestures: []
+  flickTime: 0.1
+  minDistance: 1
+  movementThreshold: 0.5
+  direction: 2
+--- !u!114 &11420658
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 113036}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 141e75b9b7edb42df80a22a14f03ae4b, type: 3}
   m_Name: 
@@ -645,7 +671,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 113036}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 11ea9930ecb674732bee27116520fad8, type: 3}
   m_Name: 
@@ -673,7 +699,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 113036}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c6be551879cd14d739b0188844ef2c60, type: 3}
   m_Name: 
@@ -722,7 +748,8 @@ MonoBehaviour:
   ArmPivot: {fileID: 453256}
   HairDry: {fileID: 8300000, guid: 787cd3bad57289f4fb4db2d4b2f69b80, type: 3}
   MaxAngle: 60
-  MinAngle: 20
+  MinAngle: 0
+  SecondsToAngle: 0.2
   GoUp: {fileID: 138714}
   GoDown: {fileID: 197376}
   Sensitivity: 10

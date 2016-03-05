@@ -6,8 +6,6 @@ namespace Assets.Scripts
 {
     public class DryHair : MinigameScriptBase
     {
-        public Transform Character;
-
         public Collider2D TapArea;
 
         public Transform ArmPivot;
@@ -15,138 +13,83 @@ namespace Assets.Scripts
         public AudioClip HairDry;
 
         private SoundKit.SKSound HairDryer;
-        
-        private TransformGesture transformGesture;
-        private PressGesture pressGesture;
-        private ReleaseGesture releaseGesture;
 
-        private Vector2 startTouchPosition;
-        private Vector2 currentTouchPosition;
+        private FlickGesture flickGesture;
 
         public float MaxAngle;
         public float MinAngle;
+        public float SecondsToAngle;
 
         public GameObject GoUp;
         public GameObject GoDown;
 
-        [Range(0, 10)]
-        public float Sensitivity = 1;
-
-        private bool? neededHitIsTop;
         public int CountNeeded;
 
         private int currentCount;
-        private bool isTouching;
         private float currentAngle;
+        private float currentTimer;
+        private bool IsAtMax;
 
         protected override void OnUnityStart()
         {
-            transformGesture = TapArea.GetComponent<TransformGesture>();
-            pressGesture = TapArea.GetComponent<PressGesture>();
-            releaseGesture = TapArea.GetComponent<ReleaseGesture>();
+            flickGesture = TapArea.GetComponent<FlickGesture>();
 
-            transformGesture.StateChanged += TransformGestureOnStateChanged;
-            pressGesture.Pressed += Pressed;
-            releaseGesture.Released += Released;
+            flickGesture.Flicked += OnFlicked;
 
-            HairDryer = SoundKit.instance.playPitchedSound(HairDry, StartInfo.SpeedFactor);
-        }
+            HairDryer = SoundKit.instance.playSound(HairDry);
+        }         
 
-        private void Released(object sender, EventArgs eventArgs)
+        private void OnFlicked(object sender, EventArgs eventArgs)
         {
             if (Stopped)
                 return;
 
-            isTouching = false;
-        }
-
-        private void Pressed(object sender, EventArgs eventArgs)
-        {
-            if (Stopped)
-                return;
-
-            startTouchPosition = pressGesture.ActiveTouches[0].Hit.Point;
-            currentTouchPosition = startTouchPosition;
-            isTouching = true;
-        }
-
-        private void TransformGestureOnStateChanged(object sender, GestureStateChangeEventArgs e)
-        {
-            if (Stopped)
-                return;
-
-            if (e.State == Gesture.GestureState.Changed)
-            {
-                currentTouchPosition += (Vector2)transformGesture.LocalDeltaPosition;
-            }
-        }
+            Hit();
+        }          
 
         protected override void OnStartMinigame()
         {
             currentCount = 0;
-            isTouching = false;
             currentAngle = Mathf.Clamp(0, MinAngle, MaxAngle);
             GoUp.SetActive(false);
-            GoDown.SetActive(false);
+            GoDown.SetActive(true);
         }
 
         protected override void OnUnityUpdate()
         {
-            var delta = transformGesture.LocalDeltaPosition;
+            if(IsAtMax)currentTimer += (Time.deltaTime / SecondsToAngle) * StartInfo.SpeedFactor;
+            else currentTimer -= Time.deltaTime / SecondsToAngle;
 
-            var change = delta.y * Sensitivity;
+            if(currentTimer >= 1.0f) currentTimer = 1.0f;
+            if(currentTimer <= 0.0f) currentTimer = 0.0f;
 
-            currentAngle += change;
+            currentAngle = MaxAngle + currentTimer * (MinAngle - MaxAngle);
 
-            var clamped = Mathf.Clamp(currentAngle, MinAngle, MaxAngle);
-
-            if (Mathf.Approximately(clamped, MaxAngle))
-            {
-                if (neededHitIsTop == null || neededHitIsTop.Value)
-                {
-                    HitTop();
-                }
-            }
-            else if (Mathf.Approximately(clamped, MinAngle))
-            {
-                if (neededHitIsTop == null || neededHitIsTop.Value == false)
-                {
-                    HitBottom();
-                }
-            }
-
-            ArmPivot.transform.rotation = Quaternion.AngleAxis(clamped, Vector3.forward);
+            ArmPivot.transform.rotation = Quaternion.AngleAxis(currentAngle, Vector3.forward);
         }
 
-        private void HitTop()
+        private void Hit()
         {
-            currentCount++;
-            neededHitIsTop = false;
+            IsAtMax = !IsAtMax;
 
-            GoUp.SetActive(false);
-            GoDown.SetActive(true);
+            GoUp.SetActive(IsAtMax);
+            GoDown.SetActive(!IsAtMax);
+
+            currentCount++;
 
             if (currentCount == CountNeeded)
             {
                 MarkAsSuccess();
                 HairDryer.stop();
+
+                currentAngle = MaxAngle + 0.5f * (MinAngle - MaxAngle);
+
+                ArmPivot.transform.rotation = Quaternion.AngleAxis(currentAngle, Vector3.forward);
+
+                GoUp.SetActive(false);
+                GoDown.SetActive(false);
             }
-        }
-
-        private void HitBottom()
-        {
-            currentCount++;
-            neededHitIsTop = true;
-
-            GoUp.SetActive(true);
-            GoDown.SetActive(false);
-
-            if (currentCount == CountNeeded)
-            {
-                MarkAsSuccess();
-                HairDryer.stop();
-            }
-        }
+        }            
 
         protected override void CleanUp()
         {
