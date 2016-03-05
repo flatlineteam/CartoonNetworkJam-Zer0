@@ -319,7 +319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 838a34b0d21658b4bab99bec3c8d3720, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Minigame: {fileID: 0}
+  Minigame: {fileID: 11496572}
   StateToDestroyOn: 2
 --- !u!114 &11443958
 MonoBehaviour:

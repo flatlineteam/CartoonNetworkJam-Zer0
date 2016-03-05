@@ -105,7 +105,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 8587f82b652222841a7aafa6004f8d0b, type: 3}
-    m_FontSize: 40
+    m_FontSize: 65
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -134,7 +134,7 @@ MonoBehaviour:
   m_MinWidth: -1
   m_MinHeight: -1
   m_PreferredWidth: -1
-  m_PreferredHeight: 125
+  m_PreferredHeight: 160
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
 --- !u!114 &11493240
@@ -212,7 +212,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 8587f82b652222841a7aafa6004f8d0b, type: 3}
-    m_FontSize: 25
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -263,8 +263,8 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 89.8, y: -60.7}
-  m_SizeDelta: {x: 205.7, y: 156.4}
+  m_AnchoredPosition: {x: 133.13, y: -89.3}
+  m_SizeDelta: {x: 367.47, y: 218.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22424686
 RectTransform:
@@ -298,10 +298,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 22424686}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -55.3, y: 43.6}
-  m_SizeDelta: {x: 31.2, y: 67.4}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 23.5, y: -10.6}
+  m_SizeDelta: {x: 38.3, y: 82.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22461898
 RectTransform:
@@ -335,8 +335,8 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 87.34997, y: -17.249962}
-  m_SizeDelta: {x: 210.6, y: 69.5}
+  m_AnchoredPosition: {x: 131.3, y: -18}
+  m_SizeDelta: {x: 363.2, y: 97.6}
   m_Pivot: {x: 0.49999994, y: 0.5000005}
 --- !u!1001 &100100000
 Prefab:

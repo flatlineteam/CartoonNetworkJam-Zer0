@@ -9,6 +9,12 @@ namespace Assets.Scripts
 
         public Minigame.MinigameState StateToDestroyOn;
 
+        public void Awake()
+        {
+            if (Minigame == null)
+                throw new ArgumentException("Missing minigame on " + gameObject.name);
+        }
+
         public void Start()
         {
             Minigame.StateChanged += MinigameOnStateChanged;            
