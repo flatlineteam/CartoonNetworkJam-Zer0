@@ -30,6 +30,8 @@ namespace Assets.Scripts
 
         public MinigameState CurrentState { get; private set; }
 
+        public Sprite TextMessageAvatar;
+
         public void Awake()
         {
             MinigameScript = GetComponent<MinigameScriptBase>();

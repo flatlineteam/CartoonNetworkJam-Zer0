@@ -484,8 +484,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartingSecondsToComplete: 1.5
   MaxPointValueForWin: 100
-  TextSentBy: Future Red
+  TextSentBy: Gladys
   TextMessageContents: Don't move, cute guy around that corner.
+  TextMessageAvatar: {fileID: 21300000, guid: c4bacdc44a25f454ba0522c46310d64b, type: 3}
 --- !u!114 &11497740
 MonoBehaviour:
   m_ObjectHideFlags: 1

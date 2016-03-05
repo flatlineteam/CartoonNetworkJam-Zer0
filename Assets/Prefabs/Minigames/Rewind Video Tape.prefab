@@ -523,8 +523,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartingSecondsToComplete: 5
   MaxPointValueForWin: 100
-  TextSentBy: Video Boss
+  TextSentBy: Big Bull Demon
   TextMessageContents: Circle in the center, rewind the tape!
+  TextMessageAvatar: {fileID: 21300000, guid: 816aed212264a1444b7247815001d6fd, type: 3}
 --- !u!114 &11493390
 MonoBehaviour:
   m_ObjectHideFlags: 1

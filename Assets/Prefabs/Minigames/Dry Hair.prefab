@@ -705,6 +705,7 @@ MonoBehaviour:
   MaxPointValueForWin: 100
   TextSentBy: Future Red
   TextMessageContents: Swipe up and down, blow dry your hair! Picture day!
+  TextMessageAvatar: {fileID: 21300000, guid: 56b4a234dba813e4f8a4f3329d3adaf5, type: 3}
 --- !u!114 &11484228
 MonoBehaviour:
   m_ObjectHideFlags: 1

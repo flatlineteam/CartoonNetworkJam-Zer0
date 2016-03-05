@@ -260,6 +260,7 @@ MonoBehaviour:
   MaxPointValueForWin: 100
   TextSentBy: Gar
   TextMessageContents: Destroy the Ernestos! They won't take our Plaza!
+  TextMessageAvatar: {fileID: 21300000, guid: 9e0f5ddde045d5746aacf7cb2d48b3d6, type: 3}
 --- !u!114 &11446276
 MonoBehaviour:
   m_ObjectHideFlags: 1

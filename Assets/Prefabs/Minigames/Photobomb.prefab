@@ -369,6 +369,7 @@ MonoBehaviour:
   MaxPointValueForWin: 100
   TextSentBy: Miss Pastel
   TextMessageContents: Tap when behind Holo-Jane, photobomb her!
+  TextMessageAvatar: {fileID: 21300000, guid: 5937d35a2c49b4f4180dd37e1723b60c, type: 3}
 --- !u!114 &11455680
 MonoBehaviour:
   m_ObjectHideFlags: 1

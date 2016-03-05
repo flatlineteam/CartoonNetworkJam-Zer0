@@ -332,8 +332,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartingSecondsToComplete: 1.5
   MaxPointValueForWin: 100
-  TextSentBy: Topher
+  TextSentBy: Dynamite Watkins
   TextMessageContents: Tap tap tap! Nail the board!
+  TextMessageAvatar: {fileID: 21300000, guid: 2de49219939d76042b55c0dd5bda2896, type: 3}
 --- !u!114 &11497922
 MonoBehaviour:
   m_ObjectHideFlags: 1

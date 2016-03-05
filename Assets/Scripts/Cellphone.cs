@@ -27,6 +27,8 @@ namespace Assets.Scripts
         public GameObject ScreenOnObj;
 
         public Transform Target;
+
+        public Sprite RedAvatar;
         
         public void Awake()
         {
@@ -54,14 +56,15 @@ namespace Assets.Scripts
             var senderInstance = Instantiate(TextMessageContainerPrefab);
             senderInstance.transform.SetParent(TextMessageParent.transform, false);
 
-            SetSenderAndText(senderInstance, minigame.TextSentBy, minigame.TextMessageContents);
+            SetSenderAndText(senderInstance, minigame.TextSentBy, minigame.TextMessageContents, minigame.TextMessageAvatar);
 
             yield return new WaitForSeconds(0.5f / speedFactor);
 
             var replyInstance = Instantiate(TextMessageContainerPrefab);
             replyInstance.transform.SetParent(TextMessageParent.transform, false);
 
-            SetSenderAndText(replyInstance, "Red", RedMessages[Random.Range(0, RedMessages.Length)]);
+            var redMessage = RedMessages[Random.Range(0, RedMessages.Length)];
+            SetSenderAndText(replyInstance, "Red", redMessage, RedAvatar);
         }
 
         public float GetWaitSeconds()
@@ -70,12 +73,13 @@ namespace Assets.Scripts
             return WaitSeconds / speedFactor;
         }
 
-        private static void SetSenderAndText(GameObject senderInstance, string sender, string text)
+        private static void SetSenderAndText(GameObject senderInstance, string sender, string text, Sprite avatarSprite)
         {
-            var avatar = senderInstance.transform.FindChild("Message").FindChild("Avatar");
+            var avatar = senderInstance.transform.FindChild("Message").FindChild("Avatar").GetComponent<Image>();
             var senderTextObj = senderInstance.transform.FindChild("Message").FindChild("Sender").GetComponent<Text>();
             var textTextObj = senderInstance.transform.FindChild("Message").FindChild("Text").GetComponent<Text>();
 
+            avatar.sprite = avatarSprite;
             senderTextObj.text = sender;
             textTextObj.text = text;
         }

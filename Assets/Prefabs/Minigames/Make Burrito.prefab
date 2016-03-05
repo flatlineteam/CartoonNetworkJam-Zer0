@@ -718,6 +718,7 @@ MonoBehaviour:
   MaxPointValueForWin: 100
   TextSentBy: Radicles
   TextMessageContents: yo make me a burrito
+  TextMessageAvatar: {fileID: 21300000, guid: 09df32b277ee9eb45b2412ce5f4e08b2, type: 3}
 --- !u!114 &11428804
 MonoBehaviour:
   m_ObjectHideFlags: 1

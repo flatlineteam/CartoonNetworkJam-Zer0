@@ -187,9 +187,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartingSecondsToComplete: 5.5
   MaxPointValueForWin: 400
-  TextSentBy: Mr. Future
+  TextSentBy: Neil
   TextMessageContents: Hold the button, make coffee! Don't fall asleep in my class
     again!
+  TextMessageAvatar: {fileID: 21300000, guid: e4fb6a93fc1d96f4a941952cdb250f7f, type: 3}
 --- !u!114 &11413608
 MonoBehaviour:
   m_ObjectHideFlags: 1

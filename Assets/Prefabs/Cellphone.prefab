@@ -50,7 +50,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &160290
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,6 +137,7 @@ MonoBehaviour:
   TextMessageParent: {fileID: 11451904}
   ScreenOnObj: {fileID: 142842}
   Target: {fileID: 22497106}
+  RedAvatar: {fileID: 21300000, guid: 56b4a234dba813e4f8a4f3329d3adaf5, type: 3}
 --- !u!114 &11451904
 MonoBehaviour:
   m_ObjectHideFlags: 1
