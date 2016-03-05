@@ -60,7 +60,11 @@ namespace Assets.Scripts
             laserInstance.transform.SetParent(GunBarrel.transform, false);
 
             isHeld = true;
-            CatMeow = SoundKit.instance.playSound(LionCat);
+
+            if (CatMeow != null)
+                CatMeow.stop();
+
+            CatMeow = SoundKit.instance.playPitchedSound(LionCat, StartInfo.SpeedFactor);
 
 
             touchPosition = pressGesture.ActiveTouches[0].Hit.Point;
@@ -131,6 +135,7 @@ namespace Assets.Scripts
         protected override void CleanUp()
         {
             Destroy(catInstance);
+            CatMeow.stop();
         }
     }
 }

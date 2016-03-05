@@ -27,6 +27,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 429318}
   - 212: {fileID: 21280086}
+  - 114: {fileID: 11428298}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -41,7 +42,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 156382}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.57, y: -0.112, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 429318}
@@ -55,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 192928}
   m_LocalRotation: {x: 0, y: 0, z: -0.707107, w: 0.70710665}
   m_LocalPosition: {x: -0.032, y: 0.085, z: 0}
-  m_LocalScale: {x: 0.30883968, y: 0.30883938, z: 0.30883938}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 425494}
   m_RootOrder: 0
@@ -85,6 +86,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prefab: {fileID: 109688, guid: ef89ecc81fd363b459149647f419a824, type: 2}
+--- !u!114 &11428298
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 192928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b989cd3abe49b7e448583dc74adf436d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sprites:
+  - Sprite: {fileID: 21300000, guid: 7c1c791404229824a93b1dd7a9eee3fb, type: 3}
+    Scale: 0.3088397
+  - Sprite: {fileID: 21300000, guid: d7fc75ec8953a26409d07ec3dfd2ee45, type: 3}
+    Scale: 0.2
 --- !u!114 &11490378
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -123,7 +140,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7c1c791404229824a93b1dd7a9eee3fb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d7fc75ec8953a26409d07ec3dfd2ee45, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -134,6 +151,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: Sprites.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: Speed
       value: 4.66
@@ -146,6 +167,16 @@ Prefab:
       propertyPath: Prefab
       value: 
       objectReference: {fileID: 109688, guid: ef89ecc81fd363b459149647f419a824, type: 2}
+    - target: {fileID: 0}
+      propertyPath: Sprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 7c1c791404229824a93b1dd7a9eee3fb,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: Sprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: d7fc75ec8953a26409d07ec3dfd2ee45,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 156382}
