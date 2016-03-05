@@ -162,6 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AudioClip: {fileID: 8300000, guid: c20562e6a797ed642b4b184fa4a8549a, type: 3}
+  SpeedUp: 1
 --- !u!114 &11479358
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -284,6 +285,10 @@ Prefab:
       propertyPath: AudioClip
       value: 
       objectReference: {fileID: 8300000, guid: c20562e6a797ed642b4b184fa4a8549a, type: 3}
+    - target: {fileID: 0}
+      propertyPath: SpeedUp
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 114888}

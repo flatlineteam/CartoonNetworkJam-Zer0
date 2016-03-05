@@ -112,7 +112,7 @@ namespace Assets.Scripts
             touchPosition = startLaserPosition;
             laserInstance = Instantiate(LaserPrefab);
             laserInstance.transform.SetParent(LaserParent, false);
-            laserSound = SoundKit.instance.playSound(BlasterHeld);
+            laserSound = SoundKit.instance.playPitchedSound(BlasterHeld, StartInfo.SpeedFactor);
 
             Camera.main.GetComponent<ScreenShake>().ShakeCamera(0.5f, TimeSpan.MaxValue);
         }          

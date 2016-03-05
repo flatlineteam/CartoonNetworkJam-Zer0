@@ -6,9 +6,18 @@ namespace Assets.Scripts
     {
         public AudioClip AudioClip;
 
+        public bool SpeedUp;
+
         public void OnEnable()
         {
-            SoundKit.instance.playOneShot(AudioClip);
+            if (SpeedUp)
+            {
+                SoundKit.instance.playPitchedSound(AudioClip, GameFlowController.Current.CurrentSpeed);
+            }
+            else
+            {
+                SoundKit.instance.playOneShot(AudioClip);
+            }
         }
     }
 }

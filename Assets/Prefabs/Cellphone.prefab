@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 910873f769c842c4ba5c54763e78399d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WaitSeconds: 2
+  WaitSeconds: 2.5
   RaiseTime: 0.5
   LowerTime: 0.5
   RaiseTo: 254
@@ -407,6 +407,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: RaiseTime
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: WaitSeconds
+      value: 2.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

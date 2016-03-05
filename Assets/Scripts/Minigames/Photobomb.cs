@@ -53,7 +53,7 @@ namespace Assets.Scripts
                 Player.localScale = new Vector3(1.0f, 1.0f);
                 Player.position += new Vector3(-1.0f, 0.0f);
                 Instantiate(flashPrefab);
-                Shutter = SoundKit.instance.playSound(ShutterClick);
+                Shutter = SoundKit.instance.playPitchedSound(ShutterClick, StartInfo.SpeedFactor);
             }
         }
 

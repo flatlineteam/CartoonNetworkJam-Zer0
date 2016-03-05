@@ -78,7 +78,7 @@ namespace Assets.Scripts
 
             if (PressStarted != null)
                 PressStarted();
-            CoffeeMaker = SoundKit.instance.playSound(CoffeeMake);
+            CoffeeMaker = SoundKit.instance.playPitchedSound(CoffeeMake, StartInfo.SpeedFactor);
         }
 
         protected override void OnUnityUpdate()

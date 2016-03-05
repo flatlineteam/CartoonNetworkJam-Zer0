@@ -49,7 +49,7 @@ namespace Assets.Scripts
             pressGesture.Pressed += Pressed;
             releaseGesture.Released += Released;
 
-            HairDryer = SoundKit.instance.playSound(HairDry);
+            HairDryer = SoundKit.instance.playPitchedSound(HairDry, StartInfo.SpeedFactor);
         }
 
         private void Released(object sender, EventArgs eventArgs)

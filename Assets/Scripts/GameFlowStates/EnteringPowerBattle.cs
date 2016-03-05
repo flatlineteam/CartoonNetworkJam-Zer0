@@ -17,7 +17,7 @@ namespace Assets.Scripts.GameFlowStates
 
         private IEnumerator WaitForTime()
         {
-            yield return new WaitForSeconds(_context.EnteringPowerBattleTime);
+            yield return new WaitForSeconds(_context.EnteringPowerBattleTime / _context.CurrentSpeed);
 
             _machine.changeState<InMinigame>();
         }
