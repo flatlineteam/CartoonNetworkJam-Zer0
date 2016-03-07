@@ -130,7 +130,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 2044788, guid: 299c2e18ad40adc4eaa4471f80500801, type: 2}
       propertyPath: orthographic size
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 299c2e18ad40adc4eaa4471f80500801, type: 2}
@@ -253,7 +253,13 @@ MonoBehaviour:
   maxCapacity: 15
   dontDestroyOnLoad: 0
   clearAllAudioClipsOnLevelLoad: 1
---- !u!1001 &1097017675
+--- !u!114 &1309152946 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11499892, guid: 299c2e18ad40adc4eaa4471f80500801,
+    type: 2}
+  m_PrefabInternal: {fileID: 212480780}
+  m_Script: {fileID: 11500000, guid: a2c791a2415314ea3b9f44592097a9d1, type: 3}
+--- !u!1001 &1576734777
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -296,6 +302,30 @@ Prefab:
       propertyPath: layers.Array.data[1]
       value: 
       objectReference: {fileID: 1309152946}
+    - target: {fileID: 22415342, guid: 543c821e7ec56454cb857d6b7ce3ce2a, type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22415342, guid: 543c821e7ec56454cb857d6b7ce3ce2a, type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22415342, guid: 543c821e7ec56454cb857d6b7ce3ce2a, type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22415342, guid: 543c821e7ec56454cb857d6b7ce3ce2a, type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22415342, guid: 543c821e7ec56454cb857d6b7ce3ce2a, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 61.00006
+      objectReference: {fileID: 0}
+    - target: {fileID: 22415342, guid: 543c821e7ec56454cb857d6b7ce3ce2a, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -61.809204
+      objectReference: {fileID: 0}
     - target: {fileID: 11421356, guid: 543c821e7ec56454cb857d6b7ce3ce2a, type: 2}
       propertyPath: StartAutomatically
       value: 1
@@ -303,17 +333,11 @@ Prefab:
     - target: {fileID: 11403780, guid: 543c821e7ec56454cb857d6b7ce3ce2a, type: 2}
       propertyPath: TestMinigame
       value: 
-      objectReference: {fileID: 11423914, guid: 406cd0a6c656f294a99e5939eefb2a1e,
+      objectReference: {fileID: 11486732, guid: 94ac5b50b006ca94d83b9677fc79f8a0,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 543c821e7ec56454cb857d6b7ce3ce2a, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &1309152946 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11499892, guid: 299c2e18ad40adc4eaa4471f80500801,
-    type: 2}
-  m_PrefabInternal: {fileID: 212480780}
-  m_Script: {fileID: 11500000, guid: a2c791a2415314ea3b9f44592097a9d1, type: 3}
 --- !u!1 &1612038031
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,7 +355,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1612038032
 MonoBehaviour:
   m_ObjectHideFlags: 0
