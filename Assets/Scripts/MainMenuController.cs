@@ -14,7 +14,7 @@ namespace Assets.Scripts
         public GameObject FlashPrefab;
         public float FlashAt;
         public AudioClip PowerGuit;
-        public AudioClip LoopGuit;
+        public AudioClip RedTheme;
         public SoundKit.SKSound sound;
 
         private AsyncOperation aSync;
@@ -60,8 +60,8 @@ namespace Assets.Scripts
         {
             yield return new WaitForSeconds(FlashAt);
             Instantiate(FlashPrefab);
-            yield return new WaitForSeconds(2);
-            sound = SoundKit.instance.playSoundLooped(LoopGuit);
+            yield return new WaitForSeconds(0);
+            sound = SoundKit.instance.playSoundLooped(RedTheme);
         }
     }
 }
