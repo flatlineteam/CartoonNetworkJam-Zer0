@@ -917,7 +917,7 @@ MonoBehaviour:
   - {fileID: 112242}
   - {fileID: 183818}
   - {fileID: 194770}
-  nailSound: {fileID: 8300000, guid: 8fcfddf8f58295a4f924b409fe70575c, type: 3}
+  nailSound: {fileID: 8300000, guid: c54ff1b8de59b1e4d9f8d2608b628444, type: 3}
 --- !u!114 &11480438
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1310,7 +1310,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: a004bd3cc30c73c4d8f7ed9817172a30, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
